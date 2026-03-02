@@ -182,8 +182,8 @@
     <?php if (isset($_GET['contact'])): ?>
       <?php if ($_GET['contact'] === 'success'): ?>
         <div class="contact-msg contact-msg--success">お問い合わせありがとうございます。内容を確認のうえ、折り返しご連絡いたします。</div>
-      <?php else: ?>
-        <div class="contact-msg contact-msg--error"><?php echo esc_html(urldecode($_GET['contact'])); ?></div>
+      <?php elseif ($_GET['contact'] === 'error' && isset($_GET['msg'])): ?>
+        <div class="contact-msg contact-msg--error"><?php echo esc_html($_GET['msg']); ?></div>
       <?php endif; ?>
     <?php endif; ?>
 
