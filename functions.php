@@ -48,3 +48,41 @@ function oishi_ai_dequeue_block_styles() {
     wp_dequeue_style('wp-img-auto-sizes-contain');
 }
 add_action('wp_enqueue_scripts', 'oishi_ai_dequeue_block_styles', 100);
+
+// Contact form handler
+function oishi_ai_handle_contact() {
+    if (!isset($_POST['_oishi_nonce']) || !wp_verify_nonce($_POST['_oishi_nonce'], 'oishi_contact_nonce')) {
+        wp_safe_redirect(home_url('/#contact') . '?' . http_build_query(['contact' => '不正なリクエストです。']));
+        exit;
+    }
+
+    $name    = sanitize_text_field($_POST['contact_name'] ?? '');
+    $email   = sanitize_email($_POST['contact_email'] ?? '');
+    $message = sanitize_textarea_field($_POST['contact_message'] ?? '');
+
+    if ($name === '' || $email === '' || $message === '') {
+        wp_safe_redirect(home_url('/#contact') . '?' . http_build_query(['contact' => 'すべての項目を入力してください。']));
+        exit;
+    }
+
+    if (!is_email($email)) {
+        wp_safe_redirect(home_url('/#contact') . '?' . http_build_query(['contact' => '有効なメールアドレスを入力してください。']));
+        exit;
+    }
+
+    $to      = 'info@oishillc.jp';
+    $subject = '【お問い合わせ】' . $name . ' 様';
+    $body    = "お名前: {$name}\nメールアドレス: {$email}\n\n{$message}";
+    $headers = ['Reply-To: ' . $name . ' <' . $email . '>'];
+
+    $sent = wp_mail($to, $subject, $body, $headers);
+
+    if ($sent) {
+        wp_safe_redirect(home_url('/#contact') . '?' . http_build_query(['contact' => 'success']));
+    } else {
+        wp_safe_redirect(home_url('/#contact') . '?' . http_build_query(['contact' => '送信に失敗しました。時間をおいて再度お試しください。']));
+    }
+    exit;
+}
+add_action('admin_post_nopriv_oishi_contact', 'oishi_ai_handle_contact');
+add_action('admin_post_oishi_contact', 'oishi_ai_handle_contact');

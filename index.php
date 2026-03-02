@@ -130,20 +130,18 @@
       <span class="section-label">Company</span>
       <h2 class="section-title">会社概要</h2>
     </div>
-    <div class="about-grid">
-      <div>
-        <table class="about-table">
-          <tr><th>社名</th><td>AI Lab OISHI</td></tr>
-          <tr><th>所在地</th><td>神奈川県川崎市</td></tr>
-          <tr><th>事業内容</th><td>AIコンサルティング / AI開発 / DX推進支援</td></tr>
-          <tr><th>URL</th><td>https://oishillc.jp</td></tr>
-        </table>
-      </div>
-      <div class="about-message">
-        <p>AIは大企業だけのものではありません。テクノロジーの力は、事業の規模に関係なく活用できるものだと私たちは考えています。</p>
-        <p>「何ができるか分からない」という段階から一緒に考え、御社のビジネスに本当に役立つAI活用を見つけ出す。それが私たちの仕事です。</p>
-        <div class="sig">— AI Lab OISHI 代表</div>
-      </div>
+    <div class="about-message">
+      <p>AIは大企業だけのものではありません。テクノロジーの力は、事業の規模に関係なく活用できるものだと私たちは考えています。</p>
+      <p>「何ができるか分からない」という段階から一緒に考え、御社のビジネスに本当に役立つAI活用を見つけ出す。それが私たちの仕事です。</p>
+      <div class="sig">— AI Lab OISHI 代表</div>
+    </div>
+    <div class="about-table-wrap">
+      <table class="about-table">
+        <tr><th>社名</th><td>AI Lab OISHI</td></tr>
+        <tr><th>所在地</th><td>神奈川県川崎市</td></tr>
+        <tr><th>事業内容</th><td>AIコンサルティング / AI開発 / DX推進支援</td></tr>
+        <tr><th>URL</th><td>https://oishillc.jp</td></tr>
+      </table>
     </div>
   </div>
 </section>
@@ -180,7 +178,32 @@
     <span class="section-label">Contact</span>
     <h2>まずはお気軽にご相談ください</h2>
     <p>「AIで何ができるか分からない」という段階からでもOK。<br>初回のご相談は無料で承ります。</p>
-    <a href="mailto:info@oishillc.jp" class="btn btn-primary">お問い合わせ</a>
+
+    <?php if (isset($_GET['contact'])): ?>
+      <?php if ($_GET['contact'] === 'success'): ?>
+        <div class="contact-msg contact-msg--success">お問い合わせありがとうございます。内容を確認のうえ、折り返しご連絡いたします。</div>
+      <?php else: ?>
+        <div class="contact-msg contact-msg--error"><?php echo esc_html(urldecode($_GET['contact'])); ?></div>
+      <?php endif; ?>
+    <?php endif; ?>
+
+    <form class="contact-form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
+      <input type="hidden" name="action" value="oishi_contact">
+      <?php wp_nonce_field('oishi_contact_nonce', '_oishi_nonce'); ?>
+      <div class="contact-form__field">
+        <label for="contact-name">お名前</label>
+        <input type="text" id="contact-name" name="contact_name" required>
+      </div>
+      <div class="contact-form__field">
+        <label for="contact-email">メールアドレス</label>
+        <input type="email" id="contact-email" name="contact_email" required>
+      </div>
+      <div class="contact-form__field">
+        <label for="contact-message">お問い合わせ内容</label>
+        <textarea id="contact-message" name="contact_message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">送信する</button>
+    </form>
   </div>
 </section>
 

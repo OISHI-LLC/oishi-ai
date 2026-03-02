@@ -378,11 +378,8 @@ section {
   background: var(--bg-elevated);
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  max-width: 760px;
+.about-table-wrap {
+  max-width: 540px;
   margin: 0 auto;
 }
 
@@ -409,9 +406,15 @@ section {
   color: var(--text-2);
 }
 
+.about-message {
+  max-width: 540px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
 .about-message p {
-  font-size: 0.9375rem;
-  color: var(--text-3);
+  font-size: 1rem;
+  color: var(--text-2);
   line-height: 2;
 }
 
@@ -525,6 +528,76 @@ section {
   margin-bottom: 32px;
   font-size: 1rem;
   line-height: 1.8;
+}
+
+/* ===== Contact Form ===== */
+.contact-form {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-form__field {
+  margin-bottom: 20px;
+}
+
+.contact-form__field label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-3);
+  margin-bottom: 6px;
+}
+
+.contact-form__field input,
+.contact-form__field textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  font-family: var(--font);
+  color: var(--text-1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.contact-form__field input:focus,
+.contact-form__field textarea:focus {
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.contact-form__field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-family: var(--font);
+}
+
+.contact-msg {
+  max-width: 480px;
+  margin: 0 auto 24px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.contact-msg--success {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.20);
+  color: rgba(34, 197, 94, 0.9);
+}
+
+.contact-msg--error {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.20);
+  color: rgba(239, 68, 68, 0.9);
 }
 
 /* ===== Footer ===== */
@@ -849,15 +922,6 @@ section {
     margin: 0;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .about-message {
-    padding-top: 0;
-    border-top: none;
-  }
 
   .portfolio-hero {
     padding: 120px 0 24px;
