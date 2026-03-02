@@ -18,12 +18,12 @@
     <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
     <nav>
       <ul class="header-nav">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#strengths">Why Us</a></li>
-        <li><a href="#about">Company</a></li>
-        <li><a href="<?php echo home_url('/portfolio/'); ?>">Portfolio</a></li>
-        <li><a href="<?php echo home_url('/blog/'); ?>">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#services"><span class="nav-ja">サービス</span><span class="nav-en">Services</span></a></li>
+        <li><a href="#strengths"><span class="nav-ja">選ばれる理由</span><span class="nav-en">Why Us</span></a></li>
+        <li><a href="#about"><span class="nav-ja">会社概要</span><span class="nav-en">Company</span></a></li>
+        <li><a href="<?php echo home_url('/portfolio/'); ?>"><span class="nav-ja">実績</span><span class="nav-en">Portfolio</span></a></li>
+        <li><a href="<?php echo home_url('/blog/'); ?>"><span class="nav-ja">ブログ</span><span class="nav-en">Blog</span></a></li>
+        <li><a href="#contact"><span class="nav-ja">お問い合わせ</span><span class="nav-en">Contact</span></a></li>
       </ul>
     </nav>
   </div>
