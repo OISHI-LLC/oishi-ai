@@ -5,7 +5,7 @@
 
 // Enqueue theme stylesheet
 function oishi_ai_enqueue_styles() {
-    wp_enqueue_style('oishi-ai-style', get_stylesheet_uri(), array(), '4.5');
+    wp_enqueue_style('oishi-ai-style', get_stylesheet_uri(), array(), '4.6');
 }
 add_action('wp_enqueue_scripts', 'oishi_ai_enqueue_styles');
 
