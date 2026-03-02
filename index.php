@@ -33,7 +33,7 @@
   <div class="hero-content">
     <span class="hero-label">AI Consulting</span>
     <h1>AIの力で、ビジネスを次のステージへ</h1>
-    <p>個人事業主から大企業まで、規模を問わず対応。<br>御社の課題に最適なAIソリューションを戦略から実装までワンストップで提供します。</p>
+    <p>規模を問わず、御社に最適なAIソリューションを<br>戦略から実装までワンストップで提供します。</p>
     <a href="#contact" class="btn btn-primary">無料相談はこちら</a>
   </div>
 </section>
