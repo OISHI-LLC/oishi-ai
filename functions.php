@@ -49,6 +49,23 @@ function oishi_ai_dequeue_block_styles() {
 }
 add_action('wp_enqueue_scripts', 'oishi_ai_dequeue_block_styles', 100);
 
+// SMTP configuration (credentials in wp-config.php)
+function oishi_ai_smtp_setup($phpmailer) {
+    if (!defined('OISHI_SMTP_PASSWORD')) {
+        return;
+    }
+    $phpmailer->isSMTP();
+    $phpmailer->Host       = 'smtp.gmail.com';
+    $phpmailer->SMTPAuth   = true;
+    $phpmailer->Port       = 587;
+    $phpmailer->SMTPSecure = 'tls';
+    $phpmailer->Username   = 'info@oishillc.jp';
+    $phpmailer->Password   = OISHI_SMTP_PASSWORD;
+    $phpmailer->From       = 'info@oishillc.jp';
+    $phpmailer->FromName   = 'AI Lab OISHI';
+}
+add_action('phpmailer_init', 'oishi_ai_smtp_setup');
+
 // Contact form handler
 function oishi_ai_handle_contact() {
     $redirect_base = home_url('/');
@@ -76,7 +93,6 @@ function oishi_ai_handle_contact() {
     $subject = '【お問い合わせ】' . $name . ' 様';
     $body    = "お名前: {$name}\nメールアドレス: {$email}\n\n{$message}";
     $headers = [
-        'From: AI Lab OISHI <wordpress@oishillc.jp>',
         'Reply-To: ' . $name . ' <' . $email . '>',
     ];
 
