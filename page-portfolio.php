@@ -9,28 +9,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AI Lab OISHI の実績紹介。AIチャットボット、RAG、AIエージェントなど、多彩なAIプロジェクトの導入事例をご覧ください。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
 </head>
 <body>
 
-<!-- ===== Header ===== -->
 <header class="site-header">
   <div class="container header-inner">
     <a href="<?php echo home_url('/'); ?>" class="site-logo">AI Lab OISHI</a>
-    <button class="mobile-toggle" aria-label="メニュー">&#9776;</button>
+    <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
     <nav>
       <ul class="header-nav">
         <li><a href="<?php echo home_url('/#services'); ?>">Services</a></li>
         <li><a href="<?php echo home_url('/#strengths'); ?>">Why Us</a></li>
         <li><a href="<?php echo home_url('/#about'); ?>">Company</a></li>
         <li><a href="<?php echo home_url('/portfolio/'); ?>" class="nav-active">Portfolio</a></li>
+        <li><a href="<?php echo home_url('/blog/'); ?>">Blog</a></li>
         <li><a href="<?php echo home_url('/#contact'); ?>">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- ===== Portfolio Hero ===== -->
 <section class="portfolio-hero">
   <div class="container text-center">
     <span class="section-label">Portfolio</span>
@@ -39,7 +41,6 @@
   </div>
 </section>
 
-<!-- ===== Portfolio Grid ===== -->
 <section class="portfolio-section">
   <div class="container">
     <div class="portfolio-grid">
@@ -96,7 +97,6 @@
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
 <section class="cta" id="contact">
   <div class="container">
     <span class="section-label">Contact</span>
@@ -106,7 +106,6 @@
   </div>
 </section>
 
-<!-- ===== Footer ===== -->
 <footer class="site-footer">
   <div class="container">
     <p>&copy; <?php echo date('Y'); ?> AI Lab OISHI</p>

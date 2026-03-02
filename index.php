@@ -4,38 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AI Lab OISHI - 小規模事業者から大企業まで、AI導入を戦略から実装までワンストップで支援します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
 </head>
 <body>
 
-<!-- ===== Header ===== -->
 <header class="site-header">
   <div class="container header-inner">
     <a href="#hero" class="site-logo">AI Lab OISHI</a>
-    <button class="mobile-toggle" aria-label="メニュー">&#9776;</button>
+    <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
     <nav>
       <ul class="header-nav">
         <li><a href="#services">Services</a></li>
         <li><a href="#strengths">Why Us</a></li>
         <li><a href="#about">Company</a></li>
         <li><a href="<?php echo home_url('/portfolio/'); ?>">Portfolio</a></li>
+        <li><a href="<?php echo home_url('/blog/'); ?>">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- ===== Hero ===== -->
 <section class="hero" id="hero">
   <div class="hero-content">
-    <span class="hero-label">AI Consulting &amp; Implementation</span>
-    <h1>AIの力で、<br>ビジネスを次のステージへ</h1>
+    <span class="hero-label">AI Consulting</span>
+    <h1>AIの力で、ビジネスを次のステージへ</h1>
     <p>個人事業主から大企業まで、規模を問わず対応。<br>御社の課題に最適なAIソリューションを戦略から実装までワンストップで提供します。</p>
     <a href="#contact" class="btn btn-primary">無料相談はこちら</a>
   </div>
 </section>
 
-<!-- ===== Use Cases ===== -->
 <section class="usecases" id="usecases">
   <div class="container">
     <div class="text-center">
@@ -45,21 +46,20 @@
     <ul class="usecases-list">
       <li>
         <div class="q">「AIを導入したいが、何から始めればいいか分からない」</div>
-        <div class="a">→ 業務分析から最適なAI活用ポイントを特定し、導入ロードマップを策定します。</div>
+        <div class="a">業務分析から最適なAI活用ポイントを特定し、導入ロードマップを策定します。</div>
       </li>
       <li>
         <div class="q">「日々の事務作業に時間を取られ、本業に集中できない」</div>
-        <div class="a">→ 生成AIによる業務自動化で、レポート作成やデータ入力の工数を大幅に削減します。</div>
+        <div class="a">生成AIによる業務自動化で、レポート作成やデータ入力の工数を大幅に削減します。</div>
       </li>
       <li>
         <div class="q">「社員にAIを使わせたいが、社内にノウハウがない」</div>
-        <div class="a">→ 実務に直結する研修プログラムで、チーム全体のAIリテラシーを底上げします。</div>
+        <div class="a">実務に直結する研修プログラムで、チーム全体のAIリテラシーを底上げします。</div>
       </li>
     </ul>
   </div>
 </section>
 
-<!-- ===== Services ===== -->
 <section class="services" id="services">
   <div class="container">
     <div class="text-center">
@@ -96,7 +96,6 @@
   </div>
 </section>
 
-<!-- ===== Strengths ===== -->
 <section class="strengths" id="strengths">
   <div class="container">
     <div class="text-center">
@@ -106,17 +105,17 @@
     </div>
     <div class="strengths-grid">
       <div class="strength-item">
-        <div class="strength-divider"></div>
+        <div class="strength-num">01</div>
         <h3>規模を問わない柔軟な対応</h3>
         <p>個人事業主のちょっとした業務改善から、大企業の全社的なDX推進まで。予算や体制に合わせたプランをご提案します。</p>
       </div>
       <div class="strength-item">
-        <div class="strength-divider"></div>
+        <div class="strength-num">02</div>
         <h3>戦略から実装まで一気通貫</h3>
         <p>「何をすべきか」の戦略立案から、実際のシステム開発・導入・運用まで。複数の会社に頼む必要はありません。</p>
       </div>
       <div class="strength-item">
-        <div class="strength-divider"></div>
+        <div class="strength-num">03</div>
         <h3>最新技術への迅速なキャッチアップ</h3>
         <p>GPT・Claude・オープンソースモデルなど、日進月歩のAI技術を常にフォロー。最適な技術選定で無駄なコストを防ぎます。</p>
       </div>
@@ -124,27 +123,30 @@
   </div>
 </section>
 
-<!-- ===== About ===== -->
 <section class="about" id="about">
   <div class="container">
     <div class="text-center">
       <span class="section-label">Company</span>
       <h2 class="section-title">会社概要</h2>
     </div>
-    <table class="about-table">
-      <tr><th>社名</th><td>AI Lab OISHI</td></tr>
-      <tr><th>所在地</th><td>神奈川県川崎市</td></tr>
-      <tr><th>事業内容</th><td>AIコンサルティング / AI開発 / DX推進支援</td></tr>
-      <tr><th>URL</th><td>https://oishillc.jp</td></tr>
-    </table>
-    <div class="about-message">
-      <p>AIは大企業だけのものではありません。テクノロジーの力は、事業の規模に関係なく活用できるものだと私たちは考えています。「何ができるか分からない」という段階から一緒に考え、御社のビジネスに本当に役立つAI活用を見つけ出す。それが私たちの仕事です。</p>
-      <div class="sig">— AI Lab OISHI 代表</div>
+    <div class="about-grid">
+      <div>
+        <table class="about-table">
+          <tr><th>社名</th><td>AI Lab OISHI</td></tr>
+          <tr><th>所在地</th><td>神奈川県川崎市</td></tr>
+          <tr><th>事業内容</th><td>AIコンサルティング / AI開発 / DX推進支援</td></tr>
+          <tr><th>URL</th><td>https://oishillc.jp</td></tr>
+        </table>
+      </div>
+      <div class="about-message">
+        <p>AIは大企業だけのものではありません。テクノロジーの力は、事業の規模に関係なく活用できるものだと私たちは考えています。</p>
+        <p>「何ができるか分からない」という段階から一緒に考え、御社のビジネスに本当に役立つAI活用を見つけ出す。それが私たちの仕事です。</p>
+        <div class="sig">— AI Lab OISHI 代表</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== Flow ===== -->
 <section class="flow">
   <div class="container">
     <div class="text-center">
@@ -152,19 +154,19 @@
       <h2 class="section-title">ご相談の流れ</h2>
       <p class="section-sub">お問い合わせから最短3営業日でご提案が可能です。</p>
     </div>
-    <div class="flow-steps">
+    <div class="flow-track">
       <div class="flow-step">
-        <div class="flow-num">Step 01</div>
+        <div class="flow-dot">1</div>
         <h3>お問い合わせ</h3>
         <p>メールにてご連絡ください。現状の課題やご要望を簡単にお聞かせください。</p>
       </div>
       <div class="flow-step">
-        <div class="flow-num">Step 02</div>
+        <div class="flow-dot">2</div>
         <h3>無料ヒアリング</h3>
         <p>オンラインにて30〜60分程度、業務内容や課題を詳しくお伺いします。</p>
       </div>
       <div class="flow-step">
-        <div class="flow-num">Step 03</div>
+        <div class="flow-dot">3</div>
         <h3>ご提案</h3>
         <p>ヒアリング内容をもとに、最適なAI活用プランとお見積りをご提示します。</p>
       </div>
@@ -172,9 +174,8 @@
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
 <section class="cta" id="contact">
-  <div class="container">
+  <div class="container cta-content">
     <span class="section-label">Contact</span>
     <h2>まずはお気軽にご相談ください</h2>
     <p>「AIで何ができるか分からない」という段階からでもOK。<br>初回のご相談は無料で承ります。</p>
@@ -182,7 +183,6 @@
   </div>
 </section>
 
-<!-- ===== Footer ===== -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-links">
