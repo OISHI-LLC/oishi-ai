@@ -12,23 +12,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.XSERVER_SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p ${{ secrets.XSERVER_PORT }} ${{ secrets.XSERVER_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
-
-      - name: Deploy via rsync
-        run: |
-          rsync -avz --delete \
-            -e "ssh -p ${{ secrets.XSERVER_PORT }} -o StrictHostKeyChecking=no" \
-            --include='style.css' \
-            --include='functions.php' \
-            --include='index.php' \
-            --include='home.php' \
-            --include='single.php' \
-            --include='page-portfolio.php' \
-            --exclude='*' \
-            ./ \
-            ${{ secrets.XSERVER_USER }}@${{ secrets.XSERVER_HOST }}:/home/xs544387/oishillc.jp/public_html/wp-content/themes/oishi-ai/
+      - name: Deploy via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: /oishillc.jp/public_html/wp-content/themes/oishi-ai/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/preview/**
+            **/CLAUDE.md
+            **/.DS_Store
