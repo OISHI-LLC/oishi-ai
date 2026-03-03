@@ -46,6 +46,20 @@
   <div class="container">
     <div class="portfolio-grid">
 
+      <article class="portfolio-card portfolio-card--featured">
+        <p class="portfolio-badge">Featured</p>
+        <h3>OISHI 日本語チャットボット</h3>
+        <p class="portfolio-category">顧客対応・社内相談の会話支援</p>
+        <p class="portfolio-desc">業務相談に特化した日本語チャットボットを実装。相談内容の整理、導入ステップの提示、費用感の目安提示までを対話形式で支援。UI/UXを含めた短期プロトタイプとして公開し、提案フェーズの意思決定を高速化。</p>
+        <div class="portfolio-tech">
+          <span>PHP</span>
+          <span>JavaScript</span>
+          <span>OpenAI互換API</span>
+          <span>UI Design</span>
+        </div>
+        <a class="portfolio-link" href="<?php echo esc_url(get_template_directory_uri() . '/chatbot.php'); ?>" target="_blank" rel="noopener noreferrer">デモを見る</a>
+      </article>
+
       <div class="portfolio-card">
         <h3>AIチャットボット導入</h3>
         <p class="portfolio-category">カスタマーサポート自動化</p>

@@ -23,7 +23,7 @@
         <li><a href="#about"><span class="nav-ja">会社概要</span><span class="nav-en">Company</span></a></li>
         <li><a href="<?php echo home_url('/portfolio/'); ?>"><span class="nav-ja">実績</span><span class="nav-en">Portfolio</span></a></li>
         <li><a href="<?php echo home_url('/blog/'); ?>"><span class="nav-ja">ブログ</span><span class="nav-en">Blog</span></a></li>
-        <li><a href="#contact"><span class="nav-ja">お問い合わせ</span><span class="nav-en">Contact</span></a></li>
+        <li><a href="<?php echo home_url('/contact/'); ?>"><span class="nav-ja">お問い合わせ</span><span class="nav-en">Contact</span></a></li>
       </ul>
     </nav>
   </div>
@@ -34,7 +34,7 @@
     <span class="hero-label">AI Consulting</span>
     <h1>AIの力で、ビジネスを次のステージへ</h1>
     <p>規模を問わず、御社に最適なAIソリューションを<br>戦略から実装までワンストップで提供します。</p>
-    <a href="#contact" class="btn btn-primary">無料相談はこちら</a>
+    <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-primary">無料相談はこちら</a>
   </div>
 </section>
 
@@ -69,6 +69,12 @@
       <p class="section-sub">事業規模やフェーズに合わせて、最適なAI活用をご提案します。</p>
     </div>
     <div class="services-grid">
+      <article class="service-card service-card--chatbot">
+        <span class="service-badge">Featured</span>
+        <h3>OISHI 日本語チャットボット</h3>
+        <p>相談内容を入力するだけで、要件整理から導入ステップまで日本語で提案するデモを公開中です。商談前の整理や社内検討のたたき台づくりに活用できます。</p>
+        <a href="<?php echo esc_url(get_template_directory_uri() . '/chatbot.php'); ?>" class="service-link" target="_blank" rel="noopener noreferrer">チャットボットを試す</a>
+      </article>
       <div class="service-card">
         <h3>AI戦略コンサルティング</h3>
         <p>ビジネス課題のヒアリングからAI導入ロードマップの策定まで。御社の状況に合った最適な導入計画を設計します。</p>
@@ -179,31 +185,7 @@
     <h2>まずはお気軽にご相談ください</h2>
     <p>「AIで何ができるか分からない」という段階からでもOK。<br>初回のご相談は無料で承ります。</p>
 
-    <?php if (isset($_GET['contact'])): ?>
-      <?php if ($_GET['contact'] === 'success'): ?>
-        <div class="contact-msg contact-msg--success">お問い合わせありがとうございます。内容を確認のうえ、折り返しご連絡いたします。</div>
-      <?php elseif ($_GET['contact'] === 'error' && isset($_GET['msg'])): ?>
-        <div class="contact-msg contact-msg--error"><?php echo esc_html($_GET['msg']); ?></div>
-      <?php endif; ?>
-    <?php endif; ?>
-
-    <form class="contact-form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
-      <input type="hidden" name="action" value="oishi_contact">
-      <?php wp_nonce_field('oishi_contact_nonce', '_oishi_nonce'); ?>
-      <div class="contact-form__field">
-        <label for="contact-name">お名前</label>
-        <input type="text" id="contact-name" name="contact_name" required>
-      </div>
-      <div class="contact-form__field">
-        <label for="contact-email">メールアドレス</label>
-        <input type="email" id="contact-email" name="contact_email" required>
-      </div>
-      <div class="contact-form__field">
-        <label for="contact-message">お問い合わせ内容</label>
-        <textarea id="contact-message" name="contact_message" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">送信する</button>
-    </form>
+    <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-primary">お問い合わせはこちら</a>
   </div>
 </section>
 

@@ -5,7 +5,9 @@
 
 // Enqueue theme stylesheet
 function oishi_ai_enqueue_styles() {
-    wp_enqueue_style('oishi-ai-style', get_stylesheet_uri(), array(), '4.6');
+    $style_path = get_stylesheet_directory() . '/style.css';
+    $style_ver = file_exists($style_path) ? (string) filemtime($style_path) : '1.0.0';
+    wp_enqueue_style('oishi-ai-style', get_stylesheet_uri(), array(), $style_ver);
 }
 add_action('wp_enqueue_scripts', 'oishi_ai_enqueue_styles');
 
@@ -68,10 +70,10 @@ add_action('phpmailer_init', 'oishi_ai_smtp_setup');
 
 // Contact form handler
 function oishi_ai_handle_contact() {
-    $redirect_base = home_url('/');
+    $redirect_base = home_url('/contact/');
 
     if (!isset($_POST['_oishi_nonce']) || !wp_verify_nonce($_POST['_oishi_nonce'], 'oishi_contact_nonce')) {
-        wp_safe_redirect($redirect_base . '?' . http_build_query(['contact' => 'error', 'msg' => '不正なリクエストです。']) . '#contact');
+        wp_safe_redirect($redirect_base . '?' . http_build_query(['contact' => 'error', 'msg' => '不正なリクエストです。']));
         exit;
     }
 
@@ -80,12 +82,12 @@ function oishi_ai_handle_contact() {
     $message = sanitize_textarea_field($_POST['contact_message'] ?? '');
 
     if ($name === '' || $email === '' || $message === '') {
-        wp_safe_redirect($redirect_base . '?' . http_build_query(['contact' => 'error', 'msg' => 'すべての項目を入力してください。']) . '#contact');
+        wp_safe_redirect($redirect_base . '?' . http_build_query(['contact' => 'error', 'msg' => 'すべての項目を入力してください。']));
         exit;
     }
 
     if (!is_email($email)) {
-        wp_safe_redirect($redirect_base . '?' . http_build_query(['contact' => 'error', 'msg' => '有効なメールアドレスを入力してください。']) . '#contact');
+        wp_safe_redirect($redirect_base . '?' . http_build_query(['contact' => 'error', 'msg' => '有効なメールアドレスを入力してください。']));
         exit;
     }
 
@@ -99,9 +101,9 @@ function oishi_ai_handle_contact() {
     $sent = wp_mail($to, $subject, $body, $headers);
 
     if ($sent) {
-        wp_safe_redirect($redirect_base . '?contact=success#contact');
+        wp_safe_redirect($redirect_base . '?contact=success');
     } else {
-        wp_safe_redirect($redirect_base . '?' . http_build_query(['contact' => 'error', 'msg' => '送信に失敗しました。時間をおいて再度お試しください。']) . '#contact');
+        wp_safe_redirect($redirect_base . '?' . http_build_query(['contact' => 'error', 'msg' => '送信に失敗しました。時間をおいて再度お試しください。']));
     }
     exit;
 }
