@@ -69,12 +69,6 @@
       <p class="section-sub">事業規模やフェーズに合わせて、最適なAI活用をご提案します。</p>
     </div>
     <div class="services-grid">
-      <article class="service-card service-card--chatbot">
-        <span class="service-badge">Featured</span>
-        <h3>OISHI 日本語チャットボット</h3>
-        <p>相談内容を入力するだけで、要件整理から導入ステップまで日本語で提案するデモを公開中です。商談前の整理や社内検討のたたき台づくりに活用できます。</p>
-        <a href="<?php echo esc_url(get_template_directory_uri() . '/chatbot.php'); ?>" class="service-link" target="_blank" rel="noopener noreferrer">チャットボットを試す</a>
-      </article>
       <div class="service-card">
         <h3>AI戦略コンサルティング</h3>
         <p>ビジネス課題のヒアリングからAI導入ロードマップの策定まで。御社の状況に合った最適な導入計画を設計します。</p>

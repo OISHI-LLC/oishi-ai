@@ -3,19 +3,7 @@ declare(strict_types=1);
 
 session_start();
 
-const DEFAULT_MODEL = "gpt-oss:120b";
-const DEFAULT_API_BASE = "https://api.openai.com/v1";
-const DEFAULT_SYSTEM_PROMPT = <<<PROMPT
-あなたはAI Lab OISHIの業務相談チャットアシスタントです。
-原則として日本語で、わかりやすく丁寧に回答してください。
-相手が明示的に他言語を希望した場合のみ、その言語で回答してください。
-PROMPT;
-
-$apiKey = (string) getenv("CHATBOT_API_KEY");
-$apiBase = rtrim((string) (getenv("CHATBOT_API_BASE_URL") ?: DEFAULT_API_BASE), "/");
-$model = (string) (getenv("CHATBOT_MODEL") ?: DEFAULT_MODEL);
-$baseSystemPrompt = (string) (getenv("CHATBOT_SYSTEM_PROMPT") ?: DEFAULT_SYSTEM_PROMPT);
-$systemPrompt = trim($baseSystemPrompt . "\n\n必ず原則日本語で回答してください。");
+const CHAT_MODE_LABEL = "固定応答モード";
 $error = null;
 
 if (!isset($_SESSION["chat_messages"]) || !is_array($_SESSION["chat_messages"])) {
@@ -34,104 +22,68 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $error = "メッセージを入力してください。";
     } else {
         $_SESSION["chat_messages"][] = ["role" => "user", "content" => $message];
-        $requestMessages = array_merge(
-            [["role" => "system", "content" => $systemPrompt]],
-            $_SESSION["chat_messages"]
-        );
-
-        try {
-            $assistantReply = fetchAssistantReply($apiBase, $apiKey, $model, $requestMessages);
-            $_SESSION["chat_messages"][] = ["role" => "assistant", "content" => $assistantReply];
-            header("Location: " . strtok($_SERVER["REQUEST_URI"], "?"));
-            exit;
-        } catch (RuntimeException $exception) {
-            $error = $exception->getMessage();
-        }
+        $assistantReply = generateFixedReply($message);
+        $_SESSION["chat_messages"][] = ["role" => "assistant", "content" => $assistantReply];
+        header("Location: " . strtok($_SERVER["REQUEST_URI"], "?"));
+        exit;
     }
 }
 
-function fetchAssistantReply(string $apiBase, string $apiKey, string $model, array $messages): string
+function generateFixedReply(string $message): string
 {
-    $url = $apiBase . "/chat/completions";
-    $payload = json_encode(
+    $intents = [
         [
-            "model" => $model,
-            "messages" => $messages,
-            "temperature" => 0.7,
+            "keywords" => ["料金", "費用", "価格", "見積", "予算"],
+            "response" => "費用は要件とデータ量で変わります。目安は、相談・業務整理が5万円から、PoCは30万円から、本番導入は80万円からです。用途を教えてもらえれば、もう少し具体化できます。",
         ],
-        JSON_THROW_ON_ERROR
-    );
-
-    $curl = curl_init($url);
-    if ($curl === false) {
-        throw new RuntimeException("通信の初期化に失敗しました。");
-    }
-
-    $headers = ["Content-Type: application/json"];
-    if ($apiKey !== "") {
-        $headers[] = "Authorization: Bearer " . $apiKey;
-    }
-
-    curl_setopt_array(
-        $curl,
         [
-            CURLOPT_POST => true,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HTTPHEADER => $headers,
-            CURLOPT_POSTFIELDS => $payload,
-            CURLOPT_TIMEOUT => 60,
-        ]
-    );
+            "keywords" => ["自動化", "業務改善", "工数削減"],
+            "response" => "業務自動化なら、まずは「毎日同じ手順の作業」を1つ特定するのが最短です。対象業務の流れを3ステップで教えてもらえれば、自動化シナリオを提案します。",
+        ],
+        [
+            "keywords" => ["チャットボット", "顧客対応", "問い合わせ対応"],
+            "response" => "顧客対応チャットボットは、FAQ整備と回答ログ分析を同時に回すと精度が伸びます。公開前に50問程度のテスト会話を作るのがおすすめです。",
+        ],
+        [
+            "keywords" => ["PoC", "poc", "検証", "試験導入"],
+            "response" => "PoCは通常2〜4週間で実施できます。1週目で要件確定、2〜3週目で検証、4週目で結果評価という流れが一般的です。",
+        ],
+        [
+            "keywords" => ["導入", "進め方", "手順", "ロードマップ"],
+            "response" => "導入ステップは、1) 課題整理 2) 小規模検証 3) 本番適用 4) 運用改善 の順が失敗しにくいです。現場の担当者を早めに巻き込むのがポイントです。",
+        ],
+    ];
 
-    $raw = curl_exec($curl);
-    if ($raw === false) {
-        $curlError = curl_error($curl);
-        throw new RuntimeException("通信に失敗しました: " . $curlError);
+    foreach ($intents as $intent) {
+        if (containsKeyword($message, $intent["keywords"])) {
+            return (string) $intent["response"];
+        }
     }
 
-    $statusCode = (int) curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
-
-    try {
-        $decoded = json_decode($raw, true, 512, JSON_THROW_ON_ERROR);
-    } catch (JsonException $exception) {
-        throw new RuntimeException("APIレスポンスの解析に失敗しました。");
+    if (containsKeyword($message, ["ありがとう", "助かる", "助かった"])) {
+        return "どういたしまして。必要なら、そのまま次のアクション案まで一緒に整理します。";
     }
 
-    if ($statusCode < 200 || $statusCode >= 300) {
-        $apiErrorMessage = (string) ($decoded["error"]["message"] ?? "不明なAPIエラー");
-        throw new RuntimeException("APIリクエストに失敗しました（{$statusCode}）: {$apiErrorMessage}");
-    }
-
-    $content = $decoded["choices"][0]["message"]["content"] ?? null;
-    $text = normalizeMessageContent($content);
-    if ($text === "") {
-        throw new RuntimeException("APIから空の応答が返されました。");
-    }
-
-    return $text;
+    $fallbackResponses = [
+        "その観点は重要です。対象の業務と、今いちばん困っている点を1つだけ教えてください。",
+        "ありがとうございます。現状の作業時間と目標の削減率がわかると、より現実的な提案ができます。",
+        "良いテーマです。利用する部署と、扱うデータの種類を教えてもらえれば具体案を返せます。",
+    ];
+    $index = abs(crc32($message)) % count($fallbackResponses);
+    return $fallbackResponses[$index];
 }
 
-function normalizeMessageContent(mixed $content): string
+function containsKeyword(string $text, array $keywords): bool
 {
-    if (is_string($content)) {
-        return trim($content);
-    }
-
-    if (is_array($content)) {
-        $parts = [];
-        foreach ($content as $item) {
-            if (!is_array($item)) {
-                continue;
-            }
-            $type = (string) ($item["type"] ?? "");
-            if ($type === "text" && isset($item["text"]) && is_string($item["text"])) {
-                $parts[] = $item["text"];
-            }
+    foreach ($keywords as $keyword) {
+        if (!is_string($keyword) || $keyword === "") {
+            continue;
         }
-        return trim(implode("\n", $parts));
+        if (stripos($text, $keyword) !== false) {
+            return true;
+        }
     }
-
-    return "";
+    return false;
 }
 
 function escapeHtml(string $value): string
@@ -284,7 +236,7 @@ function escapeHtml(string $value): string
   <main class="container">
     <header class="header">
       <h1 class="title">OISHI チャットボット</h1>
-      <p class="meta">使用モデル: <?= escapeHtml($model) ?></p>
+      <p class="meta">応答モード: <?= escapeHtml(CHAT_MODE_LABEL) ?></p>
     </header>
 
     <section class="messages">
@@ -315,7 +267,7 @@ function escapeHtml(string $value): string
           <button class="reset" type="submit" name="reset" value="1">会話をリセット</button>
         </div>
       </form>
-      <p class="hint">Ollamaを使う場合: <code>CHATBOT_API_BASE_URL=http://127.0.0.1:11434/v1</code> を設定。必要に応じて <code>CHATBOT_API_KEY</code>, <code>CHATBOT_MODEL</code>, <code>CHATBOT_SYSTEM_PROMPT</code> も設定できます。</p>
+      <p class="hint">現在は固定応答モードで動作中です。APIキー不要・課金なしで利用できます。</p>
     </section>
   </main>
 </body>
