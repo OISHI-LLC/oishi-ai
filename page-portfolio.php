@@ -48,7 +48,7 @@
 
       <article class="portfolio-card portfolio-card--featured">
         <p class="portfolio-badge">Featured</p>
-        <h3>OISHI 日本語チャットボット</h3>
+        <h3>OISHI ChatBot</h3>
         <p class="portfolio-category">顧客対応・社内相談の会話支援</p>
         <p class="portfolio-desc">業務相談に特化した日本語チャットボットを実装。相談内容の整理、導入ステップの提示、費用感の目安提示までを対話形式で支援。UI/UXを含めた短期プロトタイプとして公開し、提案フェーズの意思決定を高速化。</p>
         <div class="portfolio-tech">
