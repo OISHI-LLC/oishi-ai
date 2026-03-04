@@ -308,6 +308,10 @@ section {
   background: var(--bg-elevated);
 }
 
+.services .section-sub {
+  max-width: 700px;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -960,6 +964,16 @@ section {
     flex-direction: row;
     gap: 6px;
     align-items: baseline;
+    padding: 8px 0;
+  }
+
+  .header-nav .nav-ja {
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .header-nav .nav-en {
+    font-size: 0.8125rem;
   }
 
   .hero {

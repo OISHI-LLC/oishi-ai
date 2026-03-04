@@ -63,7 +63,7 @@
       <div class="portfolio-card">
         <h3>AIチャットボット導入</h3>
         <p class="portfolio-category">カスタマーサポート自動化</p>
-        <p class="portfolio-desc">大手EC企業のカスタマーサポートにAIチャットボットを導入。問い合わせ対応の70%を自動化し、オペレーターの負荷を大幅に削減。24時間対応を実現し、顧客満足度が15%向上。</p>
+        <p class="portfolio-desc">大手EC企業のカスタマーサポートにAIチャットボットを導入。問い合わせの一次対応を自動化し、オペレーターが複雑な相談に集中できる体制を構築。FAQ更新と運用改善を継続し、安定した顧客対応を実現。</p>
         <div class="portfolio-tech">
           <span>GPT-4</span>
           <span>LangChain</span>
@@ -75,7 +75,7 @@
       <div class="portfolio-card">
         <h3>RAGナレッジ検索システム</h3>
         <p class="portfolio-category">社内ナレッジ検索</p>
-        <p class="portfolio-desc">製造業クライアントの社内ドキュメント（10万件超）をベクトルDB化し、自然言語で検索可能なRAGシステムを構築。情報検索時間を平均80%短縮し、ナレッジの属人化を解消。</p>
+        <p class="portfolio-desc">製造業クライアントの社内ドキュメントをベクトルDB化し、自然言語で検索できるRAGシステムを構築。部署をまたいだ情報参照をしやすくし、調査時の手戻りを抑える運用基盤として展開。</p>
         <div class="portfolio-tech">
           <span>OpenAI Embeddings</span>
           <span>Pinecone</span>
@@ -87,7 +87,7 @@
       <div class="portfolio-card">
         <h3>AIエージェントによる業務自動化</h3>
         <p class="portfolio-category">業務プロセス自動化</p>
-        <p class="portfolio-desc">金融機関の審査プロセスにAIエージェントを導入。書類の自動読み取り・データ照合・レポート生成を一気通貫で自動化。処理時間を1件あたり30分から3分に短縮。</p>
+        <p class="portfolio-desc">金融機関の審査プロセスにAIエージェントを導入。書類の読み取り・データ照合・レポート生成を一気通貫で支援し、担当者の確認フローを標準化。運用負荷を抑えながら、審査業務の品質を安定化。</p>
         <div class="portfolio-tech">
           <span>Claude API</span>
           <span>Python</span>
@@ -99,7 +99,7 @@
       <div class="portfolio-card">
         <h3>予測分析ダッシュボード</h3>
         <p class="portfolio-category">データ分析・可視化</p>
-        <p class="portfolio-desc">小売チェーンの販売データを活用し、需要予測AIとリアルタイムダッシュボードを構築。在庫回転率が25%改善し、廃棄ロスを年間数千万円削減。経営判断のスピードが向上。</p>
+        <p class="portfolio-desc">小売チェーンの販売データを活用し、需要予測AIとリアルタイムダッシュボードを構築。店舗ごとの在庫判断と発注計画を可視化し、現場と本部の意思決定を支援。継続的な分析を通じて運用改善を定着。</p>
         <div class="portfolio-tech">
           <span>Prophet</span>
           <span>Streamlit</span>
