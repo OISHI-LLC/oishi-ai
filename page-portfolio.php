@@ -51,12 +51,6 @@
         <h3>OISHI ChatBot</h3>
         <p class="portfolio-category">顧客対応・社内相談の会話支援</p>
         <p class="portfolio-desc">業務相談に特化した日本語チャットボットを実装。相談内容の整理、導入ステップの提示、費用感の目安提示までを対話形式で支援。UI/UXを含めた短期プロトタイプとして公開し、提案フェーズの意思決定を高速化。</p>
-        <div class="portfolio-tech">
-          <span>PHP</span>
-          <span>JavaScript</span>
-          <span>OpenAI互換API</span>
-          <span>UI Design</span>
-        </div>
         <a class="portfolio-link" href="<?php echo esc_url(get_template_directory_uri() . '/chatbot.php'); ?>" target="_blank" rel="noopener noreferrer">デモを見る</a>
       </article>
 
@@ -64,48 +58,24 @@
         <h3>AIチャットボット導入</h3>
         <p class="portfolio-category">カスタマーサポート自動化</p>
         <p class="portfolio-desc">大手EC企業のカスタマーサポートにAIチャットボットを導入。問い合わせの一次対応を自動化し、オペレーターが複雑な相談に集中できる体制を構築。FAQ更新と運用改善を継続し、安定した顧客対応を実現。</p>
-        <div class="portfolio-tech">
-          <span>GPT-4</span>
-          <span>LangChain</span>
-          <span>Python</span>
-          <span>AWS</span>
-        </div>
       </div>
 
       <div class="portfolio-card">
         <h3>RAGナレッジ検索システム</h3>
         <p class="portfolio-category">社内ナレッジ検索</p>
         <p class="portfolio-desc">製造業クライアントの社内ドキュメントをベクトルDB化し、自然言語で検索できるRAGシステムを構築。部署をまたいだ情報参照をしやすくし、調査時の手戻りを抑える運用基盤として展開。</p>
-        <div class="portfolio-tech">
-          <span>OpenAI Embeddings</span>
-          <span>Pinecone</span>
-          <span>Next.js</span>
-          <span>Azure</span>
-        </div>
       </div>
 
       <div class="portfolio-card">
         <h3>AIエージェントによる業務自動化</h3>
         <p class="portfolio-category">業務プロセス自動化</p>
         <p class="portfolio-desc">金融機関の審査プロセスにAIエージェントを導入。書類の読み取り・データ照合・レポート生成を一気通貫で支援し、担当者の確認フローを標準化。運用負荷を抑えながら、審査業務の品質を安定化。</p>
-        <div class="portfolio-tech">
-          <span>Claude API</span>
-          <span>Python</span>
-          <span>OCR</span>
-          <span>FastAPI</span>
-        </div>
       </div>
 
       <div class="portfolio-card">
         <h3>予測分析ダッシュボード</h3>
         <p class="portfolio-category">データ分析・可視化</p>
         <p class="portfolio-desc">小売チェーンの販売データを活用し、需要予測AIとリアルタイムダッシュボードを構築。店舗ごとの在庫判断と発注計画を可視化し、現場と本部の意思決定を支援。継続的な分析を通じて運用改善を定着。</p>
-        <div class="portfolio-tech">
-          <span>Prophet</span>
-          <span>Streamlit</span>
-          <span>BigQuery</span>
-          <span>GCP</span>
-        </div>
       </div>
 
     </div>
