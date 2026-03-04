@@ -314,8 +314,19 @@ section {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+}
+
+.services-grid--seven {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.services-grid--seven > .service-card {
+  grid-column: span 4;
+}
+
+.services-grid--seven > .service-card:nth-child(n + 4) {
+  grid-column: span 3;
 }
 
 .service-card {
@@ -988,6 +999,10 @@ section {
 
   .services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .services-grid--seven > .service-card {
+    grid-column: auto;
   }
 
   .strengths-grid {

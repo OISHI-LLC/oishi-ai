@@ -68,7 +68,7 @@
       <h2 class="section-title">サービス</h2>
       <p class="section-sub">事業規模やフェーズに合わせて、最適なAI活用をご提案します。</p>
     </div>
-    <div class="services-grid">
+    <div class="services-grid services-grid--seven">
       <div class="service-card">
         <h3>AI戦略コンサルティング</h3>
         <p>ビジネス課題のヒアリングからAI導入ロードマップの策定まで。御社の状況に合った最適な導入計画を設計します。</p>
@@ -76,6 +76,10 @@
       <div class="service-card">
         <h3>カスタムAI開発</h3>
         <p>チャットボット・文書解析・画像認識・予測モデルなど、業務に特化したAIシステムをオーダーメイドで開発します。</p>
+      </div>
+      <div class="service-card">
+        <h3>AIエージェント開発</h3>
+        <p>現場業務に合わせたAIエージェントを設計・実装。情報収集・判断補助・タスク実行までを一連のフローで自動化し、日々の業務スピードを高めます。</p>
       </div>
       <div class="service-card">
         <h3>業務プロセス自動化</h3>
