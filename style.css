@@ -343,6 +343,28 @@ section {
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
 }
 
+.service-media {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(180deg, #f5f8fc 0%, #edf2f8 100%);
+  margin-bottom: 16px;
+}
+
+.service-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.35s var(--ease);
+}
+
+.service-card:hover .service-media img {
+  transform: scale(1.02);
+}
+
 .service-card h3 {
   font-size: 1rem;
   font-weight: 600;
@@ -997,12 +1019,14 @@ section {
     height: 300px;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
+  .services-grid,
+  .services-grid.services-grid--seven {
+    grid-template-columns: 1fr !important;
   }
 
-  .services-grid--seven > .service-card {
-    grid-column: auto;
+  .services-grid--seven > .service-card,
+  .services-grid--seven > .service-card:nth-child(n + 4) {
+    grid-column: auto !important;
   }
 
   .strengths-grid {

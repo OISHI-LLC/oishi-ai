@@ -97,7 +97,7 @@ function escapeHtml(string $value): string
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OISHI チャットボット</title>
-  <link rel="icon" href="/wp-content/themes/oishi-ai/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/wp-content/themes/oishi-ai/site-icon.png" type="image/png">
   <style>
     :root {
       --bg: #f4f4ef;

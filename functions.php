@@ -39,7 +39,27 @@ remove_action('wp_head', 'wp_shortlink_wp_head');
 remove_action('wp_head', 'rest_output_link_wp_head');
 remove_action('wp_head', 'wp_oembed_add_discovery_links');
 remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_head', 'wp_site_icon', 99);
 remove_action('wp_print_styles', 'print_emoji_styles');
+
+// Force a theme-managed site icon so search and browser tabs use the brand logo.
+function oishi_ai_site_icon_links() {
+    $template_dir = get_template_directory();
+    $template_uri = get_template_directory_uri();
+
+    $icon_512_ver = file_exists($template_dir . '/site-icon.png') ? (string) filemtime($template_dir . '/site-icon.png') : '1';
+    $icon_192_ver = file_exists($template_dir . '/site-icon-192.png') ? (string) filemtime($template_dir . '/site-icon-192.png') : '1';
+    $apple_ver    = file_exists($template_dir . '/apple-touch-icon.png') ? (string) filemtime($template_dir . '/apple-touch-icon.png') : '1';
+
+    $icon_512 = esc_url($template_uri . '/site-icon.png?v=' . $icon_512_ver);
+    $icon_192 = esc_url($template_uri . '/site-icon-192.png?v=' . $icon_192_ver);
+    $apple    = esc_url($template_uri . '/apple-touch-icon.png?v=' . $apple_ver);
+
+    echo '<link rel="icon" type="image/png" sizes="512x512" href="' . $icon_512 . '">' . "\n";
+    echo '<link rel="icon" type="image/png" sizes="192x192" href="' . $icon_192 . '">' . "\n";
+    echo '<link rel="apple-touch-icon" sizes="180x180" href="' . $apple . '">' . "\n";
+}
+add_action('wp_head', 'oishi_ai_site_icon_links', 1);
 
 // Disable block library CSS (not needed for this theme)
 function oishi_ai_dequeue_block_styles() {

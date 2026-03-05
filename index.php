@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
   <?php wp_head(); ?>
 </head>
 <body>
@@ -70,30 +69,51 @@
     </div>
     <div class="services-grid services-grid--seven">
       <div class="service-card">
+        <div class="service-media" aria-hidden="true">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/services/service-01-strategy.webp'); ?>" alt="" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
         <h3>AI戦略コンサルティング</h3>
         <p>ビジネス課題のヒアリングからAI導入ロードマップの策定まで。御社の状況に合った最適な導入計画を設計します。</p>
       </div>
       <div class="service-card">
+        <div class="service-media" aria-hidden="true">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/services/service-02-custom-dev.webp'); ?>" alt="" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
         <h3>カスタムAI開発</h3>
         <p>チャットボット・文書解析・画像認識・予測モデルなど、業務に特化したAIシステムをオーダーメイドで開発します。</p>
       </div>
       <div class="service-card">
+        <div class="service-media" aria-hidden="true">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/services/service-03-agent.webp'); ?>" alt="" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
         <h3>AIエージェント開発</h3>
         <p>現場業務に合わせたAIエージェントを設計・実装。情報収集・判断補助・タスク実行までを一連のフローで自動化し、日々の業務スピードを高めます。</p>
       </div>
       <div class="service-card">
+        <div class="service-media" aria-hidden="true">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/services/service-04-automation.webp'); ?>" alt="" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
         <h3>業務プロセス自動化</h3>
         <p>生成AIを活用し、レポート作成・データ入力・メール対応などの定型業務を自動化。人的リソースをコア業務に集中できます。</p>
       </div>
       <div class="service-card">
+        <div class="service-media" aria-hidden="true">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/services/service-05-training.webp'); ?>" alt="" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
         <h3>AI研修・内製化支援</h3>
         <p>ChatGPTやClaude等の生成AIツールの活用研修から、社内AIチームの立ち上げまで。自走できる組織づくりを伴走支援します。</p>
       </div>
       <div class="service-card">
+        <div class="service-media" aria-hidden="true">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/services/service-06-diagnosis.webp'); ?>" alt="" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
         <h3>AI導入診断</h3>
         <p>既存の業務フローを分析し、AI導入で効果が見込める領域を特定。投資対効果の試算とともにレポートとしてご提供します。</p>
       </div>
       <div class="service-card">
+        <div class="service-media" aria-hidden="true">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/services/service-07-integration.webp'); ?>" alt="" loading="lazy" decoding="async" width="1600" height="900">
+        </div>
         <h3>既存システムへのAI統合</h3>
         <p>お使いの業務システムやWebサービスにAI機能を組み込み。API連携やプラグイン開発で、既存環境を活かしたまま高度化します。</p>
       </div>
