@@ -40,6 +40,7 @@ remove_action('wp_head', 'rest_output_link_wp_head');
 remove_action('wp_head', 'wp_oembed_add_discovery_links');
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_head', 'wp_site_icon', 99);
+remove_action('template_redirect', 'wp_redirect_admin_locations', 1000);
 remove_action('wp_print_styles', 'print_emoji_styles');
 
 // Force a theme-managed site icon so search and browser tabs use the brand logo.
@@ -60,6 +61,22 @@ function oishi_ai_site_icon_links() {
     echo '<link rel="apple-touch-icon" sizes="180x180" href="' . $apple . '">' . "\n";
 }
 add_action('wp_head', 'oishi_ai_site_icon_links', 1);
+
+// Keep /favicon.ico on-brand instead of WordPress default icon redirects.
+function oishi_ai_redirect_favicon_request() {
+    $request_uri = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
+    if ($request_uri !== '/favicon.ico') {
+        return;
+    }
+
+    $favicon_path = get_template_directory() . '/favicon.ico';
+    $favicon_ver  = file_exists($favicon_path) ? (string) filemtime($favicon_path) : '1';
+    $favicon_url  = add_query_arg('v', $favicon_ver, get_template_directory_uri() . '/favicon.ico');
+
+    wp_safe_redirect(esc_url_raw($favicon_url), 301);
+    exit;
+}
+add_action('template_redirect', 'oishi_ai_redirect_favicon_request', 1);
 
 // Disable block library CSS (not needed for this theme)
 function oishi_ai_dequeue_block_styles() {
