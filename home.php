@@ -13,7 +13,7 @@
 
 <header class="site-header">
   <div class="container header-inner">
-    <a href="<?php echo home_url('/'); ?>" class="site-logo"><img src="<?php echo get_template_directory_uri(); ?>/logo.png" alt="" class="site-logo-img">AI Lab OISHI</a>
+    <a href="<?php echo home_url('/'); ?>" class="site-logo"><?php echo oishi_ai_get_logo_image_html(); ?>AI Lab OISHI</a>
     <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
     <nav>
       <ul class="header-nav">

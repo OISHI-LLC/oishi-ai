@@ -1,3 +1,8 @@
 .DS_Store
 preview/
 CLAUDE.md
+.env
+.env.*
+!.env.example
+tasks/backups/
+tasks/article-*.html
