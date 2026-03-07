@@ -94,7 +94,7 @@ const HOMEPAGE_FACTS = [
         "株式会社などの法人格表記",
     ],
 ];
-const CHATBOT_GUARD_COPY = "AIは間違えることがあります。会社情報はホームページ記載を優先し、最新情報は参照元と取得時刻もご確認ください。";
+const CHATBOT_GUARD_COPY = "AIは間違えることがあります。";
 
 require_once __DIR__ . "/inc/chatbot/core.php";
 
@@ -274,7 +274,6 @@ if (($_SERVER["REQUEST_METHOD"] ?? "GET") === "POST") {
           <button class="reset" type="submit" name="reset" value="1">新規会話</button>
         </form>
         <p class="guard-note">
-          <span class="guard-note-mark" aria-hidden="true"></span>
           <span><?= escapeHtml(CHATBOT_GUARD_COPY) ?></span>
         </p>
       </div>
