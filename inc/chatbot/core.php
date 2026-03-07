@@ -225,7 +225,7 @@ function buildAssistantOverride(string $message): ?array
         "/(採用している|採用してる).*(ai|AI|ＡＩ|モデル|llm|LLM)/u",
         "/(ai|AI|ＡＩ).*(使ってる|使っている|利用している|使用している|搭載している|モデル|llm|LLM|名前|名称|ベース|基盤|内部|裏側)/u",
         "/(チャット|チャットボット|bot|ＢＯＴ|アシスタント|システム).*(ai|AI|ＡＩ|モデル|llm|LLM|頭脳|エンジン)/u",
-        "/(ai|AI|ＡＩ|モデル|llm|LLM|頭脳|エンジン).*(名前|名称|教えて|知りたい|使|利用|使用|搭載|採用|ベース|基盤|中身|内部|裏側|動いてる|動作)/u",
+        "/(ai|AI|ＡＩ|モデル|llm|LLM|頭脳|エンジン).*(名前|名称|使|利用|使用|搭載|採用|ベース|基盤|中身|内部|裏側|動いてる|動作)/u",
         "/\bllm\b/i",
         "/^(誰|だれ|何者|なにもの|自己紹介|名前は|お名前は|中身は)[？?]?$/u",
         "/^(あなた|きみ|君|おまえ|お前)(は|って)?(誰|だれ|何者|なにもの|正体|何|なに|なん)[？?]?$/u",
@@ -268,7 +268,418 @@ function buildAssistantOverride(string $message): ?array
         ];
     }
 
+    $liveInfoReply = buildLiveInfoReply($message, $normalized);
+    if ($liveInfoReply !== null) {
+        return $liveInfoReply;
+    }
+
     return null;
+}
+
+function buildLiveInfoReply(string $message, string $normalized): ?array
+{
+    $intent = resolveLiveInfoIntent($message, $normalized);
+    if ($intent === null) {
+        return null;
+    }
+
+    try {
+        $type = (string) ($intent["type"] ?? "");
+        if ($type === "weather") {
+            return buildWeatherReply($intent);
+        }
+
+        if ($type === "news") {
+            return buildNewsReply($intent);
+        }
+    } catch (RuntimeException $exception) {
+        return [
+            "role" => "assistant",
+            "content" => $exception->getMessage(),
+        ];
+    }
+
+    return null;
+}
+
+function resolveLiveInfoIntent(string $message, string $normalized): ?array
+{
+    if (isWeatherIntent($normalized)) {
+        return [
+            "type" => "weather",
+            "location" => extractWeatherLocation($message),
+        ];
+    }
+
+    return resolveNewsIntent($message, $normalized);
+}
+
+function isWeatherIntent(string $normalized): bool
+{
+    return preg_match("/(天気|気温|降水確率|予報)/u", $normalized) === 1;
+}
+
+function extractWeatherLocation(string $message): string
+{
+    $trimmed = trim(preg_replace("/[？?！!。]+/u", "", $message));
+    $defaultLocation = readChatbotConfig("CHATBOT_DEFAULT_WEATHER_LOCATION", "");
+    $patterns = [
+        "/^(.+?)(?:の|での)?(?:今|今日|明日)?(?:の)?(?:天気|気温|降水確率|予報).*$/u",
+        "/^(?:今|今日|明日)?(?:の)?(?:天気|気温|降水確率|予報)[:：は]?(.+)$/u",
+    ];
+
+    foreach ($patterns as $pattern) {
+        if (preg_match($pattern, $trimmed, $matches) !== 1) {
+            continue;
+        }
+
+        $candidate = cleanWeatherLocationCandidate((string) ($matches[1] ?? ""));
+        if ($candidate !== "") {
+            return $candidate;
+        }
+    }
+
+    return $defaultLocation;
+}
+
+function cleanWeatherLocationCandidate(string $value): string
+{
+    $cleaned = trim($value);
+    $cleaned = preg_replace("/(の?(天気|気温|降水確率|予報).*)$/u", "", $cleaned);
+    $cleaned = preg_replace("/(を教えてください|教えてください|を教えて|教えて|知りたい|しりたい|ってどう|ってなに|はどう|は？|ですか)$/u", "", $cleaned);
+    return trim((string) $cleaned, " 　,、");
+}
+
+function buildWeatherReply(array $intent): array
+{
+    $location = trim((string) ($intent["location"] ?? ""));
+    if ($location === "") {
+        return [
+            "role" => "assistant",
+            "content" => "どの地域の天気を知りたいか教えてください。例: 川崎市、東京都千代田区、大阪市",
+        ];
+    }
+
+    $geo = geocodeWeatherLocation($location);
+    $current = fetchWeatherSnapshot((float) $geo["latitude"], (float) $geo["longitude"]);
+    $locationLabel = buildWeatherLocationLabel($geo);
+    $fetchedAt = formatJstTimestamp();
+
+    return [
+        "role" => "assistant",
+        "content" => $locationLabel . "の現在の天気です（取得: " . $fetchedAt . "）。\n\n"
+            . "- 天気: " . describeWeatherCode((int) ($current["weather_code"] ?? -1))
+            . "\n- 気温: " . number_format((float) ($current["temperature_2m"] ?? 0), 1) . "°C"
+            . "\n- 風速: " . number_format((float) ($current["wind_speed_10m"] ?? 0), 1) . " km/h"
+            . "\n- 取得元: Open-Meteo",
+    ];
+}
+
+function geocodeWeatherLocation(string $location): array
+{
+    $url = "https://nominatim.openstreetmap.org/search?" . http_build_query(
+        [
+            "q" => $location,
+            "format" => "jsonv2",
+            "limit" => 1,
+        ],
+        "",
+        "&",
+        PHP_QUERY_RFC3986
+    );
+    $body = fetchExternalBody($url);
+
+    try {
+        $decoded = json_decode($body, true, 512, JSON_THROW_ON_ERROR);
+    } catch (JsonException $exception) {
+        throw new RuntimeException("地域情報の解析に失敗しました。少し時間をおいて再度お試しください。");
+    }
+
+    $result = $decoded[0] ?? null;
+    if (!is_array($result)) {
+        throw new RuntimeException("地域名を特定できませんでした。都道府県や市区町村まで含めて教えてください。");
+    }
+
+    return $result;
+}
+
+function buildWeatherLocationLabel(array $geo): string
+{
+    $displayName = trim((string) ($geo["display_name"] ?? ""));
+    if ($displayName !== "") {
+        return $displayName;
+    }
+
+    $parts = [];
+    foreach (["name", "admin1", "country"] as $field) {
+        $value = trim((string) ($geo[$field] ?? ""));
+        if ($value !== "" && !in_array($value, $parts, true)) {
+            $parts[] = $value;
+        }
+    }
+
+    return $parts === [] ? "指定地点" : implode(" / ", $parts);
+}
+
+function fetchWeatherSnapshot(float $latitude, float $longitude): array
+{
+    $url = "https://api.open-meteo.com/v1/forecast?" . http_build_query(
+        [
+            "latitude" => $latitude,
+            "longitude" => $longitude,
+            "current" => "temperature_2m,weather_code,wind_speed_10m",
+            "forecast_days" => 1,
+            "timezone" => "Asia/Tokyo",
+        ],
+        "",
+        "&",
+        PHP_QUERY_RFC3986
+    );
+    $body = fetchExternalBody($url);
+
+    try {
+        $decoded = json_decode($body, true, 512, JSON_THROW_ON_ERROR);
+    } catch (JsonException $exception) {
+        throw new RuntimeException("天気情報の解析に失敗しました。少し時間をおいて再度お試しください。");
+    }
+
+    $current = $decoded["current"] ?? null;
+    if (!is_array($current)) {
+        throw new RuntimeException("現在の天気情報を取得できませんでした。少し時間をおいて再度お試しください。");
+    }
+
+    return $current;
+}
+
+function describeWeatherCode(int $code): string
+{
+    return match ($code) {
+        0 => "快晴",
+        1 => "晴れ",
+        2 => "一部くもり",
+        3 => "くもり",
+        45, 48 => "霧",
+        51, 53, 55 => "霧雨",
+        56, 57 => "凍結性の霧雨",
+        61, 63, 65 => "雨",
+        66, 67 => "凍結性の雨",
+        71, 73, 75, 77 => "雪",
+        80, 81, 82 => "にわか雨",
+        85, 86 => "にわか雪",
+        95 => "雷雨",
+        96, 99 => "ひょうを伴う雷雨",
+        default => "不明",
+    };
+}
+
+function resolveNewsIntent(string $message, string $normalized): ?array
+{
+    $hasNewsCue = preg_match("/(ニュース|最新|時事|現況|状況|動向|今どう|いまどう)/u", $normalized) === 1;
+    $hasAiCue = preg_match("/(AI|ＡＩ|生成AI|人工知能|LLM|llm)/u", $message) === 1;
+    $hasWarCue = preg_match("/(戦争|戦況|紛争|停戦|軍事侵攻|ウクライナ|ガザ|中東情勢)/u", $message) === 1;
+
+    if (!$hasNewsCue && !$hasAiCue && !$hasWarCue) {
+        return null;
+    }
+
+    if (preg_match("/(今日のニュース|最新ニュース|時事ニュース|ニュースを教えて|最新のニュース)/u", $normalized) === 1) {
+        return [
+            "type" => "news",
+            "query" => "最新ニュース",
+            "label" => "今日の主要ニュース",
+        ];
+    }
+
+    if ($hasAiCue && ($hasNewsCue || preg_match("/(AI事情|生成AI事情)/u", $normalized) === 1)) {
+        return [
+            "type" => "news",
+            "query" => "生成AI 最新",
+            "label" => "最新のAI関連ニュース",
+        ];
+    }
+
+    if ($hasWarCue) {
+        $topic = extractNewsTopic($message);
+        return [
+            "type" => "news",
+            "query" => ($topic === "" ? "戦争" : $topic) . " 最新",
+            "label" => "最新の戦況関連ニュース",
+        ];
+    }
+
+    if ($hasNewsCue) {
+        $topic = extractNewsTopic($message);
+        if ($topic === "") {
+            return [
+                "type" => "news",
+                "query" => "最新ニュース",
+                "label" => "最新ニュース",
+            ];
+        }
+
+        return [
+            "type" => "news",
+            "query" => $topic . " 最新",
+            "label" => "「" . $topic . "」の最新ニュース",
+        ];
+    }
+
+    return null;
+}
+
+function extractNewsTopic(string $message): string
+{
+    $cleaned = trim(preg_replace("/[？?！!。]+/u", "", $message));
+    $patterns = [
+        "/(を教えてください|教えてください|を教えて|教えて|知りたい|しりたい|ってどう|ってなに|ですか)$/u",
+        "/(今日の|最新の|最近の|いまの|今の)/u",
+        "/(ニュース|最新情報|時事ニュース|AI事情|事情|現況|状況|状態|動向)/u",
+    ];
+
+    foreach ($patterns as $pattern) {
+        $cleaned = preg_replace($pattern, "", $cleaned);
+    }
+
+    return trim((string) $cleaned, " 　の");
+}
+
+function buildNewsReply(array $intent): array
+{
+    $query = trim((string) ($intent["query"] ?? ""));
+    $label = trim((string) ($intent["label"] ?? "最新情報"));
+    $items = fetchNewsItems($query, 3);
+    if ($items === []) {
+        throw new RuntimeException("最新ニュースを取得できませんでした。少し時間をおいて再度お試しください。");
+    }
+
+    $lines = [];
+    foreach ($items as $index => $item) {
+        $line = ($index + 1) . ". " . $item["title"];
+        if ($item["source"] !== "") {
+            $line .= "\n- 媒体: " . $item["source"];
+        }
+        if ($item["published_at"] !== "") {
+            $line .= "\n- 公開: " . $item["published_at"];
+        }
+        if ($item["link"] !== "") {
+            $line .= "\n- リンク: " . $item["link"];
+        }
+        $lines[] = $line;
+    }
+
+    return [
+        "role" => "assistant",
+        "content" => $label . "です（取得: " . formatJstTimestamp() . "）。\n\n"
+            . implode("\n\n", $lines)
+            . "\n\n- 取得元: Google News",
+    ];
+}
+
+function fetchNewsItems(string $query, int $limit = 3): array
+{
+    $url = $query === "最新ニュース"
+        ? "https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja"
+        : "https://news.google.com/rss/search?" . http_build_query(
+            [
+                "q" => $query,
+                "hl" => "ja",
+                "gl" => "JP",
+                "ceid" => "JP:ja",
+            ],
+            "",
+            "&",
+            PHP_QUERY_RFC3986
+        );
+    $body = fetchExternalBody($url);
+
+    libxml_use_internal_errors(true);
+    $xml = simplexml_load_string($body, SimpleXMLElement::class, LIBXML_NOCDATA);
+    libxml_clear_errors();
+
+    if (!$xml instanceof SimpleXMLElement || !isset($xml->channel->item)) {
+        throw new RuntimeException("最新ニュースの解析に失敗しました。少し時間をおいて再度お試しください。");
+    }
+
+    $items = [];
+    foreach ($xml->channel->item as $item) {
+        $title = trim(html_entity_decode((string) ($item->title ?? ""), ENT_QUOTES | ENT_SUBSTITUTE, "UTF-8"));
+        if ($title === "") {
+            continue;
+        }
+
+        $items[] = [
+            "title" => $title,
+            "source" => trim((string) ($item->source ?? "")),
+            "published_at" => formatNewsTimestamp((string) ($item->pubDate ?? "")),
+            "link" => trim((string) ($item->link ?? "")),
+        ];
+
+        if (count($items) >= $limit) {
+            break;
+        }
+    }
+
+    return $items;
+}
+
+function formatJstTimestamp(?string $rawTimestamp = null): string
+{
+    $timezone = new DateTimeZone("Asia/Tokyo");
+    $date = $rawTimestamp === null || trim($rawTimestamp) === ""
+        ? new DateTimeImmutable("now", $timezone)
+        : new DateTimeImmutable($rawTimestamp);
+
+    return $date->setTimezone($timezone)->format("Y-m-d H:i") . " JST";
+}
+
+function formatNewsTimestamp(string $rawTimestamp): string
+{
+    if (trim($rawTimestamp) === "") {
+        return "";
+    }
+
+    try {
+        return formatJstTimestamp($rawTimestamp);
+    } catch (Exception $exception) {
+        return "";
+    }
+}
+
+function fetchExternalBody(string $url, int $timeout = 10): string
+{
+    if (!function_exists("curl_init")) {
+        throw new RuntimeException("最新情報の取得に必要なcURL拡張が無効です。");
+    }
+
+    $curl = curl_init($url);
+    if ($curl === false) {
+        throw new RuntimeException("最新情報の取得を初期化できませんでした。");
+    }
+
+    curl_setopt_array(
+        $curl,
+        [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTPHEADER => [
+                "Accept: application/json, application/xml, text/xml, */*",
+                "Accept-Language: ja,en-US;q=0.8",
+                "User-Agent: OISHI-AI/1.0",
+            ],
+            CURLOPT_TIMEOUT => $timeout,
+            CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_ENCODING => "",
+        ]
+    );
+
+    $body = curl_exec($curl);
+    $curlError = curl_error($curl);
+    $statusCode = (int) curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
+    if ($body === false || $statusCode < 200 || $statusCode >= 300) {
+        throw new RuntimeException("最新情報の取得に失敗しました。少し時間をおいて再度お試しください。");
+    }
+
+    return (string) $body;
 }
 
 function resolveHomepageIntent(string $normalized): ?array
@@ -535,7 +946,6 @@ function buildChatRequestMessages(array $history, string $systemPrompt, int $max
         $messages[] = ["role" => $role, "content" => $content];
     }
 
-    array_unshift($messages, ["role" => "system", "content" => buildHomepageFactsPrompt()]);
     array_unshift($messages, ["role" => "system", "content" => trim($systemPrompt)]);
     return $messages;
 }
