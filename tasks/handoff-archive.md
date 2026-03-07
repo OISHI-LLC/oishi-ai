@@ -4,6 +4,12 @@
 
 ---
 
+### 2026-03-07 16:14 JST | Agent: Codex
+- Task: 本番デプロイ経路を CI-only（GitHub Actions）へ一本化し、運用ルールを統一
+- Changed Files: `PROJECT_RULES.md`, `CODEX_ONLY.md`, `tasks/lessons.md`, `tasks/handoff.md`
+- Deploy: なし（ルール/運用ドキュメントのみ）
+- Verification: OK（CI-only 方針明記 / 例外条件明記）
+
 ### 2026-03-07 16:00 JST | Agent: Claude
 - Task: モデル名質問の検知範囲を拡大（アイデンティティ質問・具体的モデル名推測に対応）
 - Changed Files: `chatbot.php`, `tasks/todo.md`, `tasks/handoff.md`
