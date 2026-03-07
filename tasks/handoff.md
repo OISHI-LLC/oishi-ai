@@ -16,6 +16,42 @@
 
 ---
 
+### 2026-03-08 03:14 JST | Agent: Codex
+- Task: チャットボットの会社/サイト案内を構造化データ + 固定応答レイヤーへ切り替え、短い追撃でも文脈を維持するよう修正
+- Changed Files:
+  - `chatbot.php`
+  - `inc/chatbot/core.php`
+  - `tasks/lessons.md`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - GitHub push: `834fb4b` -> `master`
+  - GitHub Actions: `Deploy to Xserver` run `22804413312` が `success`
+- Verification:
+  - local:
+    - `php -l chatbot.php` OK
+    - `php -l inc/chatbot/core.php` OK
+    - `buildAssistantOverride(...)` で `御社の概要を教えて` / `会社名を教えて` / `御社について教えて` / `主なサービスを教えて` / `強みは？` / `問い合わせ方法を教えて` が固定応答に解決することを確認
+    - `PoCの進め方を教えて` / `売上予測のPoCは何から始める？` は override されず `null`、`モデル名を教えて` は `OISHI-OSSです。` を返すことを確認
+    - セッション保存後の `売上は？` -> `ホームページには明記されていません`、`概要ですよ` -> 会社概要再提示を確認
+  - live:
+    - `/` `HTTP 200`
+    - `/blog/` `HTTP 200`
+    - `/wp-login.php` `HTTP 200`
+    - `/favicon.ico` `HTTP 200`
+    - `https://www.oishillc.jp/wp-content/themes/oishi-ai/chatbot.php` `HTTP 200`
+    - live HTML に `assets/css/chatbot.css?v=1772904321` / `assets/js/chatbot.js?v=1772904321` / `window.OISHI_CHATBOT_CONFIG` を確認
+    - live stream `POST https://www.oishillc.jp/wp-content/themes/oishi-ai/chatbot.php?stream=1`:
+      - `御社の概要を教えて` -> 会社概要の固定応答
+      - `会社名を教えて` -> `ホームページに記載の会社名は AI Lab OISHI です。`
+      - 同一セッションで `売上は？` -> `ホームページには明記されていません`
+      - 同一セッションで `概要ですよ` -> 会社概要を再提示
+- Open Items:
+  - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 03:14 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
+- Next Action:
+  - `2026-03-08 04:00 JST` 以降に `/blog/` と該当記事URLで `GPT-5.4` 記事の公開を確認し、必要なら `tasks/handoff.md` を更新
+
 ### 2026-03-08 02:33 JST | Agent: Codex
 - Task: チャットボット返答の可読性を改善し、Markdown生表示と壊れたJS配信を修正
 - Changed Files:
@@ -86,27 +122,3 @@
   - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 01:53 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
 - Next Action:
   - `2026-03-08 04:00 JST` 以降に `/blog/` と該当記事URLで公開確認し、必要なら `tasks/handoff.md` を更新
-
-### 2026-03-07 17:30 JST | Agent: Claude
-- Task: GPT-5.4 ブログ記事作成・画像生成・WordPress予約投稿・画像品質修正
-- Changed Files:
-  - `tasks/article-20260307-gpt54.html`（記事HTML）
-  - `assets/blog/20260307-gpt54/hero-gpt54.webp`（ヒーロー画像、Geminiマーク除去済み）
-  - `assets/blog/20260307-gpt54/img-01-evolution-map.webp`（進化マップ）
-  - `assets/blog/20260307-gpt54/img-02-use-cases.webp`（活用シーン）
-  - `assets/blog/20260307-gpt54/img-03-steps.webp`（導入3ステップ）
-  - `assets/blog/20260307-gpt54/img-04-summary.webp`（要点3行）
-  - `tasks/lessons.md`（WPスケジュール / 品質ゲート / rsvg絵文字の教訓追加）
-  - `tasks/handoff.md`
-- Deploy:
-  - WordPress投稿 ID 32 を作成、`future` ステータスで 2026-03-08 04:00 JST に予約
-  - ヒーロー画像をメディアライブラリに登録しアイキャッチ設定済み
-  - 4枚のインフォグラフィック画像を本番サーバーへ scp（緊急対応: 絵文字黒四角修正）
-- Verification:
-  - 4画像すべて HTTP 200 確認
-  - 投稿 ID 32: `post_status=future`, `post_date=2026-03-08 04:00:00`, `post_date_gmt=2026-03-07 19:00:00`
-  - `/`, `/blog/`, `/wp-login.php`, `/favicon.ico` すべて HTTP 200
-- Open Items:
-  - なし
-- Next Action:
-  - 2026-03-08 04:00 JST に自動公開されることを確認

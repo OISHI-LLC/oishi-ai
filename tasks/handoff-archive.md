@@ -4,6 +4,30 @@
 
 ---
 
+### 2026-03-07 17:30 JST | Agent: Claude
+- Task: GPT-5.4 ブログ記事作成・画像生成・WordPress予約投稿・画像品質修正
+- Changed Files:
+  - `tasks/article-20260307-gpt54.html`（記事HTML）
+  - `assets/blog/20260307-gpt54/hero-gpt54.webp`（ヒーロー画像、Geminiマーク除去済み）
+  - `assets/blog/20260307-gpt54/img-01-evolution-map.webp`（進化マップ）
+  - `assets/blog/20260307-gpt54/img-02-use-cases.webp`（活用シーン）
+  - `assets/blog/20260307-gpt54/img-03-steps.webp`（導入3ステップ）
+  - `assets/blog/20260307-gpt54/img-04-summary.webp`（要点3行）
+  - `tasks/lessons.md`（WPスケジュール / 品質ゲート / rsvg絵文字の教訓追加）
+  - `tasks/handoff.md`
+- Deploy:
+  - WordPress投稿 ID 32 を作成、`future` ステータスで 2026-03-08 04:00 JST に予約
+  - ヒーロー画像をメディアライブラリに登録しアイキャッチ設定済み
+  - 4枚のインフォグラフィック画像を本番サーバーへ scp（緊急対応: 絵文字黒四角修正）
+- Verification:
+  - 4画像すべて HTTP 200 確認
+  - 投稿 ID 32: `post_status=future`, `post_date=2026-03-08 04:00:00`, `post_date_gmt=2026-03-07 19:00:00`
+  - `/`, `/blog/`, `/wp-login.php`, `/favicon.ico` すべて HTTP 200
+- Open Items:
+  - なし
+- Next Action:
+  - 2026-03-08 04:00 JST に自動公開されることを確認
+
 ### 2026-03-07 16:50 JST | Agent: Codex
 - Task: `chatbot.php` 分割版を CI-only で本番反映し、公開検証まで完了
 - Changed Files:
