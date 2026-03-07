@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f9fa"/>
+      <stop offset="100%" stop-color="#e9ecef"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg2)" rx="12"/>
+  <text x="400" y="40" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a2e">2026年 Mac スペック比較一覧</text>
+  <!-- Table header -->
+  <rect x="30" y="60" width="140" height="45" fill="#343a40" rx="6 6 0 0"/>
+  <rect x="175" y="60" width="148" height="45" fill="#4ecdc4" rx="6 6 0 0"/>
+  <rect x="328" y="60" width="148" height="45" fill="#45b7d1" rx="6 6 0 0"/>
+  <rect x="481" y="60" width="148" height="45" fill="#667eea" rx="6 6 0 0"/>
+  <rect x="634" y="60" width="138" height="45" fill="#764ba2" rx="6 6 0 0"/>
+  <text x="100" y="87" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">項目</text>
+  <text x="249" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">MacBook</text>
+  <text x="249" y="96" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Neo</text>
+  <text x="402" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">MacBook</text>
+  <text x="402" y="96" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Air M5</text>
+  <text x="555" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">MacBook Pro</text>
+  <text x="555" y="96" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">M5 Pro</text>
+  <text x="703" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">MacBook Pro</text>
+  <text x="703" y="96" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">M5 Max</text>
+  <!-- Row backgrounds -->
+  <rect x="30" y="105" width="742" height="42" fill="#fff"/>
+  <rect x="30" y="147" width="742" height="42" fill="#f1f3f5"/>
+  <rect x="30" y="189" width="742" height="42" fill="#fff"/>
+  <rect x="30" y="231" width="742" height="42" fill="#f1f3f5"/>
+  <rect x="30" y="273" width="742" height="42" fill="#fff"/>
+  <rect x="30" y="315" width="742" height="42" fill="#f1f3f5"/>
+  <rect x="30" y="357" width="742" height="42" fill="#fff"/>
+  <rect x="30" y="399" width="742" height="42" fill="#f1f3f5"/>
+  <rect x="30" y="441" width="742" height="42" fill="#fff" rx="0 0 6 6"/>
+  <!-- Row labels -->
+  <text x="40" y="131" font-size="12" font-weight="bold" fill="#343a40">チップ</text>
+  <text x="40" y="173" font-size="12" font-weight="bold" fill="#343a40">CPU</text>
+  <text x="40" y="215" font-size="12" font-weight="bold" fill="#343a40">GPU</text>
+  <text x="40" y="257" font-size="12" font-weight="bold" fill="#343a40">メモリ</text>
+  <text x="40" y="299" font-size="12" font-weight="bold" fill="#343a40">ストレージ</text>
+  <text x="40" y="341" font-size="12" font-weight="bold" fill="#343a40">ディスプレイ</text>
+  <text x="40" y="383" font-size="12" font-weight="bold" fill="#343a40">バッテリー</text>
+  <text x="40" y="425" font-size="12" font-weight="bold" fill="#343a40">重量</text>
+  <text x="40" y="467" font-size="12" font-weight="bold" fill="#343a40">価格（税込）</text>
+  <!-- Neo column -->
+  <text x="249" y="131" text-anchor="middle" font-size="11" fill="#495057">A18 Pro</text>
+  <text x="249" y="173" text-anchor="middle" font-size="11" fill="#495057">6コア</text>
+  <text x="249" y="215" text-anchor="middle" font-size="11" fill="#495057">6コア</text>
+  <text x="249" y="257" text-anchor="middle" font-size="11" fill="#495057">8GB</text>
+  <text x="249" y="299" text-anchor="middle" font-size="11" fill="#495057">256GB</text>
+  <text x="249" y="341" text-anchor="middle" font-size="11" fill="#495057">13.6インチ</text>
+  <text x="249" y="383" text-anchor="middle" font-size="11" fill="#495057">最大15時間</text>
+  <text x="249" y="425" text-anchor="middle" font-size="11" fill="#495057">1.24 kg</text>
+  <text x="249" y="467" text-anchor="middle" font-size="12" font-weight="bold" fill="#4ecdc4">99,800円〜</text>
+  <!-- Air M5 column -->
+  <text x="402" y="131" text-anchor="middle" font-size="11" fill="#495057">M5</text>
+  <text x="402" y="173" text-anchor="middle" font-size="11" fill="#495057">10コア</text>
+  <text x="402" y="215" text-anchor="middle" font-size="11" fill="#495057">10コア</text>
+  <text x="402" y="257" text-anchor="middle" font-size="11" fill="#495057">16GB</text>
+  <text x="402" y="299" text-anchor="middle" font-size="11" fill="#495057">256GB</text>
+  <text x="402" y="335" text-anchor="middle" font-size="11" fill="#495057">13.6 / 15.3</text>
+  <text x="402" y="349" text-anchor="middle" font-size="11" fill="#495057">インチ</text>
+  <text x="402" y="383" text-anchor="middle" font-size="11" fill="#495057">最大18時間</text>
+  <text x="402" y="425" text-anchor="middle" font-size="11" fill="#495057">1.24 / 1.56 kg</text>
+  <text x="402" y="467" text-anchor="middle" font-size="12" font-weight="bold" fill="#45b7d1">184,800円〜</text>
+  <!-- Pro M5 Pro column -->
+  <text x="555" y="131" text-anchor="middle" font-size="11" fill="#495057">M5 Pro</text>
+  <text x="555" y="173" text-anchor="middle" font-size="11" fill="#495057">12コア</text>
+  <text x="555" y="215" text-anchor="middle" font-size="11" fill="#495057">18コア</text>
+  <text x="555" y="257" text-anchor="middle" font-size="11" fill="#495057">24GB</text>
+  <text x="555" y="299" text-anchor="middle" font-size="11" fill="#495057">512GB</text>
+  <text x="555" y="335" text-anchor="middle" font-size="11" fill="#495057">14.2 / 16.2</text>
+  <text x="555" y="349" text-anchor="middle" font-size="11" fill="#495057">インチ</text>
+  <text x="555" y="383" text-anchor="middle" font-size="11" fill="#495057">最大22時間</text>
+  <text x="555" y="425" text-anchor="middle" font-size="11" fill="#495057">1.60 / 2.14 kg</text>
+  <text x="555" y="467" text-anchor="middle" font-size="12" font-weight="bold" fill="#667eea">369,800円〜</text>
+  <!-- Pro M5 Max column -->
+  <text x="703" y="131" text-anchor="middle" font-size="11" fill="#495057">M5 Max</text>
+  <text x="703" y="173" text-anchor="middle" font-size="11" fill="#495057">16コア</text>
+  <text x="703" y="215" text-anchor="middle" font-size="11" fill="#495057">40コア</text>
+  <text x="703" y="257" text-anchor="middle" font-size="11" fill="#495057">48GB</text>
+  <text x="703" y="299" text-anchor="middle" font-size="11" fill="#495057">1TB</text>
+  <text x="703" y="335" text-anchor="middle" font-size="11" fill="#495057">14.2 / 16.2</text>
+  <text x="703" y="349" text-anchor="middle" font-size="11" fill="#495057">インチ</text>
+  <text x="703" y="383" text-anchor="middle" font-size="11" fill="#495057">最大22時間</text>
+  <text x="703" y="425" text-anchor="middle" font-size="11" fill="#495057">1.60 / 2.14 kg</text>
+  <text x="703" y="467" text-anchor="middle" font-size="12" font-weight="bold" fill="#764ba2">599,800円〜</text>
+  <!-- Grid lines -->
+  <line x1="170" y1="105" x2="170" y2="483" stroke="#dee2e6" stroke-width="1"/>
+  <line x1="323" y1="105" x2="323" y2="483" stroke="#dee2e6" stroke-width="1"/>
+  <line x1="476" y1="105" x2="476" y2="483" stroke="#dee2e6" stroke-width="1"/>
+  <line x1="629" y1="105" x2="629" y2="483" stroke="#dee2e6" stroke-width="1"/>
+  <!-- Note -->
+  <text x="400" y="508" text-anchor="middle" font-size="10" fill="#868e96">※ 2026年3月時点の情報。価格は税込。バッテリーは動画再生時の最大値。</text>
+</svg>

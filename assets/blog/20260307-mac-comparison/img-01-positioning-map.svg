@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f9fa"/>
+      <stop offset="100%" stop-color="#e9ecef"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="12"/>
+  <text x="400" y="40" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a2e">2026年 Mac ポジショニングマップ</text>
+  <!-- Axes -->
+  <line x1="100" y1="430" x2="750" y2="430" stroke="#adb5bd" stroke-width="2"/>
+  <line x1="100" y1="430" x2="100" y2="70" stroke="#adb5bd" stroke-width="2"/>
+  <!-- Axis labels -->
+  <text x="425" y="470" text-anchor="middle" font-size="14" fill="#495057">価格 →</text>
+  <text x="60" y="250" text-anchor="middle" font-size="14" fill="#495057" transform="rotate(-90 60 250)">性能 →</text>
+  <!-- Axis ticks -->
+  <text x="150" y="455" text-anchor="middle" font-size="11" fill="#868e96">10万円</text>
+  <text x="310" y="455" text-anchor="middle" font-size="11" fill="#868e96">20万円</text>
+  <text x="470" y="455" text-anchor="middle" font-size="11" fill="#868e96">40万円</text>
+  <text x="650" y="455" text-anchor="middle" font-size="11" fill="#868e96">60万円</text>
+  <!-- Grid lines -->
+  <line x1="100" y1="350" x2="750" y2="350" stroke="#dee2e6" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="100" y1="250" x2="750" y2="250" stroke="#dee2e6" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="100" y1="150" x2="750" y2="150" stroke="#dee2e6" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="310" y1="70" x2="310" y2="430" stroke="#dee2e6" stroke-width="1" stroke-dasharray="4"/>
+  <line x1="470" y1="70" x2="470" y2="430" stroke="#dee2e6" stroke-width="1" stroke-dasharray="4"/>
+  <!-- MacBook Neo -->
+  <circle cx="155" cy="370" r="40" fill="#4ecdc4" opacity="0.85" filter="url(#shadow)"/>
+  <text x="155" y="365" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">MacBook</text>
+  <text x="155" y="382" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Neo</text>
+  <text x="155" y="400" text-anchor="middle" font-size="10" fill="#fff">99,800円〜</text>
+  <!-- MacBook Air M5 -->
+  <circle cx="320" cy="290" r="45" fill="#45b7d1" opacity="0.85" filter="url(#shadow)"/>
+  <text x="320" y="282" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">MacBook</text>
+  <text x="320" y="298" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Air M5</text>
+  <text x="320" y="318" text-anchor="middle" font-size="10" fill="#fff">184,800円〜</text>
+  <!-- MacBook Pro M5 Pro -->
+  <circle cx="510" cy="170" r="45" fill="#667eea" opacity="0.85" filter="url(#shadow)"/>
+  <text x="510" y="160" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">MacBook Pro</text>
+  <text x="510" y="176" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">M5 Pro</text>
+  <text x="510" y="198" text-anchor="middle" font-size="10" fill="#fff">369,800円〜</text>
+  <!-- MacBook Pro M5 Max -->
+  <circle cx="670" cy="105" r="45" fill="#764ba2" opacity="0.85" filter="url(#shadow)"/>
+  <text x="670" y="95" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">MacBook Pro</text>
+  <text x="670" y="111" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">M5 Max</text>
+  <text x="670" y="133" text-anchor="middle" font-size="10" fill="#fff">599,800円〜</text>
+  <!-- Legend -->
+  <rect x="110" y="75" width="180" height="55" fill="#fff" rx="6" opacity="0.9" filter="url(#shadow)"/>
+  <text x="120" y="95" font-size="11" fill="#495057">円の大きさ = 人気度（予測）</text>
+  <text x="120" y="115" font-size="11" fill="#495057">右上ほど高性能・高価格</text>
+</svg>
