@@ -2,8 +2,9 @@ name: X Auto Post
 
 on:
   schedule:
-    # Run every 30 minutes (UTC). The script checks JST scheduled times.
-    - cron: "7,37 * * * *"
+    # Run 2x daily: 07:00 JST (22:00 UTC) and 17:00 JST (08:00 UTC)
+    # GitHub Actions free: 2,000 min/month. This uses ~60 min/month (3%).
+    - cron: "3 22,8 * * *"
   workflow_dispatch: # Allow manual trigger
 
 jobs:
