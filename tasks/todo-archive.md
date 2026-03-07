@@ -30,3 +30,5 @@
 24. Improve Chatbot Response Readability - Markdown生表示と壊れたJS配信を修正し、返答を整形表示へ改善
 25. Root Homepage Chatbot Replies In Structured Facts - 会社/サービス/問い合わせ案内を構造化データ + 固定応答へ切り出し、短い追撃文脈も安定化
 26. Guard Deploy Workflow Against Docs-Only Pushes - `paths-ignore` に加えて changed-files 判定を入れ、無視対象だけの push では FTP deploy を実行しないよう補強
+27. Add Live Info Layer To Chatbot - 会社情報固定と一般相談を分離し、天気 / 最新ニュース取得と下部ガード文言を追加
+28. Verify GPT-5.4 Scheduled Publication - 投稿 ID 32 の自動公開、`/blog/` 掲載、記事 URL と主要画像アセットの公開を確認

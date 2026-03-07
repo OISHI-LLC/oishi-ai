@@ -16,6 +16,68 @@
 
 ---
 
+### 2026-03-08 04:02 JST | Agent: Codex
+- Task: `GPT-5.4` 予約投稿（ID 32）の自動公開と公開URL / 画像アセットを確認し、todo をクローズ
+- Changed Files:
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - なし（WordPress の予約公開確認と運用ログ更新のみ）
+- Verification:
+  - WordPress REST API `posts/32` で `status=publish`、`slug=gpt-5-4-guide-for-business`、`link=https://www.oishillc.jp/2026/03/08/gpt-5-4-guide-for-business/` を確認
+  - `/blog/` に `GPT-5.4は”使えるAI”になったのか？経営者が知っておくべき全体像` の掲載を確認
+  - live article `https://www.oishillc.jp/2026/03/08/gpt-5-4-guide-for-business/` `HTTP 200`
+  - live article HTML に `hero-gpt54.webp` / `img-01-evolution-map.webp` / `img-02-use-cases.webp` / `img-03-steps.webp` / `img-04-summary.webp` 参照を確認
+  - asset checks:
+    - `/wp-content/themes/oishi-ai/assets/blog/20260307-gpt54/hero-gpt54.webp` `HTTP 200`
+    - `/wp-content/themes/oishi-ai/assets/blog/20260307-gpt54/img-03-steps.webp` `HTTP 200`
+- Open Items:
+  - なし
+- Next Action:
+  - なし
+
+### 2026-03-08 03:59 JST | Agent: Codex
+- Task: チャットボットに live-info レイヤー（天気 / 最新ニュース）と下部ガード文言を追加し、一般質問を会社情報制約から分離
+- Changed Files:
+  - `chatbot.php`
+  - `inc/chatbot/core.php`
+  - `assets/css/chatbot.css`
+  - `tasks/lessons.md`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - GitHub push: `7832468` -> `master`
+  - GitHub Actions: `Deploy to Xserver` run `22805095650` が `success`
+  - GitHub push: `dcb9cf1` -> `master`
+  - GitHub Actions: `Deploy to Xserver` run `22805183984` が `success`
+- Verification:
+  - local:
+    - `php -l chatbot.php` OK
+    - `php -l inc/chatbot/core.php` OK
+    - `buildAssistantOverride("天気を教えて")` が地域確認を返すことを確認
+    - `buildAssistantOverride("最新のAI事情を教えて")` がモデル名応答ではなく live-info 判定に入ることを確認
+    - `buildChatRequestMessages(...)` の system prompt 件数が `1` で、ホームページ facts の常時付与を外したことを確認
+    - `php chatbot.php | rg` で composer 文言と `AIは間違えることがあります` のガード文言を確認
+    - sandbox 内の PHP cURL は外部 DNS 解決に失敗したため、最新情報の取得そのものは live 側で確認
+  - live:
+    - `/` `HTTP 200`
+    - `/blog/` `HTTP 200`
+    - `/wp-login.php` `HTTP 200`
+    - `/favicon.ico` `HTTP 200`
+    - live HTML に `assets/css/chatbot.css?v=1772909578`、`AI導入、ブログ、最新情報、お問い合わせまでそのまま相談できます。`、`AIは間違えることがあります。...` を確認
+    - live stream `POST https://www.oishillc.jp/wp-content/themes/oishi-ai/chatbot.php?stream=1`:
+      - `御社の概要を教えて` -> 会社概要の固定応答
+      - `東京の天気を教えて` -> `東京都, 日本` の天気を Open-Meteo 取得結果で返す（warning 混入なし）
+      - `今日のニュースを教えて` -> Google News の主要ニュース3件
+      - `最新のAI事情を教えて` -> Google News のAI関連ニュース3件
+- Open Items:
+  - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 03:59 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
+- Next Action:
+  - `2026-03-08 04:00 JST` 以降に `/blog/` と該当記事URLで `GPT-5.4` 記事の公開を確認し、必要なら `tasks/handoff.md` を更新
+
 ### 2026-03-08 03:25 JST | Agent: Codex
 - Task: docs-only push で `Deploy to Xserver` が走ったため、workflow に changed-files 二重ガードを追加
 - Changed Files:
@@ -40,75 +102,3 @@
   - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 03:25 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
 - Next Action:
   - 次回の docs-only push でも FTP deploy が走らないことを確認しつつ、`2026-03-08 04:00 JST` 以降に `GPT-5.4` 記事の公開を確認する
-
-### 2026-03-08 03:14 JST | Agent: Codex
-- Task: チャットボットの会社/サイト案内を構造化データ + 固定応答レイヤーへ切り替え、短い追撃でも文脈を維持するよう修正
-- Changed Files:
-  - `chatbot.php`
-  - `inc/chatbot/core.php`
-  - `tasks/lessons.md`
-  - `tasks/handoff.md`
-  - `tasks/handoff-archive.md`
-  - `tasks/todo-archive.md`
-- Deploy:
-  - GitHub push: `834fb4b` -> `master`
-  - GitHub Actions: `Deploy to Xserver` run `22804413312` が `success`
-- Verification:
-  - local:
-    - `php -l chatbot.php` OK
-    - `php -l inc/chatbot/core.php` OK
-    - `buildAssistantOverride(...)` で `御社の概要を教えて` / `会社名を教えて` / `御社について教えて` / `主なサービスを教えて` / `強みは？` / `問い合わせ方法を教えて` が固定応答に解決することを確認
-    - `PoCの進め方を教えて` / `売上予測のPoCは何から始める？` は override されず `null`、`モデル名を教えて` は `OISHI-OSSです。` を返すことを確認
-    - セッション保存後の `売上は？` -> `ホームページには明記されていません`、`概要ですよ` -> 会社概要再提示を確認
-  - live:
-    - `/` `HTTP 200`
-    - `/blog/` `HTTP 200`
-    - `/wp-login.php` `HTTP 200`
-    - `/favicon.ico` `HTTP 200`
-    - `https://www.oishillc.jp/wp-content/themes/oishi-ai/chatbot.php` `HTTP 200`
-    - live HTML に `assets/css/chatbot.css?v=1772904321` / `assets/js/chatbot.js?v=1772904321` / `window.OISHI_CHATBOT_CONFIG` を確認
-    - live stream `POST https://www.oishillc.jp/wp-content/themes/oishi-ai/chatbot.php?stream=1`:
-      - `御社の概要を教えて` -> 会社概要の固定応答
-      - `会社名を教えて` -> `ホームページに記載の会社名は AI Lab OISHI です。`
-      - 同一セッションで `売上は？` -> `ホームページには明記されていません`
-      - 同一セッションで `概要ですよ` -> 会社概要を再提示
-- Open Items:
-  - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 03:14 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
-- Next Action:
-  - `2026-03-08 04:00 JST` 以降に `/blog/` と該当記事URLで `GPT-5.4` 記事の公開を確認し、必要なら `tasks/handoff.md` を更新
-
-### 2026-03-08 02:33 JST | Agent: Codex
-- Task: チャットボット返答の可読性を改善し、Markdown生表示と壊れたJS配信を修正
-- Changed Files:
-  - `chatbot.php`
-  - `inc/chatbot/core.php`
-  - `assets/js/chatbot.js`
-  - `assets/css/chatbot.css`
-  - `tasks/lessons.md`
-  - `tasks/handoff.md`
-  - `tasks/handoff-archive.md`
-  - `tasks/todo.md`
-  - `tasks/todo-archive.md`
-- Deploy:
-  - GitHub push: `bb82378` -> `master`
-  - GitHub Actions: `Deploy to Xserver` run `22803654054` が `success`
-- Verification:
-  - local:
-    - `node --check assets/js/chatbot.js` OK
-    - `php -l chatbot.php` OK
-    - `php -l inc/chatbot/core.php` OK
-    - Node モックで assistant bubble の Markdown table が HTML table 化され、`<strong>` も適用されることを確認
-    - `buildAssistantOverride("主なサービスを教えてください")` が番号付きの読みやすい文面を返すことを確認
-  - live:
-    - `/` `HTTP 200`
-    - `/blog/` `HTTP 200`
-    - `/wp-login.php` `HTTP 200`
-    - `/favicon.ico` `HTTP 200`
-    - `chatbot.php` HTML に `assets/css/chatbot.css?v=1772904321` / `assets/js/chatbot.js?v=1772904321` / `window.OISHI_CHATBOT_CONFIG` を確認
-    - live `assets/js/chatbot.js` を取得して構文エラーなし、`formatAssistantBubble` と `assistant-table-wrap` を含むことを確認
-    - live stream `POST ...chatbot.php?stream=1`:
-      - `主なサービスを教えてください` -> Markdown表ではなく、1〜7の番号付き回答で `event: content` / `event: done`
-- Open Items:
-  - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 02:33 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
-- Next Action:
-  - `2026-03-08 04:00 JST` 以降に `/blog/` と該当記事URLで `GPT-5.4` 記事の公開を確認し、必要なら `tasks/handoff.md` を更新
