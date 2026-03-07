@@ -361,7 +361,13 @@ function buildWeatherReply(array $intent): array
     }
 
     $geo = geocodeWeatherLocation($location);
-    $current = fetchWeatherSnapshot((float) $geo["latitude"], (float) $geo["longitude"]);
+    $latitude = resolveGeoCoordinate($geo, "latitude", "lat");
+    $longitude = resolveGeoCoordinate($geo, "longitude", "lon");
+    if ($latitude === null || $longitude === null) {
+        throw new RuntimeException("地域の座標を取得できませんでした。少し表記を変えてもう一度お試しください。");
+    }
+
+    $current = fetchWeatherSnapshot($latitude, $longitude);
     $locationLabel = buildWeatherLocationLabel($geo);
     $fetchedAt = formatJstTimestamp();
 
@@ -419,6 +425,19 @@ function buildWeatherLocationLabel(array $geo): string
     }
 
     return $parts === [] ? "指定地点" : implode(" / ", $parts);
+}
+
+function resolveGeoCoordinate(array $geo, string $primaryKey, string $fallbackKey): ?float
+{
+    if (isset($geo[$primaryKey]) && is_numeric((string) $geo[$primaryKey])) {
+        return (float) $geo[$primaryKey];
+    }
+
+    if (isset($geo[$fallbackKey]) && is_numeric((string) $geo[$fallbackKey])) {
+        return (float) $geo[$fallbackKey];
+    }
+
+    return null;
 }
 
 function fetchWeatherSnapshot(float $latitude, float $longitude): array
