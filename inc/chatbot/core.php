@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . "/consultation-agent.php";
+
 function isStreamingRequest(): bool
 {
     return (string) ($_GET["stream"] ?? "") === "1";
@@ -199,6 +201,11 @@ function buildAssistantOverride(string $message): ?array
     $normalized = normalizeIntentText($message);
     if ($normalized === "") {
         return null;
+    }
+
+    $consultationAgentReply = buildConsultationAgentReply($message, $normalized);
+    if ($consultationAgentReply !== null) {
+        return $consultationAgentReply;
     }
 
     $homepageIntent = resolveHomepageIntent($normalized);
@@ -501,19 +508,19 @@ function resolveNewsIntent(string $message, string $normalized): ?array
         return null;
     }
 
-    if (preg_match("/(今日のニュース|最新ニュース|時事ニュース|ニュースを教えて|最新のニュース)/u", $normalized) === 1) {
-        return [
-            "type" => "news",
-            "query" => "最新ニュース",
-            "label" => "今日の主要ニュース",
-        ];
-    }
-
     if ($hasAiCue && ($hasNewsCue || preg_match("/(AI事情|生成AI事情)/u", $normalized) === 1)) {
         return [
             "type" => "news",
             "query" => "生成AI 最新",
             "label" => "最新のAI関連ニュース",
+        ];
+    }
+
+    if (preg_match("/(今日のニュース|最新ニュース|時事ニュース|ニュースを教えて|最新のニュース)/u", $normalized) === 1) {
+        return [
+            "type" => "news",
+            "query" => "最新ニュース",
+            "label" => "今日の主要ニュース",
         ];
     }
 
@@ -948,6 +955,28 @@ function getLastHomepageSubject(): string
     return is_string($subject) ? $subject : "";
 }
 
+function getConsultationAgentState(): ?array
+{
+    $state = $_SESSION["chatbot_agent_state"] ?? null;
+    if (!is_array($state) || (string) ($state["mode"] ?? "") !== "consultation") {
+        return null;
+    }
+
+    return $state;
+}
+
+function getLastConsultationReport(): ?array
+{
+    $report = $_SESSION["chatbot_last_agent_report"] ?? null;
+    return is_array($report) ? $report : null;
+}
+
+function getLastAgentOffer(): string
+{
+    $offer = $_SESSION["chatbot_last_agent_offer"] ?? "";
+    return is_string($offer) ? $offer : "";
+}
+
 function buildChatRequestMessages(array $history, string $systemPrompt, int $maxHistory): array
 {
     $messages = [];
@@ -1335,6 +1364,27 @@ function storeCompletedExchange(array $pendingMessages, array $assistantMessage,
         $_SESSION["chatbot_last_site_subject"] = $siteSubject;
     } else {
         unset($_SESSION["chatbot_last_site_subject"]);
+    }
+
+    $agentState = $assistantMessage["agent_state"] ?? null;
+    if (is_array($agentState)) {
+        $_SESSION["chatbot_agent_state"] = $agentState;
+    } elseif (($assistantMessage["clear_agent_state"] ?? false) === true) {
+        unset($_SESSION["chatbot_agent_state"]);
+    }
+
+    $agentReport = $assistantMessage["agent_report"] ?? null;
+    if (is_array($agentReport)) {
+        $_SESSION["chatbot_last_agent_report"] = $agentReport;
+    } elseif (($assistantMessage["clear_agent_report"] ?? false) === true) {
+        unset($_SESSION["chatbot_last_agent_report"]);
+    }
+
+    $agentOffer = trim((string) ($assistantMessage["agent_offer"] ?? ""));
+    if ($agentOffer !== "") {
+        $_SESSION["chatbot_last_agent_offer"] = $agentOffer;
+    } elseif (($assistantMessage["clear_agent_offer"] ?? false) === true || !array_key_exists("agent_offer", $assistantMessage)) {
+        unset($_SESSION["chatbot_last_agent_offer"]);
     }
 
     $_SESSION["chat_messages"][] = $storedAssistantMessage;

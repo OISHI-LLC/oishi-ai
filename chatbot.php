@@ -125,6 +125,7 @@ if (($_SERVER["REQUEST_METHOD"] ?? "GET") === "POST") {
         $_SESSION["chat_messages"] = [];
         $_SESSION["chatbot_active_model"] = $model;
         unset($_SESSION["chatbot_last_site_subject"]);
+        unset($_SESSION["chatbot_agent_state"], $_SESSION["chatbot_last_agent_report"], $_SESSION["chatbot_last_agent_offer"]);
         header("Location: " . strtok((string) ($_SERVER["REQUEST_URI"] ?? ""), "?"), true, 303);
         exit;
     }
@@ -230,9 +231,9 @@ if (($_SERVER["REQUEST_METHOD"] ?? "GET") === "POST") {
       <h2 class="intro-title" id="intro-greeting"><?= escapeHtml($introGreetingText) ?></h2>
       <p class="intro-copy" id="intro-copy"><?= escapeHtml($introCopyText) ?></p>
       <div class="suggestions" id="suggestions">
-        <button class="suggestion" type="button" data-prompt="AI導入の進め方を相談したいです。最初の3ステップを教えてください。">AI導入の進め方</button>
+        <button class="suggestion" type="button" data-prompt="AI導入の相談です。3分診断を始めてください。">3分診断を始める</button>
         <button class="suggestion" type="button" data-prompt="最近のブログで読むべき記事を3つ教えてください。">おすすめ記事を見る</button>
-        <button class="suggestion" type="button" data-prompt="業務自動化を進めたいです。まず何から整理すればいいですか？">業務自動化を相談</button>
+        <button class="suggestion" type="button" data-prompt="業務自動化の相談です。ヒアリングを始めてください。">業務自動化を相談</button>
         <button class="suggestion" type="button" data-prompt="お問い合わせの進め方を教えてください。">お問い合わせしたい</button>
       </div>
     </section>
@@ -266,7 +267,7 @@ if (($_SERVER["REQUEST_METHOD"] ?? "GET") === "POST") {
           <label class="sr-only" for="chat-message">メッセージ</label>
           <textarea id="chat-message" name="message" required><?= escapeHtml($draftMessage) ?></textarea>
           <div class="actions">
-            <div class="composer-note">AI導入、ブログ、最新情報、お問い合わせまでそのまま相談できます。</div>
+            <div class="composer-note">AI導入、導入診断、ブログ、最新情報、お問い合わせまでそのまま相談できます。</div>
             <button class="send" id="send-button" type="submit">送信</button>
           </div>
         </form>
