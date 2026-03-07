@@ -27,3 +27,4 @@
 21. Broaden Model-Name Reply Coverage - モデル名検知パターン拡大
 22. Harden CI Deploy Scope And Triggers - CIデプロイ範囲強化
 23. Reconcile March 7 Blog Assets With Git And CI - 公開済み / 予約済みブログ画像を Git 管理へ戻し、CI同期と本番検証を完了
+24. Improve Chatbot Response Readability - Markdown生表示と壊れたJS配信を修正し、返答を整形表示へ改善

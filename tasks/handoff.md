@@ -16,6 +16,42 @@
 
 ---
 
+### 2026-03-08 02:33 JST | Agent: Codex
+- Task: チャットボット返答の可読性を改善し、Markdown生表示と壊れたJS配信を修正
+- Changed Files:
+  - `chatbot.php`
+  - `inc/chatbot/core.php`
+  - `assets/js/chatbot.js`
+  - `assets/css/chatbot.css`
+  - `tasks/lessons.md`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - GitHub push: `bb82378` -> `master`
+  - GitHub Actions: `Deploy to Xserver` run `22803654054` が `success`
+- Verification:
+  - local:
+    - `node --check assets/js/chatbot.js` OK
+    - `php -l chatbot.php` OK
+    - `php -l inc/chatbot/core.php` OK
+    - Node モックで assistant bubble の Markdown table が HTML table 化され、`<strong>` も適用されることを確認
+    - `buildAssistantOverride("主なサービスを教えてください")` が番号付きの読みやすい文面を返すことを確認
+  - live:
+    - `/` `HTTP 200`
+    - `/blog/` `HTTP 200`
+    - `/wp-login.php` `HTTP 200`
+    - `/favicon.ico` `HTTP 200`
+    - `chatbot.php` HTML に `assets/css/chatbot.css?v=1772904321` / `assets/js/chatbot.js?v=1772904321` / `window.OISHI_CHATBOT_CONFIG` を確認
+    - live `assets/js/chatbot.js` を取得して構文エラーなし、`formatAssistantBubble` と `assistant-table-wrap` を含むことを確認
+    - live stream `POST ...chatbot.php?stream=1`:
+      - `主なサービスを教えてください` -> Markdown表ではなく、1〜7の番号付き回答で `event: content` / `event: done`
+- Open Items:
+  - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 02:33 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
+- Next Action:
+  - `2026-03-08 04:00 JST` 以降に `/blog/` と該当記事URLで `GPT-5.4` 記事の公開を確認し、必要なら `tasks/handoff.md` を更新
+
 ### 2026-03-08 01:53 JST | Agent: Codex
 - Task: 3/7 ブログアセットの Git 整合性を回復し、CI-only で本番再同期
 - Changed Files:
@@ -74,30 +110,3 @@
   - なし
 - Next Action:
   - 2026-03-08 04:00 JST に自動公開されることを確認
-
-### 2026-03-07 16:50 JST | Agent: Codex
-- Task: `chatbot.php` 分割版を CI-only で本番反映し、公開検証まで完了
-- Changed Files:
-  - `tasks/handoff.md`
-  - `tasks/handoff-archive.md`
-  - `tasks/todo.md`
-- Deploy:
-  - GitHub push: `ff035b7` -> `master`
-  - GitHub Actions: `Deploy to Xserver` run `22794996586` が `success`
-- Verification:
-  - live `chatbot.php` HTML に以下を確認:
-    - `/wp-content/themes/oishi-ai/assets/css/chatbot.css?...`
-    - `/wp-content/themes/oishi-ai/assets/js/chatbot.js?...`
-    - `window.OISHI_CHATBOT_CONFIG`
-  - live stream `POST ...chatbot.php?stream=1`:
-    - `モデル名は何ですか？` -> `OISHI-OSSです。`
-    - `1+1だけ答えて。` で `event: content` / `event: done`
-  - ヘルスチェック:
-    - `/` `HTTP 200`
-    - `/blog/` `HTTP 200`
-    - `/wp-login.php` `HTTP 200`
-    - `/favicon.ico` `HTTP 200`
-- Open Items:
-  - なし
-- Next Action:
-  - 以後は新機能追加時も `chatbot.php` へ直書きせず、`inc/chatbot` と `assets/js|css` 側へ追記する

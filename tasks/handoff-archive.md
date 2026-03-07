@@ -4,6 +4,33 @@
 
 ---
 
+### 2026-03-07 16:50 JST | Agent: Codex
+- Task: `chatbot.php` 分割版を CI-only で本番反映し、公開検証まで完了
+- Changed Files:
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo.md`
+- Deploy:
+  - GitHub push: `ff035b7` -> `master`
+  - GitHub Actions: `Deploy to Xserver` run `22794996586` が `success`
+- Verification:
+  - live `chatbot.php` HTML に以下を確認:
+    - `/wp-content/themes/oishi-ai/assets/css/chatbot.css?...`
+    - `/wp-content/themes/oishi-ai/assets/js/chatbot.js?...`
+    - `window.OISHI_CHATBOT_CONFIG`
+  - live stream `POST ...chatbot.php?stream=1`:
+    - `モデル名は何ですか？` -> `OISHI-OSSです。`
+    - `1+1だけ答えて。` で `event: content` / `event: done`
+  - ヘルスチェック:
+    - `/` `HTTP 200`
+    - `/blog/` `HTTP 200`
+    - `/wp-login.php` `HTTP 200`
+    - `/favicon.ico` `HTTP 200`
+- Open Items:
+  - なし
+- Next Action:
+  - 以後は新機能追加時も `chatbot.php` へ直書きせず、`inc/chatbot` と `assets/js|css` 側へ追記する
+
 ### 2026-03-07 16:31 JST | Agent: Codex
 - Task: `chatbot.php` の段階分割（関数群をモジュール化し、CSS/JSを外出し）
 - Changed Files:
