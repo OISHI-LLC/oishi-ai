@@ -196,44 +196,14 @@ function buildThemeAssetUrl(string $fileName): string
 
 function buildAssistantOverride(string $message): ?array
 {
-    $normalized = str_replace([" ", "　", "\n", "\r", "\t"], "", trim($message));
+    $normalized = normalizeIntentText($message);
     if ($normalized === "") {
         return null;
     }
 
-    $unsupportedDetailPatterns = [
-        "/(創業|設立|設立年|創業年)/u",
-        "/(代表|代表者|社長)/u",
-        "/(従業員|社員)数/u",
-        "/資本金/u",
-        "/売上/u",
-        "/(主要)?顧客/u",
-        "/取引先/u",
-        "/実績件数/u",
-        "/(ビジネス|事業|収益)モデル/u",
-    ];
-
-    foreach ($unsupportedDetailPatterns as $pattern) {
-        if (preg_match($pattern, $normalized) === 1) {
-            return [
-                "role" => "assistant",
-                "content" => "ホームページに記載の範囲では、AI Lab OISHI の社名は AI Lab OISHI、所在地は神奈川県川崎市、事業内容は AIコンサルティング / AI開発 / DX推進支援 です。ご質問の内容についてはホームページには明記されていません。",
-            ];
-        }
-    }
-
-    $companyNamePatterns = [
-        "/(会社|御社|社名|会社名|法人名).*(名前|名称|何|なに|教えて|知りたい)/u",
-        "/(名前|名称).*(会社|御社|社名|会社名|法人名)/u",
-    ];
-
-    foreach ($companyNamePatterns as $pattern) {
-        if (preg_match($pattern, $normalized) === 1) {
-            return [
-                "role" => "assistant",
-                "content" => "ホームページに記載の会社名は AI Lab OISHI です。",
-            ];
-        }
+    $homepageIntent = resolveHomepageIntent($normalized);
+    if ($homepageIntent !== null) {
+        return buildHomepageIntentReply($homepageIntent);
     }
 
     $isModelQuestion = false;
@@ -298,36 +268,254 @@ function buildAssistantOverride(string $message): ?array
         ];
     }
 
-    if (preg_match("/(あなたの会社|御社|会社概要|会社情報|どんな会社|何してる会社|何をしている会社|oishi|オイシ|ホームページ).*(教えて|知りたい|説明|紹介)/u", $message) === 1
-        || preg_match("/(会社|事業内容|所在地|拠点)について/u", $message) === 1) {
-        return [
-            "role" => "assistant",
-            "content" => "ホームページに記載の会社概要は次のとおりです。\n\n- 社名: AI Lab OISHI\n- 所在地: 神奈川県川崎市\n- 事業内容: AIコンサルティング / AI開発 / DX推進支援\n- URL: https://oishillc.jp\n- 補足: 小規模事業者から大企業までを対象に、AI導入を戦略から実装までワンストップで支援しています。",
-        ];
+    return null;
+}
+
+function resolveHomepageIntent(string $normalized): ?array
+{
+    $lastSubject = getLastHomepageSubject();
+
+    if (matchesServicesIntent($normalized, $lastSubject)) {
+        return ["intent" => "services_overview", "subject" => "services"];
     }
 
-    if (preg_match("/(サービス|できること|支援内容|メニュー)/u", $message) === 1) {
-        return [
-            "role" => "assistant",
-            "content" => "ホームページに記載の主なサービスは次の7つです。\n\n1. AI戦略コンサルティング: ビジネス課題のヒアリングからAI導入ロードマップの策定まで支援します。\n2. カスタムAI開発: チャットボット・文書解析・画像認識・予測モデルなどの業務特化型AIシステムを開発します。\n3. AIエージェント開発: 情報収集・判断補助・タスク実行まで含む業務フロー自動化を支援します。\n4. 業務プロセス自動化: レポート作成・データ入力・メール対応などの定型業務を自動化します。\n5. AI研修・内製化支援: 生成AI活用研修と社内AIチーム立ち上げを支援します。\n6. AI導入診断: AI導入余地の分析、投資対効果試算、レポート提供を行います。\n7. 既存システムへのAI統合: API連携やプラグイン開発で既存環境を高度化します。",
-        ];
+    if (matchesStrengthsIntent($normalized, $lastSubject)) {
+        return ["intent" => "strengths_overview", "subject" => "strengths"];
     }
 
-    if (preg_match("/(強み|選ばれる理由|特徴)/u", $message) === 1) {
-        return [
-            "role" => "assistant",
-            "content" => "ホームページで案内している強みは次の3点です。\n\n1. 規模を問わない柔軟な対応\n2. 戦略から実装まで一気通貫\n3. 最新技術への迅速なキャッチアップ",
-        ];
+    if (matchesContactIntent($normalized, $lastSubject)) {
+        return ["intent" => "contact_overview", "subject" => "contact"];
     }
 
-    if (preg_match("/(問い合わせ|問合せ|相談|連絡|流れ)/u", $message) === 1) {
-        return [
-            "role" => "assistant",
-            "content" => "お問い合わせの流れは次のとおりです。\n\n1. お問い合わせ\n2. 無料ヒアリング（オンライン30〜60分程度）\n3. ご提案\n\n補足:\n- 初回相談は無料です。\n- お問い合わせから最短3営業日で提案可能です。\n- お問い合わせ先ページは /contact/ です。",
-        ];
+    $companyIntent = resolveCompanyIntent($normalized, $lastSubject);
+    if ($companyIntent !== null) {
+        return ["intent" => $companyIntent, "subject" => "company"];
     }
 
     return null;
+}
+
+function resolveCompanyIntent(string $normalized, string $lastSubject): ?string
+{
+    $hasExplicitCompanyCue = preg_match(
+        "/(会社概要|会社情報|会社名|社名|法人名|所在地|拠点|住所|事業内容|どんな会社|何してる会社|何をしている会社|会社のこと|御社について|URL|url|ホームページ|サイト|webサイト|ウェブサイト)/u",
+        $normalized
+    ) === 1;
+    $hasCompanyReference = hasHomepageReference($normalized);
+    $isCompanyFollowUp = $lastSubject === "company"
+        && preg_match("/^(概要|会社概要|会社情報|名前|会社名|社名|所在地|場所|どこ|拠点|住所|事業内容|何してる|何をしている|URL|url|ホームページ|サイト|創業|設立|設立年|創業年|代表|代表者|社長|従業員|社員数|資本金|売上|主要顧客|取引先|実績件数|株式会社|合同会社|法人格)(は|って|です|ですよ)?[？?]?$/u", $normalized) === 1;
+
+    if (!$hasExplicitCompanyCue && !$hasCompanyReference && !$isCompanyFollowUp) {
+        return null;
+    }
+
+    if (preg_match("/(創業|設立|設立年|創業年|代表|代表者|社長|従業員|社員数|資本金|売上|主要顧客|取引先|実績件数|株式会社|合同会社|法人格)/u", $normalized) === 1) {
+        return "company_unsupported_detail";
+    }
+
+    if (preg_match("/(会社名|社名|法人名)/u", $normalized) === 1
+        || (preg_match("/(名前|名称|呼び名)/u", $normalized) === 1 && ($hasCompanyReference || preg_match("/(会社|御社|法人)/u", $normalized) === 1))) {
+        return "company_name";
+    }
+
+    if (preg_match("/(所在地|場所|どこ|拠点|住所)/u", $normalized) === 1) {
+        return "company_location";
+    }
+
+    if (preg_match("/(事業内容|何してる|何をしている|事業は|業務は)/u", $normalized) === 1) {
+        return "company_business";
+    }
+
+    if (preg_match("/(URL|url|ホームページ|サイト|webサイト|ウェブサイト)/u", $normalized) === 1) {
+        return "company_url";
+    }
+
+    return "company_overview";
+}
+
+function matchesServicesIntent(string $normalized, string $lastSubject): bool
+{
+    if (preg_match("/(主なサービス|サービス一覧|どんなサービス|提供サービス|できること|支援内容|メニュー)/u", $normalized) === 1) {
+        return true;
+    }
+
+    if (hasHomepageReference($normalized) && preg_match("/サービス/u", $normalized) === 1) {
+        return true;
+    }
+
+    return $lastSubject === "services"
+        && preg_match("/^(サービス|支援内容|できること|一覧|詳しく|メニュー)(は|って|です|ですよ)?[？?]?$/u", $normalized) === 1;
+}
+
+function matchesStrengthsIntent(string $normalized, string $lastSubject): bool
+{
+    if (preg_match("/(強み|選ばれる理由|特徴|他社との違い)/u", $normalized) === 1 && (hasHomepageReference($normalized) || preg_match("/(強み|選ばれる理由)/u", $normalized) === 1)) {
+        return true;
+    }
+
+    return $lastSubject === "strengths"
+        && preg_match("/^(強み|特徴|選ばれる理由|違い)(は|って|です|ですよ)?[？?]?$/u", $normalized) === 1;
+}
+
+function matchesContactIntent(string $normalized, string $lastSubject): bool
+{
+    if (preg_match("/(お問い合わせ|問い合わせ|問合せ|連絡先|無料相談|申し込み|申込|ヒアリング|相談の流れ|問い合わせの流れ|連絡方法)/u", $normalized) === 1) {
+        return true;
+    }
+
+    if (hasHomepageReference($normalized) && preg_match("/(問い合わせ|問合せ|お問い合わせ|連絡|流れ)/u", $normalized) === 1) {
+        return true;
+    }
+
+    return $lastSubject === "contact"
+        && preg_match("/^(問い合わせ|問合せ|お問い合わせ|連絡先|無料相談|申し込み|申込|流れ|ヒアリング)(は|って|です|ですよ)?[？?]?$/u", $normalized) === 1;
+}
+
+function buildHomepageIntentReply(array $resolvedIntent): array
+{
+    $facts = HOMEPAGE_FACTS;
+    $intent = (string) ($resolvedIntent["intent"] ?? "");
+    $subject = (string) ($resolvedIntent["subject"] ?? "");
+
+    switch ($intent) {
+        case "company_name":
+            $content = "ホームページに記載の会社名は " . $facts["company"]["name"] . " です。";
+            break;
+
+        case "company_location":
+            $content = "ホームページに記載の所在地は " . $facts["company"]["location"] . " です。";
+            break;
+
+        case "company_business":
+            $content = "ホームページに記載の事業内容は " . $facts["company"]["business"] . " です。";
+            break;
+
+        case "company_url":
+            $content = "ホームページに記載のURLは " . $facts["company"]["url"] . " です。";
+            break;
+
+        case "company_unsupported_detail":
+            $content = "ホームページに明記されている会社情報は、社名・所在地・事業内容・URLまでです。ご質問の内容についてはホームページには明記されていません。";
+            break;
+
+        case "services_overview":
+            $serviceLines = [];
+            foreach ($facts["services"] as $index => $service) {
+                $serviceLines[] = ($index + 1) . ". " . $service["name"] . ": " . $service["summary"];
+            }
+            $content = "ホームページに記載の主なサービスは次の" . count($serviceLines) . "つです。\n\n" . implode("\n", $serviceLines);
+            break;
+
+        case "strengths_overview":
+            $strengthLines = [];
+            foreach ($facts["strengths"] as $index => $strength) {
+                $strengthLines[] = ($index + 1) . ". " . $strength;
+            }
+            $content = "ホームページで案内している強みは次の" . count($strengthLines) . "点です。\n\n" . implode("\n", $strengthLines);
+            break;
+
+        case "contact_overview":
+            $flowLines = [];
+            foreach ($facts["contact"]["flow"] as $index => $step) {
+                $flowLines[] = ($index + 1) . ". " . $step;
+            }
+            $content = "お問い合わせの流れは次のとおりです。\n\n"
+                . implode("\n", $flowLines)
+                . "\n\n補足:\n- " . $facts["contact"]["is_free"]
+                . "\n- " . $facts["contact"]["proposal_timeline"]
+                . "\n- お問い合わせ先ページは " . $facts["contact"]["page"] . " です。";
+            break;
+
+        case "company_overview":
+        default:
+            $content = "ホームページに記載の会社概要は次のとおりです。\n\n"
+                . "- 社名: " . $facts["company"]["name"]
+                . "\n- 所在地: " . $facts["company"]["location"]
+                . "\n- 事業内容: " . $facts["company"]["business"]
+                . "\n- URL: " . $facts["company"]["url"]
+                . "\n- 補足: " . $facts["company"]["summary"];
+            break;
+    }
+
+    return [
+        "role" => "assistant",
+        "content" => $content,
+        "site_subject" => $subject,
+    ];
+}
+
+function buildHomepageFactsPrompt(): string
+{
+    static $prompt = null;
+    if (is_string($prompt)) {
+        return $prompt;
+    }
+
+    $facts = HOMEPAGE_FACTS;
+    $lines = [
+        "以下は AI Lab OISHI のホームページ記載情報です。サイトや会社に関する回答は必ずこの範囲だけを使ってください。",
+        "",
+        "- サイト説明:",
+    ];
+
+    foreach ($facts["site_summary"] as $summary) {
+        $lines[] = "  - " . $summary;
+    }
+
+    $lines[] = "";
+    $lines[] = "- 会社概要:";
+    $lines[] = "  - 社名: " . $facts["company"]["name"];
+    $lines[] = "  - 所在地: " . $facts["company"]["location"];
+    $lines[] = "  - 事業内容: " . $facts["company"]["business"];
+    $lines[] = "  - URL: " . $facts["company"]["url"];
+    $lines[] = "  - 補足: " . $facts["company"]["summary"];
+    $lines[] = "  - メッセージ:";
+    foreach ($facts["company"]["messages"] as $companyMessage) {
+        $lines[] = "    - " . $companyMessage;
+    }
+
+    $lines[] = "";
+    $lines[] = "- サービス:";
+    foreach ($facts["services"] as $service) {
+        $lines[] = "  - " . $service["name"] . ": " . $service["summary"];
+    }
+
+    $lines[] = "";
+    $lines[] = "- 選ばれる理由:";
+    foreach ($facts["strengths"] as $strength) {
+        $lines[] = "  - " . $strength;
+    }
+
+    $lines[] = "";
+    $lines[] = "- 問い合わせ:";
+    $lines[] = "  - " . $facts["contact"]["is_free"];
+    $lines[] = "  - " . $facts["contact"]["proposal_timeline"];
+    $lines[] = "  - 流れ: " . implode(" → ", $facts["contact"]["flow"]);
+    $lines[] = "  - お問い合わせページ: " . $facts["contact"]["page"];
+
+    $lines[] = "";
+    $lines[] = "- 注意:";
+    $lines[] = "  - " . implode("、", $facts["unsupported_company_fields"]) . " はホームページ記載情報には含まれていない";
+    $lines[] = "  - それらを聞かれたら「ホームページには明記されていません」と答える";
+
+    $prompt = implode("\n", $lines);
+    return $prompt;
+}
+
+function hasHomepageReference(string $normalized): bool
+{
+    return preg_match("/(御社|そちら|貴社|あなたの会社|AILabOISHI|AI Lab OISHI|オイシ|ホームページ|この会社|こちらの会社)/u", $normalized) === 1;
+}
+
+function normalizeIntentText(string $value): string
+{
+    return str_replace([" ", "　", "\n", "\r", "\t"], "", trim($value));
+}
+
+function getLastHomepageSubject(): string
+{
+    $subject = $_SESSION["chatbot_last_site_subject"] ?? "";
+    return is_string($subject) ? $subject : "";
 }
 
 function buildChatRequestMessages(array $history, string $systemPrompt, int $maxHistory): array
@@ -347,7 +535,7 @@ function buildChatRequestMessages(array $history, string $systemPrompt, int $max
         $messages[] = ["role" => $role, "content" => $content];
     }
 
-    array_unshift($messages, ["role" => "system", "content" => trim(HOMEPAGE_FACTS_PROMPT)]);
+    array_unshift($messages, ["role" => "system", "content" => buildHomepageFactsPrompt()]);
     array_unshift($messages, ["role" => "system", "content" => trim($systemPrompt)]);
     return $messages;
 }
@@ -710,6 +898,14 @@ function storeCompletedExchange(array $pendingMessages, array $assistantMessage,
     $reasoning = trim((string) ($assistantMessage["reasoning"] ?? ""));
     if ($reasoning !== "") {
         $storedAssistantMessage["reasoning"] = $reasoning;
+    }
+
+    $siteSubject = trim((string) ($assistantMessage["site_subject"] ?? ""));
+    if ($siteSubject !== "") {
+        $storedAssistantMessage["site_subject"] = $siteSubject;
+        $_SESSION["chatbot_last_site_subject"] = $siteSubject;
+    } else {
+        unset($_SESSION["chatbot_last_site_subject"]);
     }
 
     $_SESSION["chat_messages"][] = $storedAssistantMessage;
