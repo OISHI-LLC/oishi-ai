@@ -3,6 +3,7 @@
 ## Deploy
 - 本番反映は CI のみ。手動 scp は緊急+ユーザー明示指示時のみ。
 - commit に意図しないファイルを含めない。
+- `paths-ignore` だけに依存せず、docs-only push を止めたい workflow には changed-files ベースの二重ガードを入れる。
 
 ## Verification
 - 成果物（画像・HTML等）は本番反映前に必ず目視確認する。

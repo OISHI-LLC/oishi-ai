@@ -4,6 +4,41 @@
 
 ---
 
+### 2026-03-08 01:53 JST | Agent: Codex
+- Task: 3/7 ブログアセットの Git 整合性を回復し、CI-only で本番再同期
+- Changed Files:
+  - `assets/blog/20260307-gpt54/*.webp`
+  - `assets/blog/20260307-mac-comparison/*.webp`
+  - `assets/blog/20260307-mac-comparison/*.svg`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - GitHub push: `78d3a6f` -> `master`
+  - GitHub Actions: `Deploy to Xserver` run `22803010650` が `success`
+- Verification:
+  - ヘルスチェック:
+    - `/` `HTTP 200`
+    - `/blog/` `HTTP 200`
+    - `/wp-login.php` `HTTP 200`
+    - `/favicon.ico` `HTTP 200`
+  - live article `/2026/03/07/mac-comparison-2026-spring/` が `HTTP 200`
+  - live article HTML に以下を確認:
+    - `/wp-content/themes/oishi-ai/assets/blog/20260307-mac-comparison/hero.webp`
+    - `/wp-content/themes/oishi-ai/assets/blog/20260307-mac-comparison/img-03-flowchart.webp`
+    - `/wp-content/themes/oishi-ai/assets/blog/20260307-mac-comparison/img-04-price-range.webp`
+  - asset checks:
+    - `/wp-content/themes/oishi-ai/assets/blog/20260307-gpt54/hero-gpt54.webp` `HTTP 200`
+    - `/wp-content/themes/oishi-ai/assets/blog/20260307-mac-comparison/img-01-positioning-map.svg` `HTTP 200`
+  - ローカルと live のサイズ照合:
+    - 10件の `webp` が local size = remote `content-length` で一致
+  - `/blog/` で `mac-comparison` 記事掲載を確認、`GPT-5.4` 記事は未掲載（公開時刻前）
+- Open Items:
+  - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 01:53 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
+- Next Action:
+  - `2026-03-08 04:00 JST` 以降に `/blog/` と該当記事URLで公開確認し、必要なら `tasks/handoff.md` を更新
+
 ### 2026-03-07 17:30 JST | Agent: Claude
 - Task: GPT-5.4 ブログ記事作成・画像生成・WordPress予約投稿・画像品質修正
 - Changed Files:
