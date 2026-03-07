@@ -4,6 +4,21 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - "tasks/**"
+      - ".github/**"
+      - ".claude/**"
+      - "AGENTS.md"
+      - "CLAUDE.md"
+      - "CODEX_ONLY.md"
+      - "PROJECT_RULES.md"
+      - "**/*.md"
+      - ".DS_Store"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-xserver-production
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -23,6 +38,16 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
+            **/.github/**
+            **/.claude/**
+            **/tasks/**
             **/preview/**
+            **/*.md
             **/CLAUDE.md
+            **/AGENTS.md
+            **/CODEX_ONLY.md
+            **/PROJECT_RULES.md
+            **/.env
+            **/.env.*
+            **/.env.example
             **/.DS_Store

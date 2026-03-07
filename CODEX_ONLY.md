@@ -21,3 +21,10 @@ Verify at least:
 - `/blog/`
 - `/wp-login.php`
 - `/favicon.ico` (HTTP status)
+
+## Deploy Path Policy
+
+1. Production deploy must use GitHub Actions workflow only (`.github/workflows/deploy.yml`).
+2. Do not use manual `scp` / direct server upload in normal operation.
+3. Manual deploy is allowed only for emergency rollback with explicit user instruction.
+4. For deploy tasks, record workflow status and URL checks in `tasks/handoff.md`.
