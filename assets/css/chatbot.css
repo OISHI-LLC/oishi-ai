@@ -207,7 +207,6 @@ body {
   border-radius: 22px;
   padding: 14px 16px;
   line-height: 1.6;
-  white-space: pre-wrap;
   word-wrap: break-word;
   max-width: min(84%, 720px);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.04);
@@ -216,17 +215,82 @@ body {
   background: var(--user);
   color: var(--ink);
   justify-self: end;
+  white-space: pre-wrap;
 }
 .bubble.assistant {
   background: var(--assistant);
   color: var(--ink);
   justify-self: start;
+  white-space: pre-wrap;
 }
 .bubble.assistant.is-waiting {
   display: inline-flex;
   align-items: center;
   min-width: 84px;
   min-height: 60px;
+}
+.bubble.assistant.is-rich {
+  white-space: normal;
+  line-height: 1.72;
+}
+.bubble.assistant.is-rich > *:first-child {
+  margin-top: 0;
+}
+.bubble.assistant.is-rich > *:last-child {
+  margin-bottom: 0;
+}
+.bubble.assistant.is-rich p,
+.bubble.assistant.is-rich ul,
+.bubble.assistant.is-rich ol,
+.bubble.assistant.is-rich .assistant-table-wrap {
+  margin: 0 0 12px;
+}
+.bubble.assistant.is-rich ul,
+.bubble.assistant.is-rich ol {
+  padding-left: 1.25rem;
+}
+.bubble.assistant.is-rich li + li {
+  margin-top: 0.45rem;
+}
+.bubble.assistant.is-rich .assistant-heading {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.bubble.assistant.is-rich strong {
+  font-weight: 700;
+}
+.bubble.assistant.is-rich code {
+  font-family: "SFMono-Regular", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, monospace;
+  font-size: 0.92em;
+  padding: 0.08em 0.38em;
+  border-radius: 8px;
+  background: var(--bg-elevated);
+}
+.assistant-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg-elevated);
+}
+.assistant-table-wrap table {
+  width: 100%;
+  min-width: 420px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.assistant-table-wrap th,
+.assistant-table-wrap td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+}
+.assistant-table-wrap thead th {
+  background: rgba(0, 0, 0, 0.03);
+  font-weight: 700;
+}
+.assistant-table-wrap tbody tr:last-child td {
+  border-bottom: 0;
 }
 .typing-indicator {
   display: inline-flex;
@@ -392,5 +456,9 @@ button:hover:not(:disabled) {
   }
   .composer-note {
     width: 100%;
+  }
+  .assistant-table-wrap table {
+    min-width: 0;
+    font-size: 0.9rem;
   }
 }
