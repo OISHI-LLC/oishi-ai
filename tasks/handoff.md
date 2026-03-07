@@ -16,6 +16,45 @@
 
 ---
 
+### 2026-03-08 07:06 JST | Agent: Codex
+- Task: チャットボットに相談整理エージェントの最小MVPを追加し、AI関連ニュースの誤ルーティングを修正
+- Changed Files:
+  - `chatbot.php`
+  - `inc/chatbot/core.php`
+  - `inc/chatbot/consultation-agent.php`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - GitHub push: `f13bc9b` -> `master`
+  - GitHub Actions: `Deploy to Xserver` run `22808159619` が `success`
+- Verification:
+  - local:
+    - `php -l chatbot.php` / `inc/chatbot/core.php` / `inc/chatbot/consultation-agent.php` OK
+    - セッションを持ったローカルモックで `AI導入の相談です。3分診断を始めてください。` -> 4問ヒアリング開始 -> 要約 -> `お願いします` で問い合わせ文下書き生成を確認
+    - `中断` で `chatbot_agent_state` が cleared されることを確認
+    - `PoCの進め方を短く教えて` は override されず `null`
+    - `resolveNewsIntent("AI関連の最新のニュースを教えて")` が `label=最新のAI関連ニュース` を返すことを確認
+    - `php chatbot.php | rg` で `3分診断を始める` / `業務自動化の相談です。ヒアリングを始めてください。` / `AI導入、導入診断、ブログ、最新情報、お問い合わせまでそのまま相談できます。` を確認
+  - live:
+    - `/` `HTTP 200`
+    - `/blog/` `HTTP 200`
+    - `/wp-login.php` `HTTP 200`
+    - `/favicon.ico` `HTTP 200`
+    - `https://www.oishillc.jp/wp-content/themes/oishi-ai/chatbot.php` HTML に `3分診断を始める` / `業務自動化を相談` / `AI導入、導入診断、ブログ、最新情報、お問い合わせまでそのまま相談できます。` を確認
+    - live stream `POST ...chatbot.php?stream=1`:
+      - `AI導入の相談です。3分診断を始めてください。` -> 4問ヒアリング開始
+      - 同一セッションで `製造業 / 20名` -> 課題ヒアリングへ進行
+      - 同一セッションで `問い合わせ対応に時間がかかる` / `Gmail とスプレッドシート` / `3か月以内に一次回答を半自動化したい` -> `問い合わせ対応の自動化` を提案する要約を返す
+      - 同一セッションで `お願いします` -> 問い合わせ文下書きを返す
+      - 新規セッションで `AI関連の最新のニュースを教えて` -> `最新のAI関連ニュースです` と Google News 3件を返す
+      - 新規セッションで `PoCの最初の2ステップを短く教えて` -> agent ではなく通常のPoC回答を返す
+- Open Items:
+  - なし
+- Next Action:
+  - なし
+
 ### 2026-03-08 04:02 JST | Agent: Codex
 - Task: `GPT-5.4` 予約投稿（ID 32）の自動公開と公開URL / 画像アセットを確認し、todo をクローズ
 - Changed Files:
@@ -77,28 +116,3 @@
   - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 03:59 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
 - Next Action:
   - `2026-03-08 04:00 JST` 以降に `/blog/` と該当記事URLで `GPT-5.4` 記事の公開を確認し、必要なら `tasks/handoff.md` を更新
-
-### 2026-03-08 03:25 JST | Agent: Codex
-- Task: docs-only push で `Deploy to Xserver` が走ったため、workflow に changed-files 二重ガードを追加
-- Changed Files:
-  - `.github/workflows/deploy.yml`
-  - `tasks/lessons.md`
-  - `tasks/handoff.md`
-  - `tasks/handoff-archive.md`
-  - `tasks/todo-archive.md`
-- Deploy:
-  - GitHub push: `4c341fe` -> `master`
-  - GitHub Actions: 直前の docs-only push `db249c3` で `Deploy to Xserver` run `22804559952` が予期せず `success`
-  - `4c341fe` push 後の GitHub Actions 一覧では、新しい `Deploy to Xserver` run はまだ発生していないことを確認
-- Verification:
-  - local:
-    - `ruby -e "require 'yaml'; YAML.load_file('.github/workflows/deploy.yml')"` OK
-    - runtime commit `3ecf613..834fb4b` の変更対象が `chatbot.php` / `inc/chatbot/core.php` であることを確認
-    - docs commit `db249c3` の変更対象が `tasks/handoff-archive.md` / `tasks/handoff.md` / `tasks/lessons.md` / `tasks/todo-archive.md` のみであることを確認
-  - GitHub:
-    - `Deploy to Xserver` 最新 run 一覧で `db249c3` の docs-only push が実行対象になっていたことを確認
-    - `4c341fe` push 後も最新 run は `22804559952` のままで、新規 deploy run 未発生を確認
-- Open Items:
-  - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 03:25 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
-- Next Action:
-  - 次回の docs-only push でも FTP deploy が走らないことを確認しつつ、`2026-03-08 04:00 JST` 以降に `GPT-5.4` 記事の公開を確認する

@@ -4,6 +4,31 @@
 
 ---
 
+### 2026-03-08 03:25 JST | Agent: Codex
+- Task: docs-only push で `Deploy to Xserver` が走ったため、workflow に changed-files 二重ガードを追加
+- Changed Files:
+  - `.github/workflows/deploy.yml`
+  - `tasks/lessons.md`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - GitHub push: `4c341fe` -> `master`
+  - GitHub Actions: 直前の docs-only push `db249c3` で `Deploy to Xserver` run `22804559952` が予期せず `success`
+  - `4c341fe` push 後の GitHub Actions 一覧では、新しい `Deploy to Xserver` run はまだ発生していないことを確認
+- Verification:
+  - local:
+    - `ruby -e "require 'yaml'; YAML.load_file('.github/workflows/deploy.yml')"` OK
+    - runtime commit `3ecf613..834fb4b` の変更対象が `chatbot.php` / `inc/chatbot/core.php` であることを確認
+    - docs commit `db249c3` の変更対象が `tasks/handoff-archive.md` / `tasks/handoff.md` / `tasks/lessons.md` / `tasks/todo-archive.md` のみであることを確認
+  - GitHub:
+    - `Deploy to Xserver` 最新 run 一覧で `db249c3` の docs-only push が実行対象になっていたことを確認
+    - `4c341fe` push 後も最新 run は `22804559952` のままで、新規 deploy run 未発生を確認
+- Open Items:
+  - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 03:25 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
+- Next Action:
+  - 次回の docs-only push でも FTP deploy が走らないことを確認しつつ、`2026-03-08 04:00 JST` 以降に `GPT-5.4` 記事の公開を確認する
+
 ### 2026-03-08 03:14 JST | Agent: Codex
 - Task: チャットボットの会社/サイト案内を構造化データ + 固定応答レイヤーへ切り替え、短い追撃でも文脈を維持するよう修正
 - Changed Files:
