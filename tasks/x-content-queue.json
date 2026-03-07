@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "type": "blog_announce",
+    "scheduled": "2026-03-08T04:05:00+09:00",
+    "text": "【新着記事】GPT-5.4は\"使えるAI\"になったのか？\n\n推論・PC操作・ツール連携を統合した「実働型AI」の全体像を、中小企業の経営者向けにわかりやすく解説しました。\n\n月額約3,000円から始められます。\n\nhttps://www.oishillc.jp/blog/gpt-5-4-guide-for-business/",
+    "status": "pending"
+  },
+  {
+    "id": 2,
+    "type": "ai_tip",
+    "scheduled": "2026-03-08T12:00:00+09:00",
+    "text": "【AI豆知識】ChatGPTの「GPT」って何の略？\n\nGenerative Pre-trained Transformer の頭文字です。\n\n・Generative = 文章を生成する\n・Pre-trained = 大量のデータで事前学習済み\n・Transformer = 文脈を理解する仕組み\n\nつまり「大量に学習して文脈を読める文章生成AI」という意味です。",
+    "status": "pending"
+  },
+  {
+    "id": 3,
+    "type": "ai_tip",
+    "scheduled": "2026-03-09T08:00:00+09:00",
+    "text": "【中小企業のAI活用】まず試すべき3つの業務\n\n1. メール下書き → 要点を箇条書きで渡すだけ\n2. 議事録の要約 → 録音テキストを貼るだけ\n3. データ集計の質問 → 「先月の売上トップ5は？」\n\nどれも無料〜月3,000円で今日から始められます。",
+    "status": "pending"
+  },
+  {
+    "id": 4,
+    "type": "ai_tip",
+    "scheduled": "2026-03-09T18:00:00+09:00",
+    "text": "【よくある誤解】「AIに仕事を奪われる」？\n\n実際は「AIを使える人が、使えない人の仕事を取る」が正確です。\n\nExcelが登場したとき、そろばんの仕事は減りました。でもExcelを使える経理の価値は上がりました。\n\nAIも同じ。道具として使いこなす側に回りましょう。",
+    "status": "pending"
+  },
+  {
+    "id": 5,
+    "type": "ai_tip",
+    "scheduled": "2026-03-10T08:00:00+09:00",
+    "text": "【AI活用のコツ】ChatGPTへの指示で一番大事なこと\n\nそれは「役割を与える」こと。\n\n× 「売上報告書を書いて」\n○ 「あなたは中小企業の経営企画部長です。先月の売上データをもとに、社長向けの報告書を作ってください」\n\nこれだけで出力の質が劇的に変わります。",
+    "status": "pending"
+  },
+  {
+    "id": 6,
+    "type": "ai_tip",
+    "scheduled": "2026-03-10T18:00:00+09:00",
+    "text": "【知っておきたい】無料で使えるAIツール3選\n\n1. ChatGPT（無料版） → 文章作成・質問回答\n2. Google Gemini → 検索と連携した回答\n3. Microsoft Copilot → Word/Excelと連携\n\nまずは無料で触ってみて、自分の業務に合うものを見つけるのがおすすめです。",
+    "status": "pending"
+  }
+]
