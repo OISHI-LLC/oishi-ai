@@ -4,6 +4,29 @@
 
 ---
 
+### 2026-03-07 16:31 JST | Agent: Codex
+- Task: `chatbot.php` の段階分割（関数群をモジュール化し、CSS/JSを外出し）
+- Changed Files:
+  - `chatbot.php`
+  - `inc/chatbot/core.php`（新規）
+  - `assets/css/chatbot.css`（新規）
+  - `assets/js/chatbot.js`（新規）
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo.md`
+- Deploy:
+  - なし（ローカル構造改善のみ）
+- Verification:
+  - `php -l chatbot.php` / `php -l inc/chatbot/core.php` OK
+  - `php chatbot.php` 出力で `assets/css/chatbot.css` / `assets/js/chatbot.js` 参照を確認
+  - `php -r ... include chatbot.php`（`POST+stream=1`）で `モデル名は何ですか？` -> `OISHI-OSSです。` の SSE 応答を確認
+  - `buildThemeAssetUrl(\"assets/css/chatbot.css\")` のURLが `%2F` ではなく通常パスで出ることを確認
+  - 関数移動で壊れた相対パスを修正（`.env` 読み込み基準とアセット解決基準をテーマルート基準に統一）
+- Open Items:
+  - 本番反映は未実施（CIデプロイ実行が次ステップ）
+- Next Action:
+  - 必要なら CI を実行して本番反映し、`/`, `/blog/`, `/wp-login.php`, `/favicon.ico` を再検証
+
 ### 2026-03-07 16:14 JST | Agent: Codex
 - Task: 本番デプロイ経路を CI-only（GitHub Actions）へ一本化し、運用ルールを統一
 - Changed Files: `PROJECT_RULES.md`, `CODEX_ONLY.md`, `tasks/lessons.md`, `tasks/handoff.md`
