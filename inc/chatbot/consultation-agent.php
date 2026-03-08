@@ -17,6 +17,30 @@ function buildConsultationAgentReply(string $message, string $normalized): ?arra
         return null;
     }
 
+    $prefilledAnswers = extractStructuredConsultationAnswers($message);
+    if ($prefilledAnswers !== []) {
+        $nextStep = findNextConsultationStep($prefilledAnswers);
+        if ($nextStep === null) {
+            $report = buildConsultationReport($prefilledAnswers);
+            return [
+                "role" => "assistant",
+                "content" => renderConsultationSummary($report),
+                "agent_report" => $report,
+                "agent_offer" => "contact_draft",
+            ];
+        }
+
+        return [
+            "role" => "assistant",
+            "content" => buildConsultationProgressReply($nextStep, $prefilledAnswers),
+            "agent_state" => [
+                "mode" => "consultation",
+                "step" => $nextStep,
+                "answers" => $prefilledAnswers,
+            ],
+        ];
+    }
+
     return [
         "role" => "assistant",
         "content" => "導入相談の整理を始めます。\n\n"
@@ -60,55 +84,28 @@ function continueConsultationAgent(array $state, string $message, string $normal
         ];
     }
 
-    switch ($step) {
-        case "business_profile":
-            $answers["business_profile"] = $answer;
-            return [
-                "role" => "assistant",
-                "content" => "ありがとうございます。次に、今いちばん重い業務や課題を1つ教えてください。例: 問い合わせ対応に時間がかかる、日報集計が手作業",
-                "agent_state" => [
-                    "mode" => "consultation",
-                    "step" => "pain_point",
-                    "answers" => $answers,
-                ],
-            ];
-
-        case "pain_point":
-            $answers["pain_point"] = $answer;
-            return [
-                "role" => "assistant",
-                "content" => "次に、今使っているツールやデータを教えてください。例: Gmail、Slack、スプレッドシート、kintone、PDF",
-                "agent_state" => [
-                    "mode" => "consultation",
-                    "step" => "current_stack",
-                    "answers" => $answers,
-                ],
-            ];
-
-        case "current_stack":
-            $answers["current_stack"] = $answer;
-            return [
-                "role" => "assistant",
-                "content" => "最後に、3か月以内に改善したいことを教えてください。例: 問い合わせ一次対応を半自動化したい、週次レポート作成を半分にしたい",
-                "agent_state" => [
-                    "mode" => "consultation",
-                    "step" => "goal",
-                    "answers" => $answers,
-                ],
-            ];
-
-        case "goal":
-        default:
-            $answers["goal"] = $answer;
-            $report = buildConsultationReport($answers);
-            return [
-                "role" => "assistant",
-                "content" => renderConsultationSummary($report),
-                "clear_agent_state" => true,
-                "agent_report" => $report,
-                "agent_offer" => "contact_draft",
-            ];
+    $answers = mergeConsultationAnswers($answers, $answer, $step);
+    $nextStep = findNextConsultationStep($answers);
+    if ($nextStep !== null) {
+        return [
+            "role" => "assistant",
+            "content" => buildConsultationProgressReply($nextStep, $answers),
+            "agent_state" => [
+                "mode" => "consultation",
+                "step" => $nextStep,
+                "answers" => $answers,
+            ],
+        ];
     }
+
+    $report = buildConsultationReport($answers);
+    return [
+        "role" => "assistant",
+        "content" => renderConsultationSummary($report),
+        "clear_agent_state" => true,
+        "agent_report" => $report,
+        "agent_offer" => "contact_draft",
+    ];
 }
 
 function shouldStartConsultationAgent(string $message): bool
@@ -136,6 +133,119 @@ function buildConsultationStepPrompt(string $step): string
         "current_stack" => "今使っているツールやデータを教えてください。例: Gmail、Slack、スプレッドシート、kintone、PDF",
         default => "3か月以内に改善したいことを教えてください。例: 問い合わせ一次対応を半自動化したい",
     };
+}
+
+function mergeConsultationAnswers(array $answers, string $message, string $currentStep): array
+{
+    $structuredAnswers = extractStructuredConsultationAnswers($message);
+    if ($structuredAnswers === []) {
+        $answers[$currentStep] = trim($message);
+        return $answers;
+    }
+
+    foreach ($structuredAnswers as $field => $value) {
+        $answers[$field] = $value;
+    }
+
+    return $answers;
+}
+
+function extractStructuredConsultationAnswers(string $message): array
+{
+    $answers = [];
+    $normalized = preg_replace("/\r\n?/", "\n", trim($message));
+    if (!is_string($normalized) || $normalized === "") {
+        return [];
+    }
+
+    $numberedMatches = preg_match_all(
+        "/(?:^|[\\s\\n])([1-4１-４])[\\.．、:：\\)]\\s*(.+?)(?=(?:[\\s\\n]+[1-4１-４][\\.．、:：\\)]\\s*)|$)/us",
+        $normalized,
+        $matches,
+        PREG_SET_ORDER
+    );
+    if (is_int($numberedMatches) && $numberedMatches > 0) {
+        foreach ($matches as $match) {
+            $field = consultationFieldForMarker((string) ($match[1] ?? ""));
+            $value = normalizeConsultationAnswerValue((string) ($match[2] ?? ""));
+            if ($field !== null && $value !== "") {
+                $answers[$field] = $value;
+            }
+        }
+    }
+
+    $labelPatterns = [
+        "business_profile" => "/(?:業種|業界|会社規模|規模)\\s*[:：]\\s*(.+?)(?=(?:\\s*(?:課題|悩み|重い業務|業務課題|ツール|データ|現状ツール|現在のツール|目標|ゴール|改善したいこと)\\s*[:：])|$)/u",
+        "pain_point" => "/(?:課題|悩み|重い業務|業務課題)\\s*[:：]\\s*(.+?)(?=(?:\\s*(?:業種|業界|会社規模|規模|ツール|データ|現状ツール|現在のツール|目標|ゴール|改善したいこと)\\s*[:：])|$)/u",
+        "current_stack" => "/(?:ツール|データ|現状ツール|現在のツール)\\s*[:：]\\s*(.+?)(?=(?:\\s*(?:業種|業界|会社規模|規模|課題|悩み|重い業務|業務課題|目標|ゴール|改善したいこと)\\s*[:：])|$)/u",
+        "goal" => "/(?:目標|ゴール|改善したいこと)\\s*[:：]\\s*(.+?)(?=(?:\\s*(?:業種|業界|会社規模|規模|課題|悩み|重い業務|業務課題|ツール|データ|現状ツール|現在のツール)\\s*[:：])|$)/u",
+    ];
+
+    foreach ($labelPatterns as $field => $pattern) {
+        if (preg_match($pattern, $normalized, $matches) !== 1) {
+            continue;
+        }
+
+        $value = normalizeConsultationAnswerValue((string) ($matches[1] ?? ""));
+        if ($value !== "") {
+            $answers[$field] = $value;
+        }
+    }
+
+    return $answers;
+}
+
+function consultationFieldForMarker(string $marker): ?string
+{
+    return match (strtr($marker, ["１" => "1", "２" => "2", "３" => "3", "４" => "4"])) {
+        "1" => "business_profile",
+        "2" => "pain_point",
+        "3" => "current_stack",
+        "4" => "goal",
+        default => null,
+    };
+}
+
+function normalizeConsultationAnswerValue(string $value): string
+{
+    return trim($value, " \t\n\r\0\x0B-・、,");
+}
+
+function findNextConsultationStep(array $answers): ?string
+{
+    foreach (["business_profile", "pain_point", "current_stack", "goal"] as $step) {
+        if (trim((string) ($answers[$step] ?? "")) === "") {
+            return $step;
+        }
+    }
+
+    return null;
+}
+
+function buildConsultationProgressReply(string $nextStep, array $answers): string
+{
+    $answeredCount = countAnsweredConsultationFields($answers);
+    if ($nextStep === "goal" && $answeredCount >= 3) {
+        return "ありがとうございます。最後に、" . buildConsultationStepPrompt($nextStep);
+    }
+
+    if ($answeredCount >= 2) {
+        return "ありがとうございます。残りで、" . buildConsultationStepPrompt($nextStep);
+    }
+
+    return "ありがとうございます。次に、" . buildConsultationStepPrompt($nextStep);
+}
+
+function countAnsweredConsultationFields(array $answers): int
+{
+    $count = 0;
+    foreach (["business_profile", "pain_point", "current_stack", "goal"] as $step) {
+        if (trim((string) ($answers[$step] ?? "")) !== "") {
+            $count++;
+        }
+    }
+
+    return $count;
 }
 
 function buildConsultationReport(array $answers): array
@@ -190,7 +300,7 @@ function assessConsultationTrack(array $answers): array
         ];
     }
 
-    if (preg_match("/(入力|転記|集計|レポート|日報|月報|請求|定型|コピペ|メール送信)/u", $combined) === 1) {
+    if (preg_match("/(入力|転記|集計|レポート|日報|月報|請求|定型|コピペ|メール送信|在庫管理|売上管理|棚卸|Excel|エクセル|自動化)/u", $combined) === 1) {
         return [
             "track" => "定型業務の自動化",
             "reason" => "繰り返し作業の削減が主目的なので、LLMより先に自動化しやすい定型フローから着手するのが費用対効果に合うためです。",
