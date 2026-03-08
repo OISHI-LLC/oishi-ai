@@ -33,3 +33,4 @@
 27. Add Live Info Layer To Chatbot - 会社情報固定と一般相談を分離し、天気 / 最新ニュース取得と下部ガード文言を追加
 28. Verify GPT-5.4 Scheduled Publication - 投稿 ID 32 の自動公開、`/blog/` 掲載、記事 URL と主要画像アセットの公開を確認
 29. Add Consultation Agent Flow To Chatbot - 状態付きの4問ヒアリング、要約、問い合わせ文下書き生成を追加し、AI関連ニュースを一般ニュースより優先して判定するよう修正
+30. Handle Bulk Answers In Consultation Agent - `1. ... 2. ... 3. ... 4. ...` や `業種: ... 課題: ...` の一括回答を吸い上げ、残り項目だけを聞くよう修正

@@ -16,6 +16,38 @@
 
 ---
 
+### 2026-03-08 20:13 JST | Agent: Codex
+- Task: 相談整理 agent が番号付きの一括回答を1項目目しか受け取らず聞き返していたため、複数項目をまとめて吸い上げるよう修正
+- Changed Files:
+  - `inc/chatbot/consultation-agent.php`
+  - `tasks/lessons.md`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - GitHub push: `115dfc8` -> `master`
+  - GitHub Actions: `Deploy to Xserver` run `22819588845` が `success`
+- Verification:
+  - local:
+    - `php -l chatbot.php` / `inc/chatbot/core.php` / `inc/chatbot/consultation-agent.php` OK
+    - セッション付きローカルモックで `AI導入の相談です。3分診断を始めてください。` の後に `1.小売りで年商5000万ほど 2.在庫管理と売上管理 3.Excelのみ 4.完全自動化したい` を送ると、追加質問なしで要約へ進むことを確認
+    - `1.小売業 / 5名 3.Excelのみ 4.自動化したい` のように一部欠けた回答では、未回答の `今いちばん重い業務や課題` だけを聞くことを確認
+    - `業種: 小売業 / 5名 課題: 在庫管理と売上管理 ツール: Excelのみ 目標: 完全自動化したい` でも一括吸い上げできることを確認
+    - `PoCの最初の2ステップを短く教えて` は override されず `null`
+  - live:
+    - `/` `HTTP 200`
+    - `/blog/` `HTTP 200`
+    - `/wp-login.php` `HTTP 200`
+    - `/favicon.ico` `HTTP 200`
+    - live stream `POST ...chatbot.php?stream=1`:
+      - 開始後に `1.小売りで年商5000万ほど 2.在庫管理と売上管理 3.Excelのみ 4.完全自動化したい` -> `定型業務の自動化` を提案する要約をその場で返す
+      - 開始後に `1.小売業 / 5名 3.Excelのみ 4.自動化したい` -> 未回答の `今いちばん重い業務や課題` だけを聞く
+- Open Items:
+  - なし
+- Next Action:
+  - なし
+
 ### 2026-03-08 07:06 JST | Agent: Codex
 - Task: チャットボットに相談整理エージェントの最小MVPを追加し、AI関連ニュースの誤ルーティングを修正
 - Changed Files:
@@ -76,43 +108,3 @@
   - なし
 - Next Action:
   - なし
-
-### 2026-03-08 03:59 JST | Agent: Codex
-- Task: チャットボットに live-info レイヤー（天気 / 最新ニュース）と下部ガード文言を追加し、一般質問を会社情報制約から分離
-- Changed Files:
-  - `chatbot.php`
-  - `inc/chatbot/core.php`
-  - `assets/css/chatbot.css`
-  - `tasks/lessons.md`
-  - `tasks/handoff.md`
-  - `tasks/handoff-archive.md`
-  - `tasks/todo-archive.md`
-- Deploy:
-  - GitHub push: `7832468` -> `master`
-  - GitHub Actions: `Deploy to Xserver` run `22805095650` が `success`
-  - GitHub push: `dcb9cf1` -> `master`
-  - GitHub Actions: `Deploy to Xserver` run `22805183984` が `success`
-- Verification:
-  - local:
-    - `php -l chatbot.php` OK
-    - `php -l inc/chatbot/core.php` OK
-    - `buildAssistantOverride("天気を教えて")` が地域確認を返すことを確認
-    - `buildAssistantOverride("最新のAI事情を教えて")` がモデル名応答ではなく live-info 判定に入ることを確認
-    - `buildChatRequestMessages(...)` の system prompt 件数が `1` で、ホームページ facts の常時付与を外したことを確認
-    - `php chatbot.php | rg` で composer 文言と `AIは間違えることがあります` のガード文言を確認
-    - sandbox 内の PHP cURL は外部 DNS 解決に失敗したため、最新情報の取得そのものは live 側で確認
-  - live:
-    - `/` `HTTP 200`
-    - `/blog/` `HTTP 200`
-    - `/wp-login.php` `HTTP 200`
-    - `/favicon.ico` `HTTP 200`
-    - live HTML に `assets/css/chatbot.css?v=1772909578`、`AI導入、ブログ、最新情報、お問い合わせまでそのまま相談できます。`、`AIは間違えることがあります。...` を確認
-    - live stream `POST https://www.oishillc.jp/wp-content/themes/oishi-ai/chatbot.php?stream=1`:
-      - `御社の概要を教えて` -> 会社概要の固定応答
-      - `東京の天気を教えて` -> `東京都, 日本` の天気を Open-Meteo 取得結果で返す（warning 混入なし）
-      - `今日のニュースを教えて` -> Google News の主要ニュース3件
-      - `最新のAI事情を教えて` -> Google News のAI関連ニュース3件
-- Open Items:
-  - `GPT-5.4` 予約投稿（ID 32）の自動公開確認は未実施。現在時刻は `2026-03-08 03:59 JST` で、予定公開時刻 `2026-03-08 04:00 JST` 前
-- Next Action:
-  - `2026-03-08 04:00 JST` 以降に `/blog/` と該当記事URLで `GPT-5.4` 記事の公開を確認し、必要なら `tasks/handoff.md` を更新
