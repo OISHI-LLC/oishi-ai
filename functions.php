@@ -51,12 +51,16 @@ function oishi_ai_get_site_icon_urls() {
 
     $icon_512_ver = file_exists($template_dir . '/site-icon.png') ? (string) filemtime($template_dir . '/site-icon.png') : '1';
     $icon_192_ver = file_exists($template_dir . '/site-icon-192.png') ? (string) filemtime($template_dir . '/site-icon-192.png') : '1';
+    $icon_32_ver  = file_exists($template_dir . '/favicon-32x32.png') ? (string) filemtime($template_dir . '/favicon-32x32.png') : '1';
+    $icon_16_ver  = file_exists($template_dir . '/favicon-16x16.png') ? (string) filemtime($template_dir . '/favicon-16x16.png') : '1';
     $apple_ver    = file_exists($template_dir . '/apple-touch-icon.png') ? (string) filemtime($template_dir . '/apple-touch-icon.png') : '1';
 
     return array(
         'root'     => $root_favicon,
         'icon_512' => esc_url($template_uri . '/site-icon.png?v=' . $icon_512_ver),
         'icon_192' => esc_url($template_uri . '/site-icon-192.png?v=' . $icon_192_ver),
+        'icon_32'  => esc_url($template_uri . '/favicon-32x32.png?v=' . $icon_32_ver),
+        'icon_16'  => esc_url($template_uri . '/favicon-16x16.png?v=' . $icon_16_ver),
         'apple'    => esc_url($template_uri . '/apple-touch-icon.png?v=' . $apple_ver),
     );
 }
@@ -66,6 +70,8 @@ function oishi_ai_print_site_icon_links() {
     $icons = oishi_ai_get_site_icon_urls();
     echo '<link rel="icon" href="' . $icons['root'] . '" sizes="any">' . "\n";
     echo '<link rel="shortcut icon" href="' . $icons['root'] . '">' . "\n";
+    echo '<link rel="icon" type="image/png" sizes="32x32" href="' . $icons['icon_32'] . '">' . "\n";
+    echo '<link rel="icon" type="image/png" sizes="16x16" href="' . $icons['icon_16'] . '">' . "\n";
     echo '<link rel="icon" type="image/png" sizes="512x512" href="' . $icons['icon_512'] . '">' . "\n";
     echo '<link rel="icon" type="image/png" sizes="192x192" href="' . $icons['icon_192'] . '">' . "\n";
     echo '<link rel="apple-touch-icon" sizes="180x180" href="' . $icons['apple'] . '">' . "\n";

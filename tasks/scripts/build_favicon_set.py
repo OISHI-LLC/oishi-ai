@@ -38,12 +38,16 @@ def main() -> None:
     icon_512 = base.resize((512, 512), Image.Resampling.LANCZOS)
     icon_192 = base.resize((192, 192), Image.Resampling.LANCZOS)
     icon_180 = base.resize((180, 180), Image.Resampling.LANCZOS)
+    icon_32 = base.resize((32, 32), Image.Resampling.LANCZOS)
+    icon_16 = base.resize((16, 16), Image.Resampling.LANCZOS)
 
     # Canonical files used in this repository.
     icon_512.save(out_dir / "site-icon.png", format="PNG")
     icon_512.save(out_dir / "favicon.png", format="PNG")
     icon_192.save(out_dir / "site-icon-192.png", format="PNG")
     icon_180.save(out_dir / "apple-touch-icon.png", format="PNG")
+    icon_32.save(out_dir / "favicon-32x32.png", format="PNG")
+    icon_16.save(out_dir / "favicon-16x16.png", format="PNG")
 
     icon_512.save(
         out_dir / "favicon.ico",
@@ -57,6 +61,8 @@ def main() -> None:
         out_dir / "site-icon.png",
         out_dir / "site-icon-192.png",
         out_dir / "apple-touch-icon.png",
+        out_dir / "favicon-32x32.png",
+        out_dir / "favicon-16x16.png",
     ]
     print("Generated files:")
     for path in generated:
