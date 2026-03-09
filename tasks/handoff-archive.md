@@ -4,6 +4,28 @@
 
 ---
 
+### 2026-03-08 04:02 JST | Agent: Codex
+- Task: `GPT-5.4` 予約投稿（ID 32）の自動公開と公開URL / 画像アセットを確認し、todo をクローズ
+- Changed Files:
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - なし（WordPress の予約公開確認と運用ログ更新のみ）
+- Verification:
+  - WordPress REST API `posts/32` で `status=publish`、`slug=gpt-5-4-guide-for-business`、`link=https://www.oishillc.jp/2026/03/08/gpt-5-4-guide-for-business/` を確認
+  - `/blog/` に `GPT-5.4は”使えるAI”になったのか？経営者が知っておくべき全体像` の掲載を確認
+  - live article `https://www.oishillc.jp/2026/03/08/gpt-5-4-guide-for-business/` `HTTP 200`
+  - live article HTML に `hero-gpt54.webp` / `img-01-evolution-map.webp` / `img-02-use-cases.webp` / `img-03-steps.webp` / `img-04-summary.webp` 参照を確認
+  - asset checks:
+    - `/wp-content/themes/oishi-ai/assets/blog/20260307-gpt54/hero-gpt54.webp` `HTTP 200`
+    - `/wp-content/themes/oishi-ai/assets/blog/20260307-gpt54/img-03-steps.webp` `HTTP 200`
+- Open Items:
+  - なし
+- Next Action:
+  - なし
+
 ### 2026-03-08 03:59 JST | Agent: Codex
 - Task: チャットボットに live-info レイヤー（天気 / 最新ニュース）と下部ガード文言を追加し、一般質問を会社情報制約から分離
 - Changed Files:

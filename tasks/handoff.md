@@ -16,6 +16,46 @@
 
 ---
 
+### 2026-03-09 19:27 JST | Agent: Codex
+- Task: 検索結果 favicon 改善のため explicit `16x16` / `32x32` PNG favicon を追加し、live 配信と head tag を検証
+- Changed Files:
+  - `functions.php`
+  - `tasks/scripts/build_favicon_set.py`
+  - `apple-touch-icon.png`
+  - `site-icon-192.png`
+  - `favicon-16x16.png`
+  - `favicon-32x32.png`
+  - `tasks/favicon-inventory.md`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - GitHub push: `855efad` -> `master`
+  - GitHub Actions: `Deploy to Xserver` run `22848915458` が `success`
+- Verification:
+  - local:
+    - `php -l functions.php` OK
+    - `file favicon-16x16.png favicon-32x32.png favicon.ico` で `16x16` / `32x32` PNG と multi-size ICO を確認
+    - `md5 -q favicon-32x32.png` = `7d3efa92561b8bac60ceae9d50556bef`
+    - `md5 -q favicon-16x16.png` = `c46159f1dca280aec8594a8550f4627a`
+  - live:
+    - `/` `HTTP 200`
+    - `/blog/` `HTTP 200`
+    - `/wp-login.php` `HTTP 200`
+    - `/favicon.ico` `HTTP 200`
+    - `/wp-content/themes/oishi-ai/favicon-32x32.png` `HTTP 200`
+    - `/wp-content/themes/oishi-ai/favicon-16x16.png` `HTTP 200`
+    - homepage HTML に `rel="icon" sizes="32x32"` / `rel="icon" sizes="16x16"` / existing `512x512` / `192x192` / `apple-touch-icon` を確認
+    - live `favicon-32x32.png` / `favicon-16x16.png` の md5 が local と一致
+  - note:
+    - live site は既に WordPress `W` ではなくテーマ側 favicon を返していたため、検索結果の `W` は Google favicon cache の残存が主因と判断
+    - 今回の修正で crawler 向けに explicit `16x16` / `32x32` favicon を追加し、site 側で渡せる signal は強化済み
+- Open Items:
+  - なし
+- Next Action:
+  - なし
+
 ### 2026-03-08 20:13 JST | Agent: Codex
 - Task: 相談整理 agent が番号付きの一括回答を1項目目しか受け取らず聞き返していたため、複数項目をまとめて吸い上げるよう修正
 - Changed Files:
@@ -82,28 +122,6 @@
       - 同一セッションで `お願いします` -> 問い合わせ文下書きを返す
       - 新規セッションで `AI関連の最新のニュースを教えて` -> `最新のAI関連ニュースです` と Google News 3件を返す
       - 新規セッションで `PoCの最初の2ステップを短く教えて` -> agent ではなく通常のPoC回答を返す
-- Open Items:
-  - なし
-- Next Action:
-  - なし
-
-### 2026-03-08 04:02 JST | Agent: Codex
-- Task: `GPT-5.4` 予約投稿（ID 32）の自動公開と公開URL / 画像アセットを確認し、todo をクローズ
-- Changed Files:
-  - `tasks/handoff.md`
-  - `tasks/handoff-archive.md`
-  - `tasks/todo.md`
-  - `tasks/todo-archive.md`
-- Deploy:
-  - なし（WordPress の予約公開確認と運用ログ更新のみ）
-- Verification:
-  - WordPress REST API `posts/32` で `status=publish`、`slug=gpt-5-4-guide-for-business`、`link=https://www.oishillc.jp/2026/03/08/gpt-5-4-guide-for-business/` を確認
-  - `/blog/` に `GPT-5.4は”使えるAI”になったのか？経営者が知っておくべき全体像` の掲載を確認
-  - live article `https://www.oishillc.jp/2026/03/08/gpt-5-4-guide-for-business/` `HTTP 200`
-  - live article HTML に `hero-gpt54.webp` / `img-01-evolution-map.webp` / `img-02-use-cases.webp` / `img-03-steps.webp` / `img-04-summary.webp` 参照を確認
-  - asset checks:
-    - `/wp-content/themes/oishi-ai/assets/blog/20260307-gpt54/hero-gpt54.webp` `HTTP 200`
-    - `/wp-content/themes/oishi-ai/assets/blog/20260307-gpt54/img-03-steps.webp` `HTTP 200`
 - Open Items:
   - なし
 - Next Action:

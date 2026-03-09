@@ -14,13 +14,19 @@
 4. `apple-touch-icon.png` (180x180)
 - Why needed: explicitly referenced for iOS home-screen icon.
 
-5. `favicon.png` (512x512, compatibility alias)
+5. `favicon-32x32.png`
+- Why needed: explicit small favicon for crawlers and browsers that prefer PNG over ICO.
+
+6. `favicon-16x16.png`
+- Why needed: explicit tiny favicon for browser tabs and search engines.
+
+7. `favicon.png` (512x512, compatibility alias)
 - Why kept: not strictly required by current PHP hooks, but retained as a compatibility fallback and matches `site-icon.png`.
 
-6. `assets/favicon/source.png` (favicon master source)
+8. `assets/favicon/source.png` (favicon master source)
 - Why needed: single source image for favicon regeneration (current high-contrast design).
 
-7. `logo.png` (header logo source)
+9. `logo.png` (header logo source)
 - Why kept: used by site header brand mark. Do not overwrite it for favicon experiments.
 
 ## Removed As Redundant
@@ -51,3 +57,4 @@ Then verify all of:
 1. `https://www.oishillc.jp/` has favicon tags.
 2. `https://www.oishillc.jp/wp-login.php` has same favicon tags.
 3. `https://www.oishillc.jp/favicon.ico` returns `HTTP 200`.
+4. `https://www.oishillc.jp/` has `16x16` / `32x32` PNG favicon links.
