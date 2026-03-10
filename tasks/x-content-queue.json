@@ -44,21 +44,27 @@
     "type": "ai_tip",
     "scheduled": "2026-03-10T17:00:00+09:00",
     "text": "【知っておきたい】無料で使えるAIツール3選\n\n1. ChatGPT（無料版） → 文章作成・質問回答\n2. Google Gemini → 検索と連携した回答\n3. Microsoft Copilot → Word/Excelと連携\n\nまずは無料で触ってみて、自分の業務に合うものを見つけるのがおすすめです。",
-    "status": "pending"
+    "status": "posted",
+    "tweet_id": "2031310996803838021",
+    "posted_at": "2026-03-10T19:07:36.059460+09:00"
   },
   {
     "id": 7,
     "type": "blog_announce",
     "scheduled": "2026-03-09T07:00:00+09:00",
     "text": "【新着記事】AI活用企業の二極化——88%が導入、成果はわずか6%\n\n導入率は十分。でも利益に直結しているのはごく一部。\n\nMcKinsey最新調査をもとに、成果を出す企業と出せない企業の決定的な違いを解説しました。\n\n中小企業が今日から始められる3ステップも紹介。\n\nhttps://www.oishillc.jp/2026/03/09/ai-divide-88-percent-adopt-6-percent-profit/",
-    "status": "pending"
+    "status": "posted",
+    "tweet_id": "2031310997936279623",
+    "posted_at": "2026-03-10T19:07:36.059460+09:00"
   },
   {
     "id": 8,
     "type": "blog_announce",
     "scheduled": "2026-03-10T07:00:00+09:00",
     "text": "【新着記事】AIエージェントとは？——「指示待ちAI」から「自走するAI」へ\n\n目標を伝えるだけで、計画→ツール操作→タスク完了まで自律的に動くAI。\n\n2026年末には企業アプリの40%に搭載予測。中小企業が今から備えるべき3ステップを解説。\n\nhttps://www.oishillc.jp/2026/03/10/what-is-ai-agent-autonomous-ai-evolution/",
-    "status": "pending"
+    "status": "posted",
+    "tweet_id": "2031310999123321055",
+    "posted_at": "2026-03-10T19:07:36.059460+09:00"
   },
   {
     "id": 9,
