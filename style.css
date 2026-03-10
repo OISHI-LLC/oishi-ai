@@ -20,7 +20,7 @@ Text Domain: oishi-ai
   --text-4: rgba(0, 0, 0, 0.28);
   --accent: rgba(0, 0, 0, 0.06);
   --accent-subtle: rgba(0, 0, 0, 0.02);
-  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 

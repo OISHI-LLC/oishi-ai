@@ -31,17 +31,26 @@ function oishi_ai_excerpt_more($more) {
 }
 add_filter('excerpt_more', 'oishi_ai_excerpt_more');
 
-// Remove unnecessary head items for performance
-remove_action('wp_head', 'wp_generator');
-remove_action('wp_head', 'wlwmanifest_link');
-remove_action('wp_head', 'rsd_link');
-remove_action('wp_head', 'wp_shortlink_wp_head');
-remove_action('wp_head', 'rest_output_link_wp_head');
-remove_action('wp_head', 'wp_oembed_add_discovery_links');
-remove_action('wp_head', 'print_emoji_detection_script', 7);
-remove_action('wp_head', 'wp_site_icon', 99);
-remove_action('template_redirect', 'wp_redirect_admin_locations', 1000);
-remove_action('wp_print_styles', 'print_emoji_styles');
+// Remove WordPress defaults this theme does not use.
+function oishi_ai_cleanup_core_output() {
+    remove_action('wp_head', 'wp_generator');
+    remove_action('wp_head', 'wlwmanifest_link');
+    remove_action('wp_head', 'rsd_link');
+    remove_action('wp_head', 'wp_shortlink_wp_head');
+    remove_action('wp_head', 'rest_output_link_wp_head');
+    remove_action('wp_head', 'wp_oembed_add_discovery_links');
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('wp_head', 'wp_site_icon', 99);
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_action('template_redirect', 'wp_redirect_admin_locations', 1000);
+
+    remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
+    remove_action('wp_footer', 'wp_enqueue_global_styles', 1);
+    remove_action('wp_enqueue_scripts', 'wp_enqueue_classic_theme_styles');
+    remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
+    remove_action('wp_footer', 'wp_global_styles_render_svg_filters', 1);
+}
+add_action('after_setup_theme', 'oishi_ai_cleanup_core_output', 20);
 
 // Build icon URLs once so frontend/login/admin stay in sync.
 function oishi_ai_get_site_icon_urls() {

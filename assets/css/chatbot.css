@@ -23,7 +23,7 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--ink);
   background:
     radial-gradient(circle at top left, rgba(0, 100, 200, 0.08) 0%, rgba(0, 100, 200, 0) 28%),
