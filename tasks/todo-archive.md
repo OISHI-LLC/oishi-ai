@@ -35,3 +35,4 @@
 29. Add Consultation Agent Flow To Chatbot - 状態付きの4問ヒアリング、要約、問い合わせ文下書き生成を追加し、AI関連ニュースを一般ニュースより優先して判定するよう修正
 30. Handle Bulk Answers In Consultation Agent - `1. ... 2. ... 3. ... 4. ...` や `業種: ... 課題: ...` の一括回答を吸い上げ、残り項目だけを聞くよう修正
 31. Add Explicit Small Favicons - 検索結果 favicon 改善のため `16x16` / `32x32` PNG favicon と head tag を追加し、live 配信を検証
+32. Trim Theme Render Blocking Assets - 外部 Google Fonts を外し、不要な `global-styles` / REST head 出力を止めて head サイズと初回応答を削減

@@ -4,6 +4,45 @@
 
 ---
 
+### 2026-03-08 07:06 JST | Agent: Codex
+- Task: チャットボットに相談整理エージェントの最小MVPを追加し、AI関連ニュースの誤ルーティングを修正
+- Changed Files:
+  - `chatbot.php`
+  - `inc/chatbot/core.php`
+  - `inc/chatbot/consultation-agent.php`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/todo.md`
+  - `tasks/todo-archive.md`
+- Deploy:
+  - GitHub push: `f13bc9b` -> `master`
+  - GitHub Actions: `Deploy to Xserver` run `22808159619` が `success`
+- Verification:
+  - local:
+    - `php -l chatbot.php` / `inc/chatbot/core.php` / `inc/chatbot/consultation-agent.php` OK
+    - セッションを持ったローカルモックで `AI導入の相談です。3分診断を始めてください。` -> 4問ヒアリング開始 -> 要約 -> `お願いします` で問い合わせ文下書き生成を確認
+    - `中断` で `chatbot_agent_state` が cleared されることを確認
+    - `PoCの進め方を短く教えて` は override されず `null`
+    - `resolveNewsIntent("AI関連の最新のニュースを教えて")` が `label=最新のAI関連ニュース` を返すことを確認
+    - `php chatbot.php | rg` で `3分診断を始める` / `業務自動化の相談です。ヒアリングを始めてください。` / `AI導入、導入診断、ブログ、最新情報、お問い合わせまでそのまま相談できます。` を確認
+  - live:
+    - `/` `HTTP 200`
+    - `/blog/` `HTTP 200`
+    - `/wp-login.php` `HTTP 200`
+    - `/favicon.ico` `HTTP 200`
+    - `https://www.oishillc.jp/wp-content/themes/oishi-ai/chatbot.php` HTML に `3分診断を始める` / `業務自動化を相談` / `AI導入、導入診断、ブログ、最新情報、お問い合わせまでそのまま相談できます。` を確認
+    - live stream `POST ...chatbot.php?stream=1`:
+      - `AI導入の相談です。3分診断を始めてください。` -> 4問ヒアリング開始
+      - 同一セッションで `製造業 / 20名` -> 課題ヒアリングへ進行
+      - 同一セッションで `問い合わせ対応に時間がかかる` / `Gmail とスプレッドシート` / `3か月以内に一次回答を半自動化したい` -> `問い合わせ対応の自動化` を提案する要約を返す
+      - 同一セッションで `お願いします` -> 問い合わせ文下書きを返す
+      - 新規セッションで `AI関連の最新のニュースを教えて` -> `最新のAI関連ニュースです` と Google News 3件を返す
+      - 新規セッションで `PoCの最初の2ステップを短く教えて` -> agent ではなく通常のPoC回答を返す
+- Open Items:
+  - なし
+- Next Action:
+  - なし
+
 ### 2026-03-08 04:02 JST | Agent: Codex
 - Task: `GPT-5.4` 予約投稿（ID 32）の自動公開と公開URL / 画像アセットを確認し、todo をクローズ
 - Changed Files:
