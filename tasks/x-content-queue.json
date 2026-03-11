@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": 26,
+    "type": "blog_announce",
+    "scheduled": "2026-03-11T20:30:00+09:00",
+    "text": "Claude Code の始め方を、超初心者向けに整理しました。\n\n・Claude Code って何？\n・インストールはどうやる？\n・ターミナルが苦手でも使える？\n・最初に何を試せばいい？\n\n「AIにコードを書かせる」より、\n「わからないをすぐ減らせる」ことの価値が大きいです。\n\nインストールから使い方まで、やさしくまとめています。\nhttps://www.oishillc.jp/2026/03/11/claude-code-complete-guide-for-beginners/",
+    "status": "pending"
+  },
+  {
+    "id": 27,
+    "type": "trend_pickup",
+    "scheduled": "2026-03-11T22:00:00+09:00",
+    "text": "Claude Code のすごさは、\nコード生成の速さだけではないです。\n\n本当に大きいのは、\n「調べる時間」が一気に短くなること。\n\n・このファイルは何？\n・どこを直せばいい？\n・関連する場所はどこ？\n\n初心者ほど、書くことより\n“わからなくて止まる時間” が重いです。\n\nClaude Code の価値は、ここを前に進めることだと思います。",
+    "status": "pending"
+  },
+  {
+    "id": 28,
+    "type": "practical_take",
+    "scheduled": "2026-03-11T23:30:00+09:00",
+    "text": "Claude Code 初心者が失敗しやすいのは、\nいきなり大きな仕事を頼むことです。\n\n最初はこの順番が安全です。\n1. フォルダの中身を聞く\n2. わからない場所を質問する\n3. 小さな修正を1つ頼む\n4. 変更内容を確認する\n\nClaude Code は全自動の魔法ではなく、\n一緒に作業するパートナーとして使うと強いです。",
+    "status": "pending"
+  }
+]

@@ -2,9 +2,13 @@ name: X Auto Post
 
 on:
   schedule:
-    # Run 2x daily: 07:00 JST (22:00 UTC) and 17:00 JST (08:00 UTC)
-    # GitHub Actions free: 2,000 min/month. This uses ~60 min/month (3%).
+    # Run 5x daily:
+    # - 07:03 JST / 17:03 JST existing cadence
+    # - 20:30 JST / 22:00 JST / 23:30 JST evening article promotion cadence
     - cron: "3 22,8 * * *"
+    - cron: "30 11 * * *"
+    - cron: "0 13 * * *"
+    - cron: "30 14 * * *"
   workflow_dispatch: # Allow manual trigger
 
 permissions:
