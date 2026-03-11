@@ -4,8 +4,7 @@
     "type": "blog_announce",
     "scheduled": "2026-03-11T20:30:00+09:00",
     "text": "Claude Code の始め方を、超初心者向けに整理しました。\n\n・Claude Code って何？\n・インストールはどうやる？\n・ターミナルが苦手でも使える？\n・最初に何を試せばいい？\n\n「AIにコードを書かせる」より、\n「わからないをすぐ減らせる」ことの価値が大きいです。\n\nインストールから使い方まで、やさしくまとめています。\nhttps://www.oishillc.jp/2026/03/11/claude-code-complete-guide-for-beginners/",
-    "status": "error",
-    "error": "403 Forbidden\nYou are not permitted to perform this action."
+    "status": "pending"
   },
   {
     "id": 27,
