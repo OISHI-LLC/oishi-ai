@@ -16,6 +16,45 @@
 
 ---
 
+### 2026-03-12 04:05 JST | Agent: Codex
+- Task: Claude Code 記事向け X 投稿 3 本の結果確認と、今夜用の臨時 cron を通常運用へ戻す
+- Changed Files:
+  - `.github/workflows/x-post.yml`
+  - `tasks/todo.md`
+  - `tasks/handoff.md`
+- Deploy:
+  - GitHub push: pending
+  - GitHub Actions:
+    - manual rerun `22952737185`: `id=26` は `403 Forbidden / You are not permitted to perform this action.`
+    - scheduled run `22962122968`: `id=27` / `id=28` を自動投稿成功
+    - scheduled run `22966084229`: `Done. 0 tweet(s) processed.`
+- Verification:
+  - `gh run view 22962122968 --log` で `Posted id=27 -> tweet 2031763562948174126` と `Posted id=28 -> tweet 2031763564105793607` を確認
+  - local `tasks/x-content-queue.json` を `git pull` 後に確認し、`id=27,28` が `status=posted`・`tweet_id`・`posted_at` 付きで反映されていることを確認
+  - `id=26` はユーザー手動投稿済みのため queue 上の `error` をそのまま残す
+- Open Items:
+  - `id=26` の queue 履歴は `error` のまま残っているが、実運用上は手動投稿済み
+- Next Action:
+  - なし
+
+### 2026-03-11 21:10 JST | Agent: Codex
+- Task: 今夜の Claude Code 記事向け X 投稿 3 本の自動投稿失敗を調査し、再実行まで実施
+- Changed Files:
+  - `tasks/x-content-queue.json`
+- Deploy:
+  - GitHub push: `1e7fe6a` -> `master`
+  - GitHub Actions: `X Auto Post` manual run `22951851894`
+- Verification:
+  - `gh run view 22951115151 --log` で `id=26` の `create_tweet` が `403 Forbidden / You are not permitted to perform this action.` で失敗することを確認
+  - ユーザー提供の X API credentials を GitHub Secrets に更新後、`id=26` を `pending` に戻して manual rerun
+  - `gh run view 22951851894 --log` でも同じ `403 Forbidden / You are not permitted to perform this action.` を再確認
+  - local `tasks/x-content-queue.json` は `id=26=error`, `id=27,28=pending`
+- Open Items:
+  - X App 側の permission が `Read only` のままの可能性が高く、`Read and write` への変更と Access Token / Access Token Secret の再発行が必要
+  - 権限更新前は `22:00 / 23:30 JST` 分も同様に失敗する見込み
+- Next Action:
+  - ユーザーが X Developer Portal で `Read and write` に変更し、新しい token を GitHub Secrets へ反映後、`id=26` を再度 `pending` に戻して workflow を手動再実行する
+
 ### 2026-03-11 19:34 JST | Agent: Codex
 - Task: Claude Code 記事に合わせた X 投稿 3 本を作成し、今夜 `20:30 / 22:00 / 23:30 JST` の自動投稿キューへ登録
 - Changed Files:

@@ -2,13 +2,8 @@ name: X Auto Post
 
 on:
   schedule:
-    # Run 5x daily:
-    # - 07:03 JST / 17:03 JST existing cadence
-    # - 20:30 JST / 22:30 JST / 23:50 JST evening article promotion cadence
+    # Run 2x daily at 07:03 JST / 17:03 JST
     - cron: "3 22,8 * * *"
-    - cron: "30 11 * * *"
-    - cron: "30 13 * * *"
-    - cron: "50 14 * * *"
   workflow_dispatch: # Allow manual trigger
 
 permissions:
