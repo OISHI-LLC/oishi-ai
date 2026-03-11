@@ -16,6 +16,55 @@
 
 ---
 
+### 2026-03-11 19:34 JST | Agent: Codex
+- Task: Claude Code 記事に合わせた X 投稿 3 本を作成し、今夜 `20:30 / 22:00 / 23:30 JST` の自動投稿キューへ登録
+- Changed Files:
+  - `.github/workflows/x-post.yml`
+  - `tasks/x-content-queue.json`
+  - `tasks/todo.md`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+- Deploy:
+  - GitHub push: `af81ad9` -> `master`
+  - GitHub Actions: 予約時刻前のため実投稿 run は未確認
+- Verification:
+  - local:
+    - `python3 -m json.tool tasks/x-content-queue.json` OK
+    - queue に `id=26,27,28` の `pending` 3件、時刻 `2026-03-11T20:30:00+09:00` / `22:00:00+09:00` / `23:30:00+09:00` を確認
+    - `.github/workflows/x-post.yml` に UTC cron `11:30 / 13:00 / 14:30` を追加し、JST `20:30 / 22:00 / 23:30` に対応することを確認
+- Open Items:
+  - 実際の X 投稿成功確認は各時刻後に必要
+  - `x-post.yml` は今夜対応のため 1日5回実行になっている。恒久運用にするか後で戻すかを決める必要あり
+- Next Action:
+  - `2026-03-11 20:30 JST` 以降、GitHub Actions run と `tasks/x-content-queue.json` の `status` が `posted` へ変わることを確認し、必要なら cron を整理する
+
+### 2026-03-11 17:23 JST | Agent: Codex
+- Task: Claude Code 完全ガイド記事を作成し、ユーザー支給のアイキャッチ画像を設定して WordPress 本番へ公開
+- Changed Files:
+  - `tasks/todo.md`
+  - `tasks/lessons.md`
+  - `tasks/handoff.md`
+  - `tasks/handoff-archive.md`
+  - `tasks/article-20260311-claude-code-guide.html`（作業用草稿、`.gitignore` 対象）
+- Deploy:
+  - GitHub push なし（テーマコード変更なし）
+  - WordPress 投稿 ID `50` を `publish` で作成
+  - メディア ID `49` としてアイキャッチ画像を登録し、投稿 ID `50` の `_thumbnail_id` に設定
+- Verification:
+  - local:
+    - `wc -m tasks/article-20260311-claude-code-guide.html` = `16716`
+    - 記事草稿に `目次`、`参照元`、`about-table-wrap` の表ラッパー 3 か所を確認
+  - live:
+    - `https://www.oishillc.jp/2026/03/11/claude-code-complete-guide-for-beginners/` `HTTP 200`
+    - `/blog/` に当該記事の掲載を確認
+    - live article HTML に `og:image` / `twitter:image` として `wp-content/uploads/2026/03/名称未設定のデザイン-4-scaled.png` が入っていることを確認
+    - アイキャッチ画像 URL `https://www.oishillc.jp/wp-content/uploads/2026/03/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A%E3%81%AE%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3-4-scaled.png` `HTTP 200`
+- Open Items:
+  - `tasks/article-20260311-claude-code-guide.html` は `.gitignore` 対象のため、Git には載っていない
+  - 画像ファイル名が WordPress 既定の日本語名のままなので、必要なら後日メディア整理を検討
+- Next Action:
+  - 必要ならこの記事から X 投稿 3 本（ブログ誘導 / トレンド要点整理 / 実務転用）を作成
+
 ### 2026-03-10 11:20 JST | Agent: Codex
 - Task: テーマの render-blocking を削減するため、Google Fonts 依存と WordPress の不要な `global-styles` / head 出力を整理
 - Changed Files:
@@ -91,38 +140,6 @@
   - note:
     - live site は既に WordPress `W` ではなくテーマ側 favicon を返していたため、検索結果の `W` は Google favicon cache の残存が主因と判断
     - 今回の修正で crawler 向けに explicit `16x16` / `32x32` favicon を追加し、site 側で渡せる signal は強化済み
-- Open Items:
-  - なし
-- Next Action:
-  - なし
-
-### 2026-03-08 20:13 JST | Agent: Codex
-- Task: 相談整理 agent が番号付きの一括回答を1項目目しか受け取らず聞き返していたため、複数項目をまとめて吸い上げるよう修正
-- Changed Files:
-  - `inc/chatbot/consultation-agent.php`
-  - `tasks/lessons.md`
-  - `tasks/handoff.md`
-  - `tasks/handoff-archive.md`
-  - `tasks/todo.md`
-  - `tasks/todo-archive.md`
-- Deploy:
-  - GitHub push: `115dfc8` -> `master`
-  - GitHub Actions: `Deploy to Xserver` run `22819588845` が `success`
-- Verification:
-  - local:
-    - `php -l chatbot.php` / `inc/chatbot/core.php` / `inc/chatbot/consultation-agent.php` OK
-    - セッション付きローカルモックで `AI導入の相談です。3分診断を始めてください。` の後に `1.小売りで年商5000万ほど 2.在庫管理と売上管理 3.Excelのみ 4.完全自動化したい` を送ると、追加質問なしで要約へ進むことを確認
-    - `1.小売業 / 5名 3.Excelのみ 4.自動化したい` のように一部欠けた回答では、未回答の `今いちばん重い業務や課題` だけを聞くことを確認
-    - `業種: 小売業 / 5名 課題: 在庫管理と売上管理 ツール: Excelのみ 目標: 完全自動化したい` でも一括吸い上げできることを確認
-    - `PoCの最初の2ステップを短く教えて` は override されず `null`
-  - live:
-    - `/` `HTTP 200`
-    - `/blog/` `HTTP 200`
-    - `/wp-login.php` `HTTP 200`
-    - `/favicon.ico` `HTTP 200`
-    - live stream `POST ...chatbot.php?stream=1`:
-      - 開始後に `1.小売りで年商5000万ほど 2.在庫管理と売上管理 3.Excelのみ 4.完全自動化したい` -> `定型業務の自動化` を提案する要約をその場で返す
-      - 開始後に `1.小売業 / 5名 3.Excelのみ 4.自動化したい` -> 未回答の `今いちばん重い業務や課題` だけを聞く
 - Open Items:
   - なし
 - Next Action:
