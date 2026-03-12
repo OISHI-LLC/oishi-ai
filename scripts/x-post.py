@@ -10,6 +10,7 @@ import tweepy
 
 JST = timezone(timedelta(hours=9))
 QUEUE_PATH = os.path.join(os.path.dirname(__file__), "..", "tasks", "x-content-queue.json")
+REPO_ROOT = os.path.join(os.path.dirname(__file__), "..")
 
 def get_client():
     return tweepy.Client(
@@ -18,6 +19,16 @@ def get_client():
         access_token=os.environ["X_ACCESS_TOKEN"],
         access_token_secret=os.environ["X_ACCESS_TOKEN_SECRET"],
     )
+
+def get_api():
+    """v1.1 API for media upload."""
+    auth = tweepy.OAuth1UserHandler(
+        os.environ["X_API_KEY"],
+        os.environ["X_API_KEY_SECRET"],
+        os.environ["X_ACCESS_TOKEN"],
+        os.environ["X_ACCESS_TOKEN_SECRET"],
+    )
+    return tweepy.API(auth)
 
 def load_queue():
     with open(QUEUE_PATH, "r", encoding="utf-8") as f:
@@ -48,7 +59,20 @@ def post_due_tweets(dry_run=False):
 
         try:
             client = get_client()
-            response = client.create_tweet(text=item["text"])
+            media_ids = None
+
+            # Upload image if specified
+            if item.get("image"):
+                image_path = os.path.join(REPO_ROOT, item["image"])
+                if os.path.exists(image_path):
+                    api = get_api()
+                    media = api.media_upload(image_path)
+                    media_ids = [media.media_id]
+                    print(f"  Uploaded media: {item['image']} -> {media.media_id}")
+                else:
+                    print(f"  Warning: image not found: {image_path}", file=sys.stderr)
+
+            response = client.create_tweet(text=item["text"], media_ids=media_ids)
             tweet_id = response.data["id"]
             item["status"] = "posted"
             item["tweet_id"] = tweet_id

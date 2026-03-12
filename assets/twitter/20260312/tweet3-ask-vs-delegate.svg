@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="tbg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDF4FF"/>
+      <stop offset="100%" stop-color="#FAE8FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="0" fill="url(#tbg3)"/>
+
+  <!-- Title -->
+  <text x="600" y="75" text-anchor="middle" font-family="sans-serif" font-size="52" font-weight="bold" fill="#1E1B4B">AIの使い方が変わった</text>
+  <text x="600" y="125" text-anchor="middle" font-family="sans-serif" font-size="34" fill="#86198F">「教えて」から「やっておいて」へ</text>
+
+  <!-- Left: Ask -->
+  <rect x="50" y="170" width="530" height="450" rx="20" fill="#fff" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="315" y="230" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#64748B">今までのAI</text>
+  <text x="315" y="270" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#64748B">「質問する」</text>
+
+  <text x="315" y="330" text-anchor="middle" font-family="sans-serif" font-size="56">🙋</text>
+  <text x="315" y="380" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">「Excelにまとめる方法は？」</text>
+  <text x="315" y="420" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E1B4B">↓</text>
+  <text x="315" y="455" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">AIが方法を教えてくれる</text>
+  <text x="315" y="495" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E1B4B">↓</text>
+  <text x="315" y="530" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#DC2626">自分で手を動かす</text>
+
+  <rect x="120" y="555" width="390" height="45" rx="10" fill="#FEE2E2"/>
+  <text x="315" y="585" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#991B1B">結局、作業は自分……</text>
+
+  <!-- Right: Delegate -->
+  <rect x="620" y="170" width="530" height="450" rx="20" fill="#fff" stroke="#16A34A" stroke-width="3"/>
+  <text x="885" y="230" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#16A34A">これからのAI</text>
+  <text x="885" y="270" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#16A34A">「任せる」</text>
+
+  <text x="885" y="330" text-anchor="middle" font-family="sans-serif" font-size="56">🤝</text>
+  <text x="885" y="380" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">「Excelにまとめて」</text>
+  <text x="885" y="420" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E1B4B">↓</text>
+  <text x="885" y="455" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">AIが実際にファイルを作成</text>
+  <text x="885" y="495" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E1B4B">↓</text>
+  <text x="885" y="530" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#16A34A">完成品を確認するだけ</text>
+
+  <rect x="690" y="555" width="390" height="45" rx="10" fill="#DCFCE7"/>
+  <text x="885" y="585" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#166534">作業ゼロで結果が届く</text>
+</svg>

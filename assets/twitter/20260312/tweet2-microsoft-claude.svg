@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="tbg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" rx="0" fill="url(#tbg2)"/>
+
+  <!-- Title -->
+  <text x="600" y="75" text-anchor="middle" font-family="sans-serif" font-size="52" font-weight="bold" fill="#1E1B4B">Microsoft × Claude 提携</text>
+  <text x="600" y="125" text-anchor="middle" font-family="sans-serif" font-size="34" fill="#1D4ED8">結局なにが変わるの？</text>
+
+  <!-- Before -->
+  <rect x="50" y="170" width="520" height="220" rx="20" fill="#fff"/>
+  <text x="310" y="215" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="bold" fill="#64748B">今まで</text>
+  <text x="310" y="265" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">AIツールを別に開いて</text>
+  <text x="310" y="305" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">コピペして</text>
+  <text x="310" y="345" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">またExcelに戻って……</text>
+  <text x="310" y="375" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#DC2626">面倒くさい</text>
+
+  <!-- Arrow -->
+  <text x="600" y="295" text-anchor="middle" font-family="sans-serif" font-size="56" fill="#1D4ED8">→</text>
+
+  <!-- After -->
+  <rect x="630" y="170" width="520" height="220" rx="20" fill="#fff" stroke="#16A34A" stroke-width="3"/>
+  <text x="890" y="215" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="bold" fill="#16A34A">これから</text>
+  <text x="890" y="265" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">ExcelやPowerPointの中で</text>
+  <text x="890" y="305" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">Claudeが直接手伝ってくれる</text>
+  <text x="890" y="345" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">ツールの行き来なし</text>
+  <text x="890" y="375" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#16A34A">開くだけでAIがそこにいる</text>
+
+  <!-- Bottom: Timeline -->
+  <rect x="50" y="430" width="1100" height="200" rx="16" fill="#fff"/>
+  <text x="600" y="475" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#1E1B4B">対応スケジュール</text>
+
+  <rect x="100" y="500" width="300" height="100" rx="12" fill="#DCFCE7"/>
+  <text x="250" y="540" text-anchor="middle" font-family="sans-serif" font-size="36">📗📙</text>
+  <text x="250" y="580" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#16A34A">Excel・PPT 提供中</text>
+
+  <rect x="450" y="500" width="300" height="100" rx="12" fill="#FEF3C7"/>
+  <text x="600" y="540" text-anchor="middle" font-family="sans-serif" font-size="36">📘</text>
+  <text x="600" y="580" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#92400E">Word 4月以降</text>
+
+  <rect x="800" y="500" width="300" height="100" rx="12" fill="#FEF3C7"/>
+  <text x="950" y="540" text-anchor="middle" font-family="sans-serif" font-size="36">📨</text>
+  <text x="950" y="580" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#92400E">Outlook/Teams 順次</text>
+</svg>
