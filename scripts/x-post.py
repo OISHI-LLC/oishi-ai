@@ -79,6 +79,14 @@ def post_due_tweets(dry_run=False):
             item["posted_at"] = now.isoformat()
             print(f"Posted id={item['id']} -> tweet {tweet_id}")
             posted += 1
+        except tweepy.errors.Forbidden as e:
+            item["status"] = "error"
+            item["error"] = str(e)
+            detail = getattr(e, 'response', None)
+            body = detail.text if detail else "no response body"
+            print(f"Error posting id={item['id']}: {e}", file=sys.stderr)
+            print(f"  Response body: {body}", file=sys.stderr)
+            print(f"  Tweet length: {len(item['text'])} chars", file=sys.stderr)
         except Exception as e:
             item["status"] = "error"
             item["error"] = str(e)
