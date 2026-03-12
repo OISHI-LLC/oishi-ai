@@ -40,7 +40,9 @@
     "scheduled": "2026-03-12T15:00:00+09:00",
     "text": "MicrosoftとAnthropicが提携を発表。AI業界ではかなり大きなニュースです。\n\n何が変わるかというと、普段使っているExcelやPowerPointの中で、Claude（AI）が直接仕事を手伝ってくれるようになります。\n\n3/11からExcelとPowerPointのアドインが提供開始。つまり「新しいAIツールを覚える」という壁が解消される。\n\n今まで：AIに聞く → 回答をコピペ → Excelに貼り付け → 手作業で整形\nこれから：Excelを開く → AIがその場でデータ分析・関数入力・グラフ作成\n\nAIが「わざわざ使いに行くもの」から「いつもの仕事道具の中にいるもの」に変わる。ExcelやPowerPointを毎日使っている方にとって、最も自然なAI導入の入口になると思います。\n\nWordは4月以降、Outlook・Teamsも順次対応予定。Office体験が大きく変わりそうです。",
     "image": "assets/twitter/20260312/tweet2-microsoft-claude.png",
-    "status": "pending"
+    "status": "posted",
+    "tweet_id": "2032003729113985453",
+    "posted_at": "2026-03-12T17:00:15.937665+09:00"
   },
   {
     "id": 31,
