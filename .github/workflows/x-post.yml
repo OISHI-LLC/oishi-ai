@@ -2,10 +2,10 @@ name: X Auto Post
 
 on:
   schedule:
-    # 2026-03-12: 11:25 JST, 14:55 JST, 17:55 JST
-    - cron: "25 2 12 3 *"
-    - cron: "55 5 12 3 *"
-    - cron: "55 8 12 3 *"
+    # 2026-03-12: 11:31 JST, 15:01 JST, 18:01 JST
+    - cron: "31 2 12 3 *"
+    - cron: "1 6 12 3 *"
+    - cron: "1 9 12 3 *"
   workflow_dispatch: # Allow manual trigger
 
 permissions:
