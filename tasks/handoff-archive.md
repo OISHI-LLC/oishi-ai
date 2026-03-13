@@ -4,6 +4,21 @@
 
 ---
 
+### 2026-03-13 21:00 JST | Agent: Claude
+- Task: 3/13 AI コーディングツール比較記事向け X 投稿 3 本の予約投稿セットアップ、未コミットローカル変更の整理・デプロイ・検証
+
+---
+
+### 2026-03-13 11:45 JST | Agent: Codex
+- Task: ブログ記事詳細ページのアイキャッチ画像が大きすぎる表示崩れを修正
+
+---
+
+### 2026-03-12 11:48 JST | Agent: GitHub Actions (自動)
+- Task: Claude Cowork 記事向け X 投稿 id=29,30,31 の自動投稿
+
+---
+
 ### 2026-03-12 04:05 JST | Agent: Codex
 - Task: Claude Code 記事向け X 投稿 3 本の結果確認と、今夜用の臨時 cron を通常運用へ戻す
 - Changed Files:
