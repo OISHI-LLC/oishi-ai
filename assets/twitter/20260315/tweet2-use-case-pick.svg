@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="70" text-anchor="middle" fill="#f1f5f9" font-size="42" font-weight="bold">用途別AIの選び方</text>
+  <text x="600" y="115" text-anchor="middle" fill="#94a3b8" font-size="26">「有名だから」ではなく、業務から逆算する</text>
+
+  <!-- Card 1: Claude -->
+  <rect x="60" y="160" width="340" height="420" rx="16" fill="#1e293b" stroke="#d97706" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="230" y="215" text-anchor="middle" fill="#d97706" font-size="36" font-weight="bold">Claude</text>
+  <line x1="100" y1="240" x2="360" y2="240" stroke="#334155" stroke-width="1.5"/>
+  <text x="230" y="285" text-anchor="middle" fill="#e2e8f0" font-size="28" font-weight="bold">契約書チェック</text>
+  <text x="230" y="320" text-anchor="middle" fill="#e2e8f0" font-size="28" font-weight="bold">経費精算</text>
+  <text x="230" y="355" text-anchor="middle" fill="#e2e8f0" font-size="28" font-weight="bold">法務・人事</text>
+  <line x1="100" y1="385" x2="360" y2="385" stroke="#334155" stroke-width="1.5"/>
+  <text x="230" y="425" text-anchor="middle" fill="#fbbf24" font-size="24">「わからない」と</text>
+  <text x="230" y="458" text-anchor="middle" fill="#fbbf24" font-size="24">正直に言ってくれる</text>
+  <rect x="120" y="490" width="220" height="60" rx="10" fill="#d97706" fill-opacity="0.15" stroke="#d97706" stroke-width="1.5"/>
+  <text x="230" y="528" text-anchor="middle" fill="#d97706" font-size="26" font-weight="bold">安全性が最強</text>
+
+  <!-- Card 2: Gemini -->
+  <rect x="430" y="160" width="340" height="420" rx="16" fill="#1e293b" stroke="#4285f4" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="600" y="215" text-anchor="middle" fill="#4285f4" font-size="36" font-weight="bold">Gemini</text>
+  <line x1="470" y1="240" x2="730" y2="240" stroke="#334155" stroke-width="1.5"/>
+  <text x="600" y="285" text-anchor="middle" fill="#e2e8f0" font-size="28" font-weight="bold">会議の議事録</text>
+  <text x="600" y="320" text-anchor="middle" fill="#e2e8f0" font-size="28" font-weight="bold">動画分析</text>
+  <text x="600" y="355" text-anchor="middle" fill="#e2e8f0" font-size="28" font-weight="bold">経営企画</text>
+  <line x1="470" y1="385" x2="730" y2="385" stroke="#334155" stroke-width="1.5"/>
+  <text x="600" y="425" text-anchor="middle" fill="#93c5fd" font-size="24">音声・動画を</text>
+  <text x="600" y="458" text-anchor="middle" fill="#93c5fd" font-size="24">直接入力できる</text>
+  <rect x="490" y="490" width="220" height="60" rx="10" fill="#4285f4" fill-opacity="0.15" stroke="#4285f4" stroke-width="1.5"/>
+  <text x="600" y="528" text-anchor="middle" fill="#4285f4" font-size="26" font-weight="bold">マルチモーダル</text>
+
+  <!-- Card 3: GPT-5.4 -->
+  <rect x="800" y="160" width="340" height="420" rx="16" fill="#1e293b" stroke="#10a37f" stroke-width="2.5" filter="url(#shadow)"/>
+  <text x="970" y="215" text-anchor="middle" fill="#10a37f" font-size="36" font-weight="bold">GPT-5.4</text>
+  <line x1="840" y1="240" x2="1100" y2="240" stroke="#334155" stroke-width="1.5"/>
+  <text x="970" y="285" text-anchor="middle" fill="#e2e8f0" font-size="28" font-weight="bold">営業メール</text>
+  <text x="970" y="320" text-anchor="middle" fill="#e2e8f0" font-size="28" font-weight="bold">SNS投稿</text>
+  <text x="970" y="355" text-anchor="middle" fill="#e2e8f0" font-size="28" font-weight="bold">マーケティング</text>
+  <line x1="840" y1="385" x2="1100" y2="385" stroke="#334155" stroke-width="1.5"/>
+  <text x="970" y="425" text-anchor="middle" fill="#6ee7b7" font-size="24">テンプレート・</text>
+  <text x="970" y="458" text-anchor="middle" fill="#6ee7b7" font-size="24">プラグインが豊富</text>
+  <rect x="860" y="490" width="220" height="60" rx="10" fill="#10a37f" fill-opacity="0.15" stroke="#10a37f" stroke-width="1.5"/>
+  <text x="970" y="528" text-anchor="middle" fill="#10a37f" font-size="26" font-weight="bold">エコシステム</text>
+
+  <!-- Footer -->
+  <text x="600" y="640" text-anchor="middle" fill="#64748b" font-size="22">一番よく使う業務から逆算して選ぶのが正解</text>
+</svg>
