@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1050">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FAF5FF"/>
+      <stop offset="100%" stop-color="#F3E8FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1050" fill="url(#bg4)"/>
+
+  <!-- Title -->
+  <text x="600" y="65" text-anchor="middle" font-family="sans-serif" font-size="48" font-weight="bold" fill="#0F172A">あなたに合うのはどれ？</text>
+  <text x="600" y="110" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#7C3AED">タイプ別おすすめガイド</text>
+
+  <!-- Row 1 -->
+  <rect x="50" y="145" width="1100" height="150" rx="16" fill="#fff" stroke="#6366F1" stroke-width="2"/>
+  <rect x="50" y="145" width="80" height="150" rx="16" fill="#6366F1"/>
+  <rect x="110" y="145" width="20" height="150" fill="#6366F1"/>
+  <text x="90" y="235" text-anchor="middle" font-family="sans-serif" font-size="48" fill="#fff">1</text>
+  <text x="160" y="195" font-family="sans-serif" font-size="32" font-weight="bold" fill="#1E293B">まず無料で試したい人</text>
+  <text x="160" y="235" font-family="sans-serif" font-size="30" fill="#6B7280">→ GitHub Copilot Free（月0円）がベスト</text>
+  <text x="160" y="275" font-family="sans-serif" font-size="28" fill="#6B7280">月2,000回の補完＋50回チャット。十分お試しできる。</text>
+
+  <!-- Row 2 -->
+  <rect x="50" y="315" width="1100" height="150" rx="16" fill="#fff" stroke="#10B981" stroke-width="2"/>
+  <rect x="50" y="315" width="80" height="150" rx="16" fill="#10B981"/>
+  <rect x="110" y="315" width="20" height="150" fill="#10B981"/>
+  <text x="90" y="405" text-anchor="middle" font-family="sans-serif" font-size="48" fill="#fff">2</text>
+  <text x="160" y="365" font-family="sans-serif" font-size="32" font-weight="bold" fill="#1E293B">書きながらサポートが欲しい人</text>
+  <text x="160" y="405" font-family="sans-serif" font-size="30" fill="#6B7280">→ Cursor Pro（月$20）がベスト</text>
+  <text x="160" y="445" font-family="sans-serif" font-size="28" fill="#6B7280">Tab補完＋Agent Mode。エディタの中で全部完結。</text>
+
+  <!-- Row 3 -->
+  <rect x="50" y="485" width="1100" height="150" rx="16" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="50" y="485" width="80" height="150" rx="16" fill="#F59E0B"/>
+  <rect x="110" y="485" width="20" height="150" fill="#F59E0B"/>
+  <text x="90" y="575" text-anchor="middle" font-family="sans-serif" font-size="48" fill="#fff">3</text>
+  <text x="160" y="535" font-family="sans-serif" font-size="32" font-weight="bold" fill="#1E293B">AIに大きな仕事を任せたい人</text>
+  <text x="160" y="575" font-family="sans-serif" font-size="30" fill="#6B7280">→ Claude Code（月$20〜）がベスト</text>
+  <text x="160" y="615" font-family="sans-serif" font-size="28" fill="#6B7280">「バグ直して」で完了。自律型エージェントが最強。</text>
+
+  <!-- Row 4 -->
+  <rect x="50" y="655" width="1100" height="150" rx="16" fill="#fff" stroke="#EC4899" stroke-width="2"/>
+  <rect x="50" y="655" width="80" height="150" rx="16" fill="#EC4899"/>
+  <rect x="110" y="655" width="20" height="150" fill="#EC4899"/>
+  <text x="90" y="745" text-anchor="middle" font-family="sans-serif" font-size="48" fill="#fff">4</text>
+  <text x="160" y="705" font-family="sans-serif" font-size="32" font-weight="bold" fill="#1E293B">最強の環境を作りたい人</text>
+  <text x="160" y="745" font-family="sans-serif" font-size="30" fill="#6B7280">→ Cursor + Claude Code 併用（月$40）</text>
+  <text x="160" y="785" font-family="sans-serif" font-size="28" fill="#6B7280">日常コーディングはCursor、大仕事はClaude Code。</text>
+
+  <!-- Row 5 -->
+  <rect x="50" y="825" width="1100" height="150" rx="16" fill="#fff" stroke="#0EA5E9" stroke-width="2"/>
+  <rect x="50" y="825" width="80" height="150" rx="16" fill="#0EA5E9"/>
+  <rect x="110" y="825" width="20" height="150" fill="#0EA5E9"/>
+  <text x="90" y="915" text-anchor="middle" font-family="sans-serif" font-size="48" fill="#fff">5</text>
+  <text x="160" y="875" font-family="sans-serif" font-size="32" font-weight="bold" fill="#1E293B">チーム導入を検討中の人</text>
+  <text x="160" y="915" font-family="sans-serif" font-size="30" fill="#6B7280">→ GitHub Copilot Business（$19/ユーザー/月）</text>
+  <text x="160" y="955" font-family="sans-serif" font-size="28" fill="#6B7280">管理機能・導入実績・コスパのバランスが最も良い。</text>
+</svg>

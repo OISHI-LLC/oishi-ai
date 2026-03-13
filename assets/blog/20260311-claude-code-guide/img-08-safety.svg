@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ECFDF5"/>
+      <stop offset="100%" stop-color="#D1FAE5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" rx="24" fill="url(#bg8)"/>
+  <text x="600" y="48" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#1E1B4B">安心して使うための 3つのルール</text>
+  <text x="600" y="76" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#166534">Claude Code は安全設計。でもこの3つは覚えておこう</text>
+
+  <!-- Rule 1 -->
+  <rect x="40" y="100" width="360" height="270" rx="16" fill="#fff"/>
+  <text x="220" y="155" text-anchor="middle" font-family="sans-serif" font-size="48">🛡️</text>
+  <text x="220" y="195" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1E1B4B">変更前に必ず確認が出る</text>
+  <text x="220" y="228" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">ファイルを変更するときは</text>
+  <text x="220" y="250" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">必ず「これでいい？」と聞かれます</text>
+  <text x="220" y="272" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">勝手に変えられる心配はありません</text>
+
+  <rect x="80" y="295" width="280" height="50" rx="10" fill="#ECFDF5"/>
+  <text x="220" y="316" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">わからなければ「やめて」</text>
+  <text x="220" y="336" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">と言えばキャンセルできます</text>
+
+  <!-- Rule 2 -->
+  <rect x="420" y="100" width="360" height="270" rx="16" fill="#fff"/>
+  <text x="600" y="155" text-anchor="middle" font-family="sans-serif" font-size="48">🔒</text>
+  <text x="600" y="195" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1E1B4B">パスワードは見せない</text>
+  <text x="600" y="228" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">パスワードやAPIキーが</text>
+  <text x="600" y="250" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">書かれたファイルは</text>
+  <text x="600" y="272" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">「読まないで」と設定できます</text>
+
+  <rect x="460" y="295" width="280" height="50" rx="10" fill="#ECFDF5"/>
+  <text x="600" y="316" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">.env ファイルなどは</text>
+  <text x="600" y="336" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">アクセス禁止にしておこう</text>
+
+  <!-- Rule 3 -->
+  <rect x="800" y="100" width="360" height="270" rx="16" fill="#fff"/>
+  <text x="980" y="155" text-anchor="middle" font-family="sans-serif" font-size="48">👀</text>
+  <text x="980" y="195" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1E1B4B">結果は自分の目で見る</text>
+  <text x="980" y="228" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">Claude Code が提案した変更は</text>
+  <text x="980" y="250" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">ざっとでいいので目を通しましょう</text>
+  <text x="980" y="272" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">完璧に読めなくてもOK</text>
+
+  <rect x="840" y="295" width="280" height="50" rx="10" fill="#ECFDF5"/>
+  <text x="980" y="316" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">「なぜこう変えたの？」と</text>
+  <text x="980" y="336" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">聞けば説明してくれます</text>
+</svg>

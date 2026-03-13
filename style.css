@@ -820,6 +820,8 @@ section {
   color: var(--text-1);
   letter-spacing: -0.025em;
   margin-bottom: 8px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--border);
 }
 
 .blog-header p {

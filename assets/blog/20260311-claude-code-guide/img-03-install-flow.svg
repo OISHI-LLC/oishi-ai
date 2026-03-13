@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="440" rx="24" fill="url(#bg3)"/>
+  <text x="600" y="48" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#1E1B4B">インストールから初回起動まで</text>
+
+  <!-- Step 1 -->
+  <rect x="40" y="80" width="260" height="320" rx="16" fill="#fff"/>
+  <circle cx="170" cy="120" r="28" fill="#2563EB" opacity="0.15"/>
+  <text x="170" y="129" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#2563EB">1</text>
+  <text x="170" y="170" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1E1B4B">インストール</text>
+  <rect x="65" y="195" width="210" height="36" rx="8" fill="#1E293B"/>
+  <text x="170" y="218" text-anchor="middle" font-family="monospace" font-size="11" fill="#22D3EE">curl -fsSL https://</text>
+  <text x="170" y="232" text-anchor="middle" font-family="monospace" font-size="11" fill="#22D3EE">claude.ai/install.sh | bash</text>
+  <text x="170" y="275" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">ネイティブインストール推奨</text>
+  <text x="170" y="295" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">Homebrew / WinGet も可</text>
+  <rect x="65" y="320" width="210" height="48" rx="8" fill="#EFF6FF"/>
+  <text x="170" y="340" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2563EB" font-weight="bold">npm は非推奨（deprecated）</text>
+  <text x="170" y="358" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B7280">互換性が必要な場合のみ</text>
+
+  <!-- Arrow -->
+  <path d="M310 240 L340 240" stroke="#2563EB" stroke-width="2"/>
+  <polygon points="340,234 350,240 340,246" fill="#2563EB"/>
+
+  <!-- Step 2 -->
+  <rect x="350" y="80" width="220" height="320" rx="16" fill="#fff"/>
+  <circle cx="460" cy="120" r="28" fill="#2563EB" opacity="0.15"/>
+  <text x="460" y="129" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#2563EB">2</text>
+  <text x="460" y="170" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1E1B4B">プロジェクトへ移動</text>
+  <rect x="375" y="195" width="170" height="32" rx="8" fill="#1E293B"/>
+  <text x="460" y="216" text-anchor="middle" font-family="monospace" font-size="13" fill="#22D3EE">cd your-project</text>
+  <text x="460" y="265" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">作業したいプロジェクトの</text>
+  <text x="460" y="285" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">ディレクトリに移動</text>
+
+  <!-- Arrow -->
+  <path d="M580 240 L610 240" stroke="#2563EB" stroke-width="2"/>
+  <polygon points="610,234 620,240 610,246" fill="#2563EB"/>
+
+  <!-- Step 3 -->
+  <rect x="620" y="80" width="220" height="320" rx="16" fill="#fff"/>
+  <circle cx="730" cy="120" r="28" fill="#2563EB" opacity="0.15"/>
+  <text x="730" y="129" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#2563EB">3</text>
+  <text x="730" y="170" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1E1B4B">起動 + ログイン</text>
+  <rect x="655" y="195" width="150" height="32" rx="8" fill="#1E293B"/>
+  <text x="730" y="216" text-anchor="middle" font-family="monospace" font-size="13" fill="#22D3EE">claude</text>
+  <text x="730" y="265" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">初回はブラウザで</text>
+  <text x="730" y="285" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">ログインを求められる</text>
+  <rect x="655" y="310" width="150" height="32" rx="8" fill="#1E293B"/>
+  <text x="730" y="331" text-anchor="middle" font-family="monospace" font-size="13" fill="#22D3EE">/login</text>
+  <text x="730" y="370" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B7280">アカウント切替はこちら</text>
+
+  <!-- Arrow -->
+  <path d="M850 240 L880 240" stroke="#2563EB" stroke-width="2"/>
+  <polygon points="880,234 890,240 880,246" fill="#2563EB"/>
+
+  <!-- Step 4 -->
+  <rect x="890" y="80" width="270" height="320" rx="16" fill="#fff" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="1025" cy="120" r="28" fill="#2563EB" opacity="0.15"/>
+  <text x="1025" y="129" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#2563EB">4</text>
+  <text x="1025" y="170" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1E1B4B">初日に覚えること</text>
+  <rect x="920" y="195" width="210" height="32" rx="8" fill="#1E293B"/>
+  <text x="1025" y="216" text-anchor="middle" font-family="monospace" font-size="13" fill="#22D3EE">claude</text>
+  <text x="1080" y="216" font-family="sans-serif" font-size="11" fill="#94A3B8">セッション開始</text>
+  <rect x="920" y="240" width="210" height="32" rx="8" fill="#1E293B"/>
+  <text x="1025" y="261" text-anchor="middle" font-family="monospace" font-size="13" fill="#22D3EE">/help</text>
+  <text x="1080" y="261" font-family="sans-serif" font-size="11" fill="#94A3B8">操作一覧</text>
+  <rect x="920" y="285" width="210" height="32" rx="8" fill="#1E293B"/>
+  <text x="1025" y="306" text-anchor="middle" font-family="monospace" font-size="13" fill="#22D3EE">/login</text>
+  <text x="1080" y="306" font-family="sans-serif" font-size="11" fill="#94A3B8">アカウント切替</text>
+  <rect x="920" y="340" width="210" height="44" rx="10" fill="#EFF6FF"/>
+  <text x="1025" y="367" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2563EB">この3つだけで始められる</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="520" rx="24" fill="url(#bg1)"/>
+  <text x="600" y="50" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#1E1B4B">通常のチャットAI vs Claude Code</text>
+
+  <!-- Chat AI side -->
+  <rect x="60" y="80" width="520" height="400" rx="16" fill="#fff" stroke="#C4B5FD" stroke-width="2"/>
+  <rect x="60" y="80" width="520" height="56" rx="16" fill="#7C3AED"/>
+  <rect x="60" y="110" width="520" height="26" fill="#7C3AED"/>
+  <text x="320" y="116" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#fff">通常のチャットAI</text>
+
+  <!-- Chat AI items -->
+  <circle cx="110" cy="180" r="18" fill="#EDE9FE"/>
+  <text x="110" y="186" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#7C3AED">💬</text>
+  <text x="145" y="185" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">前提：会話中心</text>
+
+  <circle cx="110" cy="230" r="18" fill="#EDE9FE"/>
+  <text x="110" y="236" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#7C3AED">📋</text>
+  <text x="145" y="235" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">対象：貼り付けたコードや文章</text>
+
+  <circle cx="110" cy="280" r="18" fill="#EDE9FE"/>
+  <text x="110" y="286" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#7C3AED">⚡</text>
+  <text x="145" y="285" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">できること：説明、提案、コード生成</text>
+
+  <circle cx="110" cy="330" r="18" fill="#EDE9FE"/>
+  <text x="110" y="336" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#7C3AED">🎯</text>
+  <text x="145" y="335" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">強み：アイデア出し、相談、文章化</text>
+
+  <rect x="100" y="380" width="440" height="70" rx="12" fill="#F5F3FF"/>
+  <text x="320" y="410" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">コードの断片を貼って相談する体験</text>
+  <text x="320" y="432" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">→ 回答を受け取り、自分で適用する</text>
+
+  <!-- Arrow -->
+  <text x="600" y="290" text-anchor="middle" font-family="sans-serif" font-size="36" fill="#7C3AED">→</text>
+
+  <!-- Claude Code side -->
+  <rect x="620" y="80" width="520" height="400" rx="16" fill="#fff" stroke="#7C3AED" stroke-width="2"/>
+  <rect x="620" y="80" width="520" height="56" rx="16" fill="#7C3AED"/>
+  <rect x="620" y="110" width="520" height="26" fill="#7C3AED"/>
+  <text x="880" y="116" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#fff">Claude Code</text>
+
+  <!-- Claude Code items -->
+  <circle cx="670" cy="180" r="18" fill="#EDE9FE"/>
+  <text x="670" y="186" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#7C3AED">🔧</text>
+  <text x="705" y="185" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">前提：作業中心</text>
+
+  <circle cx="670" cy="230" r="18" fill="#EDE9FE"/>
+  <text x="670" y="236" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#7C3AED">📂</text>
+  <text x="705" y="235" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">対象：プロジェクト全体</text>
+
+  <circle cx="670" cy="280" r="18" fill="#EDE9FE"/>
+  <text x="670" y="286" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#7C3AED">🚀</text>
+  <text x="705" y="285" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">できること：探索、編集、コマンド実行、Git</text>
+
+  <circle cx="670" cy="330" r="18" fill="#EDE9FE"/>
+  <text x="670" y="336" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#7C3AED">💪</text>
+  <text x="705" y="335" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">強み：開発作業の前進と自動化</text>
+
+  <rect x="660" y="380" width="440" height="70" rx="12" fill="#F5F3FF"/>
+  <text x="880" y="410" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">プロジェクト全体を読みながら一緒に作業</text>
+  <text x="880" y="432" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">→ 探索・編集・実行まで一気通貫</text>
+</svg>

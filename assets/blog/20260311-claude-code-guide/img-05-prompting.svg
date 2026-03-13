@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0F9FF"/>
+      <stop offset="100%" stop-color="#E0F2FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="520" rx="24" fill="url(#bg5)"/>
+  <text x="600" y="48" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#1E1B4B">初心者向け 頼み方テンプレート 4型</text>
+  <text x="600" y="76" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#0369A1">コツ：「いきなり作らせる」より「先に読ませる」</text>
+
+  <!-- 型1 -->
+  <rect x="40" y="100" width="270" height="390" rx="16" fill="#fff"/>
+  <rect x="40" y="100" width="270" height="50" rx="16" fill="#0284C7"/>
+  <rect x="40" y="125" width="270" height="25" fill="#0284C7"/>
+  <text x="175" y="132" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff">型1: まず理解させる</text>
+  <rect x="60" y="170" width="230" height="80" rx="8" fill="#F0F9FF"/>
+  <text x="175" y="195" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">「このプロジェクトの役割を</text>
+  <text x="175" y="213" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">要約してください。主要ファイルと</text>
+  <text x="175" y="231" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">読むべき順番も教えて」</text>
+  <text x="175" y="285" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284C7">目的</text>
+  <text x="175" y="310" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">コードベースの全体像を</text>
+  <text x="175" y="330" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">短時間で把握する</text>
+  <rect x="60" y="360" width="230" height="36" rx="8" fill="#DCFCE7"/>
+  <text x="175" y="383" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">新規参画時に最適</text>
+  <rect x="60" y="410" width="230" height="56" rx="8" fill="#FEF3C7"/>
+  <text x="175" y="432" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400E">探索コストが急激に下がる</text>
+  <text x="175" y="452" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400E">= Claude Code最大の強み</text>
+
+  <!-- 型2 -->
+  <rect x="330" y="100" width="270" height="390" rx="16" fill="#fff"/>
+  <rect x="330" y="100" width="270" height="50" rx="16" fill="#0284C7"/>
+  <rect x="330" y="125" width="270" height="25" fill="#0284C7"/>
+  <text x="465" y="132" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff">型2: 原因を絞る</text>
+  <rect x="350" y="170" width="230" height="80" rx="8" fill="#F0F9FF"/>
+  <text x="465" y="195" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">「ログイン失敗時に空白画面に</text>
+  <text x="465" y="213" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">なる不具合。関連ファイルを探し</text>
+  <text x="465" y="231" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">原因候補を3つに絞って」</text>
+  <text x="465" y="285" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284C7">目的</text>
+  <text x="465" y="310" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">修正の前に原因を</text>
+  <text x="465" y="330" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">特定・整理する</text>
+  <rect x="350" y="360" width="230" height="36" rx="8" fill="#DCFCE7"/>
+  <text x="465" y="383" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">バグ修正の初手に最適</text>
+  <rect x="350" y="410" width="230" height="56" rx="8" fill="#FEF3C7"/>
+  <text x="465" y="432" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400E">いきなり直させるより</text>
+  <text x="465" y="452" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400E">精度と安全性が大幅UP</text>
+
+  <!-- 型3 -->
+  <rect x="620" y="100" width="270" height="390" rx="16" fill="#fff"/>
+  <rect x="620" y="100" width="270" height="50" rx="16" fill="#0284C7"/>
+  <rect x="620" y="125" width="270" height="25" fill="#0284C7"/>
+  <text x="755" y="132" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff">型3: 小さく実装</text>
+  <rect x="640" y="170" width="230" height="80" rx="8" fill="#F0F9FF"/>
+  <text x="755" y="195" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">「問い合わせフォームの必須</text>
+  <text x="755" y="213" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">チェックを追加。変更対象は</text>
+  <text x="755" y="231" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">最小限にして確認観点も出して」</text>
+  <text x="755" y="285" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284C7">目的</text>
+  <text x="755" y="310" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">影響範囲を最小化しつつ</text>
+  <text x="755" y="330" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">確実に実装する</text>
+  <rect x="640" y="360" width="230" height="36" rx="8" fill="#DCFCE7"/>
+  <text x="755" y="383" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">日常の小改修に最適</text>
+  <rect x="640" y="410" width="230" height="56" rx="8" fill="#FEF3C7"/>
+  <text x="755" y="432" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400E">検証条件を与えることで</text>
+  <text x="755" y="452" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400E">結果の質が大幅に変わる</text>
+
+  <!-- 型4 -->
+  <rect x="910" y="100" width="270" height="390" rx="16" fill="#fff"/>
+  <rect x="910" y="100" width="270" height="50" rx="16" fill="#0284C7"/>
+  <rect x="910" y="125" width="270" height="25" fill="#0284C7"/>
+  <text x="1045" y="132" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#fff">型4: 計画だけ出す</text>
+  <rect x="930" y="170" width="230" height="80" rx="8" fill="#F0F9FF"/>
+  <text x="1045" y="195" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">「コードは変更せず、改修に</text>
+  <text x="1045" y="213" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">必要なファイル、影響範囲、</text>
+  <text x="1045" y="231" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">確認手順だけを整理して」</text>
+  <text x="1045" y="285" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#0284C7">目的</text>
+  <text x="1045" y="310" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">実装前にリスクと</text>
+  <text x="1045" y="330" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">手順を見通す</text>
+  <rect x="930" y="360" width="230" height="36" rx="8" fill="#DCFCE7"/>
+  <text x="1045" y="383" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">大きめの改修前に最適</text>
+  <rect x="930" y="410" width="230" height="56" rx="8" fill="#FEF3C7"/>
+  <text x="1045" y="432" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400E">まず計画 → 納得したら実行</text>
+  <text x="1045" y="452" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400E">安全かつ効率的</text>
+</svg>

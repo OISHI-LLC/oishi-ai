@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500">
+  <defs>
+    <linearGradient id="bg3b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="500" rx="24" fill="url(#bg3b)"/>
+  <text x="800" y="55" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1E1B4B">マルチエージェントシステムの仕組み</text>
+  <!-- Orchestrator (center top) -->
+  <rect x="580" y="90" width="440" height="100" rx="16" fill="#7C3AED"/>
+  <circle cx="640" cy="140" r="22" fill="#fff" opacity="0.2"/>
+  <path d="M630 140 L640 130 L650 140 M640 130 L640 152" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="820" y="133" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#fff">オーケストレーター</text>
+  <text x="820" y="162" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#fff" opacity="0.85">タスク分解・割り当て・統合</text>
+  <!-- Arrows from orchestrator to agents -->
+  <path d="M660 190 L300 260" stroke="#7C3AED" stroke-width="2.5" opacity="0.5"/>
+  <polygon points="300,253 295,268 308,262" fill="#7C3AED" opacity="0.5"/>
+  <path d="M800 190 L800 260" stroke="#7C3AED" stroke-width="2.5" opacity="0.5"/>
+  <polygon points="792,260 800,280 808,260" fill="#7C3AED" opacity="0.5"/>
+  <path d="M940 190 L1300 260" stroke="#7C3AED" stroke-width="2.5" opacity="0.5"/>
+  <polygon points="1292,262 1305,268 1300,253" fill="#7C3AED" opacity="0.5"/>
+  <!-- Agent 1: Research -->
+  <rect x="100" y="280" width="380" height="180" rx="16" fill="#fff"/>
+  <rect x="100" y="280" width="380" height="45" rx="16" fill="#7C3AED" opacity="0.1"/>
+  <circle cx="160" cy="303" r="14" fill="#7C3AED" opacity="0.3"/>
+  <path d="M155 298 L165 308 M165 298 L165 308 L155 308" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+  <text x="310" y="309" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7C3AED">調査エージェント</text>
+  <text x="290" y="355" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">Web検索・情報収集</text>
+  <text x="290" y="380" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">データ取得・要約</text>
+  <text x="290" y="405" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">ファクトチェック</text>
+  <rect x="170" y="420" width="240" height="28" rx="14" fill="#F5F3FF"/>
+  <text x="290" y="440" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#7C3AED">ツール: 検索API / スクレイピング</text>
+  <!-- Agent 2: Analysis -->
+  <rect x="610" y="280" width="380" height="180" rx="16" fill="#fff"/>
+  <rect x="610" y="280" width="380" height="45" rx="16" fill="#7C3AED" opacity="0.1"/>
+  <circle cx="670" cy="303" r="14" fill="#7C3AED" opacity="0.3"/>
+  <rect x="662" y="296" width="16" height="14" rx="2" fill="none" stroke="#7C3AED" stroke-width="2"/>
+  <line x1="666" y1="303" x2="674" y2="303" stroke="#7C3AED" stroke-width="1.5"/>
+  <line x1="666" y1="307" x2="674" y2="307" stroke="#7C3AED" stroke-width="1.5"/>
+  <text x="820" y="309" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7C3AED">分析エージェント</text>
+  <text x="800" y="355" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">データ加工・統計処理</text>
+  <text x="800" y="380" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">パターン認識・予測</text>
+  <text x="800" y="405" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">レポート生成</text>
+  <rect x="680" y="420" width="240" height="28" rx="14" fill="#F5F3FF"/>
+  <text x="800" y="440" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#7C3AED">ツール: Python / SQL / BI</text>
+  <!-- Agent 3: Action -->
+  <rect x="1120" y="280" width="380" height="180" rx="16" fill="#fff"/>
+  <rect x="1120" y="280" width="380" height="45" rx="16" fill="#7C3AED" opacity="0.1"/>
+  <circle cx="1180" cy="303" r="14" fill="#7C3AED" opacity="0.3"/>
+  <path d="M1173 298 L1187 298 L1187 308 L1173 308 Z" fill="none" stroke="#7C3AED" stroke-width="2"/>
+  <path d="M1176 302 L1184 302" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+  <text x="1330" y="309" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7C3AED">実行エージェント</text>
+  <text x="1310" y="355" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">メール送信・予約登録</text>
+  <text x="1310" y="380" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">システム操作・API連携</text>
+  <text x="1310" y="405" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">ファイル作成・更新</text>
+  <rect x="1190" y="420" width="240" height="28" rx="14" fill="#F5F3FF"/>
+  <text x="1310" y="440" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#7C3AED">ツール: メール / CRM / ERP</text>
+  <!-- Bidirectional arrows between agents -->
+  <path d="M480 370 L610 370" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <path d="M990 370 L1120 370" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="800" y="490" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">複数のエージェントが協調して複雑なタスクを自律的に完遂する</text>
+</svg>

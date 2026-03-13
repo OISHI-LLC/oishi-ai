@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0FDF4"/>
+      <stop offset="100%" stop-color="#DCFCE7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" rx="24" fill="url(#bg2)"/>
+  <text x="600" y="48" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#1E1B4B">始める前に用意するもの</text>
+  <text x="600" y="78" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#166534">たった3つだけ！</text>
+
+  <!-- Item 1 -->
+  <rect x="60" y="105" width="340" height="265" rx="16" fill="#fff"/>
+  <text x="230" y="160" text-anchor="middle" font-family="sans-serif" font-size="48">💻</text>
+  <text x="230" y="200" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1B4B">パソコン</text>
+  <text x="230" y="232" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">Mac でも Windows でもOK</text>
+  <text x="230" y="256" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">メモリは4GB以上あれば大丈夫</text>
+  <rect x="110" y="280" width="240" height="36" rx="8" fill="#DCFCE7"/>
+  <text x="230" y="304" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">ほとんどのPCで使えます</text>
+  <rect x="110" y="325" width="240" height="28" rx="6" fill="#F0FDF4"/>
+  <text x="230" y="344" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B7280">8GB以上あるとより快適</text>
+
+  <!-- Item 2 -->
+  <rect x="430" y="105" width="340" height="265" rx="16" fill="#fff"/>
+  <text x="600" y="160" text-anchor="middle" font-family="sans-serif" font-size="48">🌐</text>
+  <text x="600" y="200" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1B4B">インターネット</text>
+  <text x="600" y="232" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">Wi-Fi でもスマホのテザリングでも</text>
+  <text x="600" y="256" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">ネットにつながればOK</text>
+  <rect x="480" y="280" width="240" height="36" rx="8" fill="#DCFCE7"/>
+  <text x="600" y="304" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">オフラインでは使えません</text>
+
+  <!-- Item 3 -->
+  <rect x="800" y="105" width="340" height="265" rx="16" fill="#fff"/>
+  <text x="970" y="160" text-anchor="middle" font-family="sans-serif" font-size="48">🔑</text>
+  <text x="970" y="200" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1B4B">有料アカウント</text>
+  <text x="970" y="232" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">Claude Pro（月額 $20）など</text>
+  <text x="970" y="256" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">無料プランでは使えません</text>
+  <rect x="850" y="280" width="240" height="36" rx="8" fill="#FEF3C7"/>
+  <text x="970" y="304" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#92400E">有料プランが必要です</text>
+  <rect x="850" y="325" width="240" height="28" rx="6" fill="#F0FDF4"/>
+  <text x="970" y="344" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6B7280">claude.com/pricing で確認</text>
+</svg>

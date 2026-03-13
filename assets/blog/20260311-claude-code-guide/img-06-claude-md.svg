@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDF4FF"/>
+      <stop offset="100%" stop-color="#FAE8FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="460" rx="24" fill="url(#bg6)"/>
+  <text x="600" y="48" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#1E1B4B">CLAUDE.md と Auto Memory の使い分け</text>
+  <text x="600" y="76" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#86198F">2つは「競合」ではなく「補完」の関係</text>
+
+  <!-- CLAUDE.md -->
+  <rect x="40" y="100" width="540" height="330" rx="16" fill="#fff" stroke="#A855F7" stroke-width="2"/>
+  <rect x="40" y="100" width="540" height="56" rx="16" fill="#A855F7"/>
+  <rect x="40" y="130" width="540" height="26" fill="#A855F7"/>
+  <text x="310" y="135" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#fff">CLAUDE.md</text>
+
+  <text x="80" y="190" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">書く人：人間</text>
+  <text x="80" y="220" font-family="sans-serif" font-size="15" fill="#6B7280">ルール、指示、運用方針を明示的に記述</text>
+
+  <text x="80" y="255" font-family="sans-serif" font-size="14" font-weight="bold" fill="#A855F7">書くべき内容：</text>
+  <text x="100" y="280" font-family="sans-serif" font-size="14" fill="#374151">- よく使うテストコマンド</text>
+  <text x="100" y="302" font-family="sans-serif" font-size="14" fill="#374151">- Lint / 型チェックの実行方法</text>
+  <text x="100" y="324" font-family="sans-serif" font-size="14" fill="#374151">- 触ってはいけないディレクトリ</text>
+  <text x="100" y="346" font-family="sans-serif" font-size="14" fill="#374151">- チームの命名規則・ブランチ運用</text>
+
+  <rect x="70" y="370" width="480" height="40" rx="10" fill="#FDF4FF"/>
+  <text x="310" y="396" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#A855F7">短く、具体的で、運用に効く内容に絞る</text>
+
+  <!-- 中央の矢印 -->
+  <text x="600" y="280" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#A855F7">⇄</text>
+  <text x="600" y="310" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#86198F">補完関係</text>
+
+  <!-- Auto Memory -->
+  <rect x="620" y="100" width="540" height="330" rx="16" fill="#fff" stroke="#06B6D4" stroke-width="2"/>
+  <rect x="620" y="100" width="540" height="56" rx="16" fill="#06B6D4"/>
+  <rect x="620" y="130" width="540" height="26" fill="#06B6D4"/>
+  <text x="890" y="135" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#fff">Auto Memory</text>
+
+  <text x="660" y="190" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">書く人：Claude（自動）</text>
+  <text x="660" y="220" font-family="sans-serif" font-size="15" fill="#6B7280">作業から学んだパターンや気付きを蓄積</text>
+
+  <text x="660" y="255" font-family="sans-serif" font-size="14" font-weight="bold" fill="#06B6D4">蓄積される内容：</text>
+  <text x="680" y="280" font-family="sans-serif" font-size="14" fill="#374151">- ビルドコマンドの最適解</text>
+  <text x="680" y="302" font-family="sans-serif" font-size="14" fill="#374151">- デバッグの癖やパターン</text>
+  <text x="680" y="324" font-family="sans-serif" font-size="14" fill="#374151">- プロジェクト固有の調査履歴</text>
+  <text x="680" y="346" font-family="sans-serif" font-size="14" fill="#374151">- よく使うファイルパスの記憶</text>
+
+  <rect x="650" y="370" width="480" height="40" rx="10" fill="#ECFEFF"/>
+  <text x="890" y="396" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#06B6D4">毎回ゼロから始めない仕組み</text>
+</svg>

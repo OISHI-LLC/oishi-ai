@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 500">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="500" rx="24" fill="url(#bg3)"/>
+  <text x="800" y="55" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1E1B4B">上位6%企業の4つの成功要因</text>
+  <!-- Factor 1 -->
+  <rect x="60" y="90" width="350" height="370" rx="16" fill="#fff"/>
+  <!-- Gear/process icon -->
+  <circle cx="235" cy="160" r="30" fill="#7C3AED" opacity="0.15"/>
+  <circle cx="235" cy="160" r="15" fill="none" stroke="#7C3AED" stroke-width="2.5"/>
+  <path d="M235 140 L235 135 M235 180 L235 185 M215 160 L210 160 M255 160 L260 160 M221 146 L217 142 M249 174 L253 178 M249 146 L253 142 M221 174 L217 178" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="235" y="220" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">業務プロセスの</text>
+  <text x="235" y="250" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">再設計</text>
+  <line x1="185" y1="275" x2="285" y2="275" stroke="#7C3AED" stroke-width="2" opacity="0.3"/>
+  <text x="235" y="305" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">AIを貼り付けるのではなく</text>
+  <text x="235" y="330" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">AIありきでフローを</text>
+  <text x="235" y="355" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">作り直す</text>
+  <rect x="120" y="385" width="230" height="36" rx="18" fill="#7C3AED" opacity="0.1"/>
+  <text x="235" y="409" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#7C3AED">最大の成功要因</text>
+  <!-- Factor 2 -->
+  <rect x="430" y="90" width="350" height="370" rx="16" fill="#fff"/>
+  <!-- Growth arrow icon -->
+  <circle cx="605" cy="160" r="30" fill="#7C3AED" opacity="0.15"/>
+  <path d="M585 175 L605 150 L625 165" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M605 150 L625 150 L625 165" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+  <text x="605" y="220" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">効率化+成長を</text>
+  <text x="605" y="250" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">ゴールに設定</text>
+  <line x1="555" y1="275" x2="655" y2="275" stroke="#7C3AED" stroke-width="2" opacity="0.3"/>
+  <text x="605" y="305" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">コスト削減だけでなく</text>
+  <text x="605" y="330" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">売上成長・イノベーションも</text>
+  <text x="605" y="355" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">AIの目的に含める</text>
+  <rect x="490" y="385" width="230" height="36" rx="18" fill="#7C3AED" opacity="0.1"/>
+  <text x="605" y="409" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#7C3AED">攻めと守りの両立</text>
+  <!-- Factor 3 -->
+  <rect x="800" y="90" width="350" height="370" rx="16" fill="#fff"/>
+  <!-- Network icon -->
+  <circle cx="975" cy="160" r="30" fill="#7C3AED" opacity="0.15"/>
+  <circle cx="960" cy="148" r="6" fill="#7C3AED"/>
+  <circle cx="990" cy="148" r="6" fill="#7C3AED"/>
+  <circle cx="975" cy="175" r="6" fill="#7C3AED"/>
+  <line x1="960" y1="148" x2="990" y2="148" stroke="#7C3AED" stroke-width="1.5"/>
+  <line x1="960" y1="148" x2="975" y2="175" stroke="#7C3AED" stroke-width="1.5"/>
+  <line x1="990" y1="148" x2="975" y2="175" stroke="#7C3AED" stroke-width="1.5"/>
+  <text x="975" y="220" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">複数領域に</text>
+  <text x="975" y="250" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">横展開</text>
+  <line x1="925" y1="275" x2="1025" y2="275" stroke="#7C3AED" stroke-width="2" opacity="0.3"/>
+  <text x="975" y="305" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">1部署に閉じず</text>
+  <text x="975" y="330" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">営業・サポート・経理等</text>
+  <text x="975" y="355" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">横断的に活用</text>
+  <rect x="860" y="385" width="230" height="36" rx="18" fill="#7C3AED" opacity="0.1"/>
+  <text x="975" y="409" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#7C3AED">3倍の変革的活用</text>
+  <!-- Factor 4 -->
+  <rect x="1170" y="90" width="350" height="370" rx="16" fill="#fff"/>
+  <!-- Database icon -->
+  <circle cx="1345" cy="160" r="30" fill="#7C3AED" opacity="0.15"/>
+  <ellipse cx="1345" cy="148" rx="16" ry="8" fill="none" stroke="#7C3AED" stroke-width="2"/>
+  <path d="M1329 148 L1329 172 Q1345 182 1361 172 L1361 148" fill="none" stroke="#7C3AED" stroke-width="2"/>
+  <ellipse cx="1345" cy="160" rx="16" ry="8" fill="none" stroke="#7C3AED" stroke-width="1.5" opacity="0.5"/>
+  <text x="1345" y="220" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">データ品質に</text>
+  <text x="1345" y="250" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">継続投資</text>
+  <line x1="1295" y1="275" x2="1395" y2="275" stroke="#7C3AED" stroke-width="2" opacity="0.3"/>
+  <text x="1345" y="305" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">AIの出力品質は</text>
+  <text x="1345" y="330" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">入力データの質で決まる</text>
+  <text x="1345" y="355" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">整理・統合に投資</text>
+  <rect x="1230" y="385" width="230" height="36" rx="18" fill="#7C3AED" opacity="0.1"/>
+  <text x="1345" y="409" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#7C3AED">データ = AIの燃料</text>
+  <text x="800" y="488" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#9CA3AF">出典：McKinsey "The State of AI in 2025"</text>
+</svg>

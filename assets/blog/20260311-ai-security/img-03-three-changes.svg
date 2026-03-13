@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 480">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="480" rx="24" fill="url(#bg3)"/>
+  <text x="800" y="55" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1E1B4B">AIセキュリティがもたらす3つの変化</text>
+
+  <!-- Card 1: 民主化 -->
+  <rect x="60" y="90" width="470" height="360" rx="16" fill="#fff"/>
+  <rect x="60" y="90" width="470" height="50" rx="16" fill="#7C3AED" opacity="0.1"/>
+  <text x="295" y="123" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#7C3AED">変化1</text>
+
+  <!-- Magnifying glass icon -->
+  <circle cx="295" cy="185" r="25" fill="none" stroke="#7C3AED" stroke-width="3"/>
+  <line x1="313" y1="203" x2="328" y2="218" stroke="#7C3AED" stroke-width="3" stroke-linecap="round"/>
+
+  <text x="295" y="240" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">脆弱性スキャンの民主化</text>
+  <text x="295" y="280" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">従来：専門家に数百万円で依頼</text>
+  <rect x="130" y="295" width="330" height="4" rx="2" fill="#E2E8F0"/>
+  <text x="295" y="330" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7C3AED">AI：約60万円・2週間で</text>
+  <text x="295" y="358" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7C3AED">6,000ファイルを網羅監査</text>
+  <text x="295" y="400" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">中小企業でも月額数千円〜</text>
+  <text x="295" y="425" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">数万円で定期スキャンが可能に</text>
+
+  <!-- Arrow 1->2 -->
+  <path d="M545 270 L565 270" stroke="#7C3AED" stroke-width="2"/>
+  <polygon points="565,264 575,270 565,276" fill="#7C3AED"/>
+
+  <!-- Card 2: リアルタイム検知 -->
+  <rect x="565" y="90" width="470" height="360" rx="16" fill="#fff"/>
+  <rect x="565" y="90" width="470" height="50" rx="16" fill="#7C3AED" opacity="0.1"/>
+  <text x="800" y="123" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#7C3AED">変化2</text>
+
+  <!-- Eye/monitor icon -->
+  <ellipse cx="800" cy="185" rx="30" ry="18" fill="none" stroke="#7C3AED" stroke-width="3"/>
+  <circle cx="800" cy="185" r="8" fill="#7C3AED"/>
+
+  <text x="800" y="240" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">リアルタイム脅威検知</text>
+  <text x="800" y="280" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">従来：定期検査のみ・人手不足</text>
+  <rect x="635" y="295" width="330" height="4" rx="2" fill="#E2E8F0"/>
+  <text x="800" y="330" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7C3AED">AI：24時間365日</text>
+  <text x="800" y="358" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7C3AED">自動監視・即座にアラート</text>
+  <text x="800" y="400" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">67%の組織がエージェント型AIを</text>
+  <text x="800" y="425" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">セキュリティ運用に導入済み</text>
+
+  <!-- Arrow 2->3 -->
+  <path d="M1050 270 L1070 270" stroke="#7C3AED" stroke-width="2"/>
+  <polygon points="1070,264 1080,270 1070,276" fill="#7C3AED"/>
+
+  <!-- Card 3: 自動対応 -->
+  <rect x="1070" y="90" width="470" height="360" rx="16" fill="#fff"/>
+  <rect x="1070" y="90" width="470" height="50" rx="16" fill="#7C3AED" opacity="0.1"/>
+  <text x="1305" y="123" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#7C3AED">変化3</text>
+
+  <!-- Lightning bolt icon -->
+  <path d="M1295 165 L1305 180 L1315 180 L1305 205 L1318 185 L1308 185 Z" fill="#7C3AED"/>
+
+  <text x="1305" y="240" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#1E1B4B">検知から対応まで自動化</text>
+  <text x="1305" y="280" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">従来：検知→人間が分析→数時間後に対応</text>
+  <rect x="1140" y="295" width="330" height="4" rx="2" fill="#E2E8F0"/>
+  <text x="1305" y="330" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7C3AED">AI：検知→分析→隔離→報告</text>
+  <text x="1305" y="358" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7C3AED">すべて自動で即座に完了</text>
+  <text x="1305" y="400" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">人間が気づく前に</text>
+  <text x="1305" y="425" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#6B7280">AIが対処を完了</text>
+</svg>

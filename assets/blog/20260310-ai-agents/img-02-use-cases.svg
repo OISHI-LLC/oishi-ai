@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 480">
+  <defs>
+    <linearGradient id="bg2b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="480" rx="24" fill="url(#bg2b)"/>
+  <text x="800" y="55" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1E1B4B">AIエージェントの3大活用領域</text>
+  <!-- Use Case 1: Customer Support -->
+  <rect x="60" y="90" width="480" height="350" rx="16" fill="#fff" opacity="0.9"/>
+  <circle cx="300" cy="155" r="35" fill="#7C3AED" opacity="0.15"/>
+  <!-- Headset icon -->
+  <path d="M285 145 Q285 130 300 130 Q315 130 315 145" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="280" y="145" width="8" height="16" rx="3" fill="#7C3AED"/>
+  <rect x="312" y="145" width="8" height="16" rx="3" fill="#7C3AED"/>
+  <path d="M320 158 Q320 170 310 170 L305 170" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round"/>
+  <text x="300" y="215" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1E1B4B">カスタマーサポート</text>
+  <line x1="200" y1="235" x2="400" y2="235" stroke="#7C3AED" stroke-width="2" opacity="0.3"/>
+  <text x="300" y="270" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">問い合わせ内容を自動分類</text>
+  <text x="300" y="300" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">回答の検索・生成・送信</text>
+  <text x="300" y="330" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">エスカレーション判断も自動</text>
+  <rect x="175" y="365" width="250" height="36" rx="18" fill="#7C3AED" opacity="0.1"/>
+  <text x="300" y="389" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#7C3AED">対応時間 最大70%削減</text>
+  <!-- Use Case 2: Data Analysis -->
+  <rect x="560" y="90" width="480" height="350" rx="16" fill="#fff" opacity="0.9"/>
+  <circle cx="800" cy="155" r="35" fill="#7C3AED" opacity="0.15"/>
+  <!-- Chart icon -->
+  <rect x="783" y="155" width="8" height="20" rx="2" fill="#7C3AED"/>
+  <rect x="796" y="140" width="8" height="35" rx="2" fill="#7C3AED"/>
+  <rect x="809" y="148" width="8" height="27" rx="2" fill="#7C3AED"/>
+  <line x1="780" y1="175" x2="820" y2="175" stroke="#7C3AED" stroke-width="2"/>
+  <text x="800" y="215" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1E1B4B">データ分析・レポート</text>
+  <line x1="700" y1="235" x2="900" y2="235" stroke="#7C3AED" stroke-width="2" opacity="0.3"/>
+  <text x="800" y="270" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">複数データソースを自動統合</text>
+  <text x="800" y="300" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">異常値検知と原因分析</text>
+  <text x="800" y="330" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">定型レポートを自動作成</text>
+  <rect x="675" y="365" width="250" height="36" rx="18" fill="#7C3AED" opacity="0.1"/>
+  <text x="800" y="389" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#7C3AED">分析工数 週10時間→1時間</text>
+  <!-- Use Case 3: IT Infrastructure -->
+  <rect x="1060" y="90" width="480" height="350" rx="16" fill="#fff" opacity="0.9"/>
+  <circle cx="1300" cy="155" r="35" fill="#7C3AED" opacity="0.15"/>
+  <!-- Server icon -->
+  <rect x="1283" y="135" width="34" height="14" rx="3" fill="none" stroke="#7C3AED" stroke-width="2"/>
+  <circle cx="1310" cy="142" r="3" fill="#7C3AED"/>
+  <rect x="1283" y="153" width="34" height="14" rx="3" fill="none" stroke="#7C3AED" stroke-width="2"/>
+  <circle cx="1310" cy="160" r="3" fill="#7C3AED"/>
+  <rect x="1283" y="171" width="34" height="14" rx="3" fill="none" stroke="#7C3AED" stroke-width="2"/>
+  <circle cx="1310" cy="178" r="3" fill="#7C3AED"/>
+  <text x="1300" y="215" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1E1B4B">IT運用・監視</text>
+  <line x1="1200" y1="235" x2="1400" y2="235" stroke="#7C3AED" stroke-width="2" opacity="0.3"/>
+  <text x="1300" y="270" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">システム異常を自動検知</text>
+  <text x="1300" y="300" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">原因特定と復旧を自律実行</text>
+  <text x="1300" y="330" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">セキュリティ脅威に即時対応</text>
+  <rect x="1175" y="365" width="250" height="36" rx="18" fill="#7C3AED" opacity="0.1"/>
+  <text x="1300" y="389" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#7C3AED">MTTR 平均60%短縮</text>
+  <text x="800" y="468" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#9CA3AF">出典：McKinsey "The State of AI in 2025" / Gartner 2025 Predictions</text>
+</svg>

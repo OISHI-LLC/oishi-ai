@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="440" rx="24" fill="url(#bg5)"/>
+  <text x="600" y="48" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#1E1B4B">はじめの一歩 — まずこれだけ試してみよう</text>
+
+  <!-- Step 1 -->
+  <rect x="40" y="85" width="270" height="330" rx="16" fill="#fff"/>
+  <circle cx="175" cy="125" r="24" fill="#F59E0B" opacity="0.15"/>
+  <text x="175" y="133" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#F59E0B">1</text>
+  <text x="175" y="175" text-anchor="middle" font-family="sans-serif" font-size="36">👋</text>
+  <text x="175" y="210" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1E1B4B">まず挨拶する</text>
+  <text x="175" y="240" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">「このフォルダの中身を</text>
+  <text x="175" y="260" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">教えてください」</text>
+  <rect x="70" y="285" width="210" height="50" rx="10" fill="#FFFBEB"/>
+  <text x="175" y="305" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#92400E">何が入っているか</text>
+  <text x="175" y="325" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#92400E">説明してくれます</text>
+  <rect x="70" y="350" width="210" height="40" rx="8" fill="#DCFCE7"/>
+  <text x="175" y="376" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">所要時間：1分</text>
+
+  <!-- Step 2 -->
+  <rect x="340" y="85" width="270" height="330" rx="16" fill="#fff"/>
+  <circle cx="475" cy="125" r="24" fill="#F59E0B" opacity="0.15"/>
+  <text x="475" y="133" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#F59E0B">2</text>
+  <text x="475" y="175" text-anchor="middle" font-family="sans-serif" font-size="36">🔍</text>
+  <text x="475" y="210" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1E1B4B">質問してみる</text>
+  <text x="475" y="240" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">「一番大事なファイルは</text>
+  <text x="475" y="260" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">どれですか？」</text>
+  <rect x="370" y="285" width="210" height="50" rx="10" fill="#FFFBEB"/>
+  <text x="475" y="305" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#92400E">中身を読んで</text>
+  <text x="475" y="325" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#92400E">答えてくれます</text>
+  <rect x="370" y="350" width="210" height="40" rx="8" fill="#DCFCE7"/>
+  <text x="475" y="376" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">所要時間：2〜3分</text>
+
+  <!-- Step 3 -->
+  <rect x="640" y="85" width="270" height="330" rx="16" fill="#fff"/>
+  <circle cx="775" cy="125" r="24" fill="#F59E0B" opacity="0.15"/>
+  <text x="775" y="133" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#F59E0B">3</text>
+  <text x="775" y="175" text-anchor="middle" font-family="sans-serif" font-size="36">✏️</text>
+  <text x="775" y="210" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1E1B4B">小さなお願いをする</text>
+  <text x="775" y="240" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">「READMEファイルに</text>
+  <text x="775" y="260" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">説明を書いてください」</text>
+  <rect x="670" y="285" width="210" height="50" rx="10" fill="#FFFBEB"/>
+  <text x="775" y="305" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#92400E">ファイルを作成・編集</text>
+  <text x="775" y="325" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#92400E">してくれます</text>
+  <rect x="670" y="350" width="210" height="40" rx="8" fill="#DCFCE7"/>
+  <text x="775" y="376" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">所要時間：5分</text>
+
+  <!-- Step 4 -->
+  <rect x="940" y="85" width="220" height="330" rx="16" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="1050" cy="125" r="24" fill="#F59E0B" opacity="0.15"/>
+  <text x="1050" y="133" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#F59E0B">4</text>
+  <text x="1050" y="175" text-anchor="middle" font-family="sans-serif" font-size="36">✅</text>
+  <text x="1050" y="210" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1E1B4B">確認する</text>
+  <text x="1050" y="240" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">変更内容を見て</text>
+  <text x="1050" y="260" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#6B7280">OKなら承認</text>
+  <rect x="960" y="285" width="180" height="70" rx="10" fill="#F5F3FF"/>
+  <text x="1050" y="312" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#7C3AED">Claude Code は</text>
+  <text x="1050" y="332" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#7C3AED">勝手には変更しません</text>
+  <text x="1050" y="352" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#7C3AED">必ず確認を求めます</text>
+  <rect x="960" y="370" width="180" height="30" rx="8" fill="#DCFCE7"/>
+  <text x="1050" y="390" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">安心！</text>
+</svg>

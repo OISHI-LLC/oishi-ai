@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0FDF4"/>
+      <stop offset="100%" stop-color="#DCFCE7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg3)"/>
+
+  <!-- Title -->
+  <text x="600" y="65" text-anchor="middle" font-family="sans-serif" font-size="48" font-weight="bold" fill="#0F172A">Cursor × Claude Code 併用ワークフロー</text>
+  <text x="600" y="110" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#16A34A">月$40で「最強の組み合わせ」が手に入る</text>
+
+  <!-- Left: Cursor zone -->
+  <rect x="50" y="150" width="530" height="700" rx="20" fill="#fff" stroke="#10B981" stroke-width="3"/>
+  <rect x="50" y="150" width="530" height="70" rx="20" fill="#10B981"/>
+  <rect x="50" y="200" width="530" height="20" fill="#10B981"/>
+  <text x="315" y="197" text-anchor="middle" font-family="sans-serif" font-size="36" font-weight="bold" fill="#fff">Cursor で担当する作業</text>
+
+  <text x="315" y="260" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#059669" font-weight="bold">日常のコーディング</text>
+
+  <rect x="90" y="285" width="450" height="105" rx="12" fill="#ECFDF5"/>
+  <text x="115" y="318" font-family="sans-serif" font-size="34" fill="#374151">✏️ コードを書きながらTab補完</text>
+  <text x="115" y="358" font-family="sans-serif" font-size="30" fill="#6B7280">→ 1行ずつサクサク進む</text>
+
+  <rect x="90" y="405" width="450" height="105" rx="12" fill="#ECFDF5"/>
+  <text x="115" y="438" font-family="sans-serif" font-size="34" fill="#374151">🐛 小さなバグ修正</text>
+  <text x="115" y="478" font-family="sans-serif" font-size="30" fill="#6B7280">→ その場で即座に対応</text>
+
+  <rect x="90" y="525" width="450" height="105" rx="12" fill="#ECFDF5"/>
+  <text x="115" y="558" font-family="sans-serif" font-size="34" fill="#374151">💬 コードの意味を質問</text>
+  <text x="115" y="598" font-family="sans-serif" font-size="30" fill="#6B7280">→ エディタ内チャットで確認</text>
+
+  <rect x="90" y="645" width="450" height="105" rx="12" fill="#ECFDF5"/>
+  <text x="115" y="678" font-family="sans-serif" font-size="34" fill="#374151">🎨 UI/デザインの微調整</text>
+  <text x="115" y="718" font-family="sans-serif" font-size="30" fill="#6B7280">→ プレビューを見ながら修正</text>
+
+  <rect x="90" y="770" width="450" height="55" rx="10" fill="#D1FAE5"/>
+  <text x="315" y="805" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="bold" fill="#065F46">Cursor Pro $20/月</text>
+
+  <!-- Right: Claude Code zone -->
+  <rect x="620" y="150" width="530" height="700" rx="20" fill="#fff" stroke="#F59E0B" stroke-width="3"/>
+  <rect x="620" y="150" width="530" height="70" rx="20" fill="#F59E0B"/>
+  <rect x="620" y="200" width="530" height="20" fill="#F59E0B"/>
+  <text x="885" y="197" text-anchor="middle" font-family="sans-serif" font-size="36" font-weight="bold" fill="#fff">Claude Code で担当する作業</text>
+
+  <text x="885" y="260" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#D97706" font-weight="bold">大きなタスク・自動化</text>
+
+  <rect x="660" y="285" width="450" height="105" rx="12" fill="#FFFBEB"/>
+  <text x="685" y="318" font-family="sans-serif" font-size="34" fill="#374151">🔧 大規模リファクタリング</text>
+  <text x="685" y="358" font-family="sans-serif" font-size="30" fill="#6B7280">→ 10+ファイルを一括変更</text>
+
+  <rect x="660" y="405" width="450" height="105" rx="12" fill="#FFFBEB"/>
+  <text x="685" y="438" font-family="sans-serif" font-size="34" fill="#374151">🧪 テスト自動生成</text>
+  <text x="685" y="478" font-family="sans-serif" font-size="30" fill="#6B7280">→ 全ファイルのテストを作成</text>
+
+  <rect x="660" y="525" width="450" height="105" rx="12" fill="#FFFBEB"/>
+  <text x="685" y="558" font-family="sans-serif" font-size="34" fill="#374151">🏗️ 新機能の一括実装</text>
+  <text x="685" y="598" font-family="sans-serif" font-size="30" fill="#6B7280">→ 設計から実装まで自律実行</text>
+
+  <rect x="660" y="645" width="450" height="105" rx="12" fill="#FFFBEB"/>
+  <text x="685" y="678" font-family="sans-serif" font-size="34" fill="#374151">🔍 コードベース調査</text>
+  <text x="685" y="718" font-family="sans-serif" font-size="30" fill="#6B7280">→ 「この処理どこ？」を即解決</text>
+
+  <rect x="660" y="770" width="450" height="55" rx="10" fill="#FEF3C7"/>
+  <text x="885" y="805" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="bold" fill="#92400E">Claude Pro $20/月</text>
+</svg>

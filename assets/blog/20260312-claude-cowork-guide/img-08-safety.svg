@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100">
+  <defs>
+    <linearGradient id="bg8c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ECFDF5"/>
+      <stop offset="100%" stop-color="#D1FAE5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1100" rx="24" fill="url(#bg8c)"/>
+  <text x="600" y="68" text-anchor="middle" font-family="sans-serif" font-size="52" font-weight="bold" fill="#1E1B4B">安全に使うための 4つのルール</text>
+  <text x="600" y="115" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#166534">Coworkは安全設計。でもこの4つは覚えておこう</text>
+
+  <!-- Row 1 -->
+  <!-- Rule 1 -->
+  <rect x="40" y="155" width="560" height="420" rx="20" fill="#fff"/>
+  <text x="320" y="240" text-anchor="middle" font-family="sans-serif" font-size="72">📂</text>
+  <text x="320" y="300" text-anchor="middle" font-family="sans-serif" font-size="40" font-weight="bold" fill="#1E1B4B">許可フォルダだけ</text>
+  <text x="320" y="345" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">あなたが指定した</text>
+  <text x="320" y="380" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">フォルダにしかアクセスしません</text>
+  <rect x="80" y="410" width="480" height="120" rx="14" fill="#ECFDF5"/>
+  <text x="320" y="450" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">パソコン全体を</text>
+  <text x="320" y="485" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">見られる心配なし</text>
+  <text x="320" y="520" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#166534">作業に必要なフォルダだけ指定</text>
+
+  <!-- Rule 2 -->
+  <rect x="620" y="155" width="540" height="420" rx="20" fill="#fff"/>
+  <text x="890" y="240" text-anchor="middle" font-family="sans-serif" font-size="72">🗑️</text>
+  <text x="890" y="300" text-anchor="middle" font-family="sans-serif" font-size="40" font-weight="bold" fill="#1E1B4B">削除は必ず確認</text>
+  <text x="890" y="345" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">ファイルを消すときは</text>
+  <text x="890" y="380" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">「削除していい？」と必ず聞かれます</text>
+  <rect x="660" y="410" width="460" height="120" rx="14" fill="#ECFDF5"/>
+  <text x="890" y="450" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">勝手にファイルが</text>
+  <text x="890" y="485" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">消える心配なし</text>
+  <text x="890" y="520" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#166534">確認して初めて実行されます</text>
+
+  <!-- Row 2 -->
+  <!-- Rule 3 -->
+  <rect x="40" y="605" width="560" height="450" rx="20" fill="#fff"/>
+  <text x="320" y="690" text-anchor="middle" font-family="sans-serif" font-size="72">💾</text>
+  <text x="320" y="750" text-anchor="middle" font-family="sans-serif" font-size="40" font-weight="bold" fill="#1E1B4B">バックアップ推奨</text>
+  <text x="320" y="795" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">大切なファイルは</text>
+  <text x="320" y="830" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">事前にコピーを取っておきましょう</text>
+  <rect x="80" y="860" width="480" height="120" rx="14" fill="#ECFDF5"/>
+  <text x="320" y="900" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">まだリサーチ</text>
+  <text x="320" y="935" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">プレビュー段階</text>
+  <text x="320" y="970" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#166534">練習用フォルダで試そう</text>
+
+  <!-- Rule 4 -->
+  <rect x="620" y="605" width="540" height="450" rx="20" fill="#fff"/>
+  <text x="890" y="690" text-anchor="middle" font-family="sans-serif" font-size="72">🔒</text>
+  <text x="890" y="750" text-anchor="middle" font-family="sans-serif" font-size="40" font-weight="bold" fill="#1E1B4B">秘密は見せない</text>
+  <text x="890" y="795" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">パスワードやAPIキーの</text>
+  <text x="890" y="830" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">ファイルは作業フォルダに含めない</text>
+  <rect x="660" y="860" width="460" height="120" rx="14" fill="#ECFDF5"/>
+  <text x="890" y="900" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">機密ファイルは</text>
+  <text x="890" y="935" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">別の場所に保管</text>
+  <text x="890" y="970" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#166534">見せなければ安全です</text>
+</svg>

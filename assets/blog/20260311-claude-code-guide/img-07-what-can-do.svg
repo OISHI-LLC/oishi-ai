@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500">
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDF4FF"/>
+      <stop offset="100%" stop-color="#FAE8FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="500" rx="24" fill="url(#bg7)"/>
+  <text x="600" y="48" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#1E1B4B">Claude Code でできること 5選</text>
+  <text x="600" y="76" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#86198F">初心者でも今日からすぐ使える機能</text>
+
+  <!-- 1 -->
+  <rect x="40" y="100" width="220" height="370" rx="16" fill="#fff"/>
+  <text x="150" y="150" text-anchor="middle" font-family="sans-serif" font-size="40">📂</text>
+  <text x="150" y="185" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">中身を教えてもらう</text>
+  <text x="150" y="215" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">プロジェクトの</text>
+  <text x="150" y="235" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">構造や役割を</text>
+  <text x="150" y="255" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">わかりやすく説明</text>
+  <rect x="60" y="280" width="180" height="56" rx="10" fill="#FDF4FF"/>
+  <text x="150" y="302" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#86198F">「このプロジェクトは</text>
+  <text x="150" y="322" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#86198F">何をするもの？」</text>
+  <rect x="60" y="355" width="180" height="36" rx="8" fill="#DCFCE7"/>
+  <text x="150" y="378" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">難易度：超かんたん</text>
+  <rect x="60" y="405" width="180" height="44" rx="8" fill="#F0FDF4"/>
+  <text x="150" y="424" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#166534">初めてのプロジェクトを</text>
+  <text x="150" y="441" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#166534">理解するのに最適</text>
+
+  <!-- 2 -->
+  <rect x="280" y="100" width="220" height="370" rx="16" fill="#fff"/>
+  <text x="390" y="150" text-anchor="middle" font-family="sans-serif" font-size="40">🐛</text>
+  <text x="390" y="185" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">バグを見つけて直す</text>
+  <text x="390" y="215" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">エラーの原因を</text>
+  <text x="390" y="235" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">探して、修正案を</text>
+  <text x="390" y="255" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">出してくれる</text>
+  <rect x="300" y="280" width="180" height="56" rx="10" fill="#FDF4FF"/>
+  <text x="390" y="302" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#86198F">「画面が真っ白になる</text>
+  <text x="390" y="322" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#86198F">原因を探して」</text>
+  <rect x="300" y="355" width="180" height="36" rx="8" fill="#DCFCE7"/>
+  <text x="390" y="378" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">難易度：かんたん</text>
+  <rect x="300" y="405" width="180" height="44" rx="8" fill="#F0FDF4"/>
+  <text x="390" y="424" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#166534">一人で探すより</text>
+  <text x="390" y="441" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#166534">圧倒的に速い</text>
+
+  <!-- 3 -->
+  <rect x="520" y="100" width="220" height="370" rx="16" fill="#fff"/>
+  <text x="630" y="150" text-anchor="middle" font-family="sans-serif" font-size="40">📝</text>
+  <text x="630" y="185" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">ファイルを作る・直す</text>
+  <text x="630" y="215" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">新しいファイルの作成</text>
+  <text x="630" y="235" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">既存ファイルの修正</text>
+  <text x="630" y="255" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">どちらもお任せ</text>
+  <rect x="540" y="280" width="180" height="56" rx="10" fill="#FDF4FF"/>
+  <text x="630" y="302" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#86198F">「READMEに使い方を</text>
+  <text x="630" y="322" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#86198F">書いてください」</text>
+  <rect x="540" y="355" width="180" height="36" rx="8" fill="#DCFCE7"/>
+  <text x="630" y="378" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16A34A">難易度：かんたん</text>
+  <rect x="540" y="405" width="180" height="44" rx="8" fill="#F0FDF4"/>
+  <text x="630" y="424" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#166534">地味だけど</text>
+  <text x="630" y="441" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#166534">ものすごく便利</text>
+
+  <!-- 4 -->
+  <rect x="760" y="100" width="220" height="370" rx="16" fill="#fff"/>
+  <text x="870" y="150" text-anchor="middle" font-family="sans-serif" font-size="40">🧪</text>
+  <text x="870" y="185" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">テストを追加する</text>
+  <text x="870" y="215" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">コードが正しく</text>
+  <text x="870" y="235" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">動くかの確認用</text>
+  <text x="870" y="255" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">テストを自動作成</text>
+  <rect x="780" y="280" width="180" height="56" rx="10" fill="#FDF4FF"/>
+  <text x="870" y="302" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#86198F">「この機能のテストを</text>
+  <text x="870" y="322" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#86198F">書いてください」</text>
+  <rect x="780" y="355" width="180" height="36" rx="8" fill="#FEF3C7"/>
+  <text x="870" y="378" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#92400E">難易度：ふつう</text>
+  <rect x="780" y="405" width="180" height="44" rx="8" fill="#F0FDF4"/>
+  <text x="870" y="424" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#166534">安心して開発を</text>
+  <text x="870" y="441" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#166534">進められるように</text>
+
+  <!-- 5 -->
+  <rect x="1000" y="100" width="160" height="370" rx="16" fill="#fff"/>
+  <text x="1080" y="150" text-anchor="middle" font-family="sans-serif" font-size="40">💾</text>
+  <text x="1080" y="185" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1E1B4B">Git操作</text>
+  <text x="1080" y="215" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">変更の保存</text>
+  <text x="1080" y="235" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">履歴の確認</text>
+  <text x="1080" y="255" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">も手伝える</text>
+  <rect x="1010" y="280" width="140" height="56" rx="10" fill="#FDF4FF"/>
+  <text x="1080" y="302" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#86198F">「変更を保存</text>
+  <text x="1080" y="322" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#86198F">して」</text>
+  <rect x="1010" y="355" width="140" height="36" rx="8" fill="#FEF3C7"/>
+  <text x="1080" y="378" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#92400E">難易度：ふつう</text>
+</svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 480">
+  <defs>
+    <linearGradient id="bg1a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="480" rx="24" fill="url(#bg1a)"/>
+  <text x="800" y="55" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1E1B4B">従来AI vs AIエージェント</text>
+  <!-- Left: Traditional AI -->
+  <rect x="80" y="85" width="660" height="360" rx="16" fill="#fff"/>
+  <rect x="80" y="85" width="660" height="50" rx="16" fill="#94A3B8" opacity="0.15"/>
+  <text x="410" y="118" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#64748B">従来のAI（ChatGPT等）</text>
+  <!-- Flow: Human -> AI -> Human -> AI... -->
+  <text x="180" y="175" font-family="sans-serif" font-size="17" fill="#6B7280">人間が質問</text>
+  <path d="M290 170 L340 170" stroke="#94A3B8" stroke-width="2"/>
+  <polygon points="340,163 360,170 340,177" fill="#94A3B8"/>
+  <text x="380" y="175" font-family="sans-serif" font-size="17" fill="#6B7280">AIが回答</text>
+  <path d="M480 170 L530 170" stroke="#94A3B8" stroke-width="2"/>
+  <polygon points="530,163 550,170 530,177" fill="#94A3B8"/>
+  <text x="570" y="175" font-family="sans-serif" font-size="17" fill="#6B7280">人間が作業...</text>
+  <!-- Labels -->
+  <rect x="140" y="210" width="540" height="45" rx="10" fill="#F1F5F9"/>
+  <text x="410" y="239" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#64748B">毎回、指示→回答→手作業の繰り返し</text>
+  <text x="410" y="295" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">入力: 具体的な質問 1つずつ</text>
+  <text x="410" y="325" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">出力: テキストの回答</text>
+  <text x="410" y="355" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">ツール操作: 人間が行う</text>
+  <text x="410" y="385" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">判断: 人間が毎回判断</text>
+  <text x="410" y="425" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#64748B">= 優秀な翻訳者</text>
+  <!-- Arrow between -->
+  <path d="M770 265 L830 265" stroke="#7C3AED" stroke-width="3"/>
+  <polygon points="830,255 860,265 830,275" fill="#7C3AED"/>
+  <!-- Right: AI Agent -->
+  <rect x="860" y="85" width="660" height="360" rx="16" fill="#fff"/>
+  <rect x="860" y="85" width="660" height="50" rx="16" fill="#7C3AED" opacity="0.15"/>
+  <text x="1190" y="118" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#7C3AED">AIエージェント</text>
+  <!-- Flow: Human gives goal -> AI does everything -->
+  <text x="960" y="175" font-family="sans-serif" font-size="17" fill="#6B7280">人間がゴール設定</text>
+  <path d="M1120 170 L1170 170" stroke="#7C3AED" stroke-width="2"/>
+  <polygon points="1170,163 1190,170 1170,177" fill="#7C3AED"/>
+  <text x="1210" y="175" font-family="sans-serif" font-size="17" font-weight="bold" fill="#7C3AED">AIが全部やる</text>
+  <rect x="920" y="210" width="540" height="45" rx="10" fill="#F5F3FF"/>
+  <text x="1190" y="239" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#7C3AED">計画→ツール使用→実行→完了を自律的に</text>
+  <text x="1190" y="295" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">入力: 達成したいゴール</text>
+  <text x="1190" y="325" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">出力: タスクの完了</text>
+  <text x="1190" y="355" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">ツール操作: AIが自動で実行</text>
+  <text x="1190" y="385" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">判断: AIが状況に応じて判断</text>
+  <text x="1190" y="425" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7C3AED">= 自走する新入社員</text>
+</svg>

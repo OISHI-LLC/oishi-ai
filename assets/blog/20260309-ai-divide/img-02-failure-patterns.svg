@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 480">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="480" rx="24" fill="url(#bg2)"/>
+  <text x="800" y="55" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1E1B4B">成果が出ない企業の3つの共通点</text>
+  <!-- Pattern 1 -->
+  <rect x="60" y="90" width="480" height="350" rx="16" fill="#fff" opacity="0.9"/>
+  <circle cx="300" cy="155" r="35" fill="#FEE2E2"/>
+  <text x="300" y="163" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#DC2626">1</text>
+  <text x="300" y="215" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1E1B4B">貼り付け型</text>
+  <text x="300" y="260" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">既存業務にAIを追加するだけ</text>
+  <text x="300" y="290" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">非効率なプロセスが</text>
+  <text x="300" y="315" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">速く回るだけで成果なし</text>
+  <!-- Warning icon (triangle) -->
+  <path d="M280 360 L300 330 L320 360 Z" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="300" y="356" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#DC2626">!</text>
+  <text x="300" y="400" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#DC2626">最も多い失敗パターン</text>
+  <!-- Pattern 2 -->
+  <rect x="560" y="90" width="480" height="350" rx="16" fill="#fff" opacity="0.9"/>
+  <circle cx="800" cy="155" r="35" fill="#FEF3C7"/>
+  <text x="800" y="163" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#D97706">2</text>
+  <text x="800" y="215" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1E1B4B">実験止まり</text>
+  <text x="800" y="260" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">PoCで「面白い」で終わり</text>
+  <text x="800" y="290" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">全社展開の計画がなく</text>
+  <text x="800" y="315" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">一部チームの趣味で終了</text>
+  <!-- Clock icon -->
+  <circle cx="800" cy="355" r="18" fill="none" stroke="#D97706" stroke-width="2"/>
+  <path d="M800 342 L800 355 L810 360" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round"/>
+  <text x="800" y="400" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#D97706">3分の2がこの段階</text>
+  <!-- Pattern 3 -->
+  <rect x="1060" y="90" width="480" height="350" rx="16" fill="#fff" opacity="0.9"/>
+  <circle cx="1300" cy="155" r="35" fill="#DBEAFE"/>
+  <text x="1300" y="163" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#2563EB">3</text>
+  <text x="1300" y="215" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1E1B4B">経営不在</text>
+  <text x="1300" y="260" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">AI活用をIT部門に丸投げ</text>
+  <text x="1300" y="290" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">経営戦略との接続がなく</text>
+  <text x="1300" y="315" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">投資判断ができない</text>
+  <!-- Person icon -->
+  <circle cx="1300" cy="348" r="10" fill="none" stroke="#2563EB" stroke-width="2"/>
+  <path d="M1280 380 Q1300 365 1320 380" fill="none" stroke="#2563EB" stroke-width="2"/>
+  <text x="1300" y="400" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2563EB">上位6%は経営層が関与</text>
+</svg>

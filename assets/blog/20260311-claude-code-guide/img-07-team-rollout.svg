@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440">
+  <defs>
+    <linearGradient id="bg7" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0FDF4"/>
+      <stop offset="100%" stop-color="#DCFCE7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="440" rx="24" fill="url(#bg7)"/>
+  <text x="600" y="48" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#1E1B4B">チーム導入の3段階ロードマップ</text>
+  <text x="600" y="76" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#166534">順序を守ることが定着の鍵</text>
+
+  <!-- Step 1 -->
+  <rect x="40" y="100" width="350" height="310" rx="16" fill="#fff"/>
+  <circle cx="215" cy="145" r="32" fill="#16A34A" opacity="0.15"/>
+  <text x="215" y="155" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#16A34A">1</text>
+  <text x="215" y="200" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1B4B">個人で小さく試す</text>
+
+  <rect x="70" y="220" width="290" height="44" rx="8" fill="#F0FDF4"/>
+  <text x="215" y="240" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">1人 or 少人数で</text>
+  <text x="215" y="258" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">テスト追加・軽微修正・調査補助</text>
+
+  <text x="215" y="295" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">確認すべきこと</text>
+  <text x="215" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">「精度」ではなく</text>
+  <text x="215" y="340" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">「どの作業で本当に</text>
+  <text x="215" y="360" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">時間短縮が起きるか」</text>
+
+  <rect x="70" y="375" width="290" height="24" rx="6" fill="#DCFCE7"/>
+  <text x="215" y="392" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#166534">期間目安：1〜2週間</text>
+
+  <!-- Arrow 1->2 -->
+  <path d="M400 255 L420 255" stroke="#16A34A" stroke-width="3"/>
+  <polygon points="420,249 432,255 420,261" fill="#16A34A"/>
+
+  <!-- Step 2 -->
+  <rect x="430" y="100" width="350" height="310" rx="16" fill="#fff" stroke="#16A34A" stroke-width="2"/>
+  <circle cx="605" cy="145" r="32" fill="#16A34A" opacity="0.15"/>
+  <text x="605" y="155" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#16A34A">2</text>
+  <text x="605" y="200" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1B4B">ルール化する</text>
+
+  <rect x="460" y="220" width="290" height="44" rx="8" fill="#F0FDF4"/>
+  <text x="605" y="240" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">プロジェクト単位で</text>
+  <text x="605" y="258" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">CLAUDE.md + deny設定を整備</text>
+
+  <text x="605" y="295" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">明文化すべきこと</text>
+  <text x="605" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">deny対象ファイル / 確認フロー</text>
+  <text x="605" y="340" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">テストルール / コミット前チェック</text>
+
+  <rect x="460" y="365" width="290" height="32" rx="6" fill="#FEF3C7"/>
+  <text x="605" y="386" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#92400E">ここがチーム利用の最重要段階</text>
+
+  <!-- Arrow 2->3 -->
+  <path d="M790 255 L810 255" stroke="#16A34A" stroke-width="3"/>
+  <polygon points="810,249 822,255 810,261" fill="#16A34A"/>
+
+  <!-- Step 3 -->
+  <rect x="820" y="100" width="350" height="310" rx="16" fill="#fff"/>
+  <circle cx="995" cy="145" r="32" fill="#16A34A" opacity="0.15"/>
+  <text x="995" y="155" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#16A34A">3</text>
+  <text x="995" y="200" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1E1B4B">高度機能を段階的に</text>
+
+  <rect x="850" y="220" width="290" height="44" rx="8" fill="#F0FDF4"/>
+  <text x="995" y="240" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">必要に応じて拡張機能を追加</text>
+  <text x="995" y="258" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">急いで全部足さなくてOK</text>
+
+  <text x="995" y="295" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#16A34A">検討する拡張</text>
+  <text x="995" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">カスタムコマンド / Hooks</text>
+  <text x="995" y="340" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">MCP連携 / Subagents</text>
+  <text x="995" y="360" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6B7280">GitHub Actions 自動化</text>
+
+  <rect x="850" y="375" width="290" height="24" rx="6" fill="#DCFCE7"/>
+  <text x="995" y="392" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#166534">基本が固まってから</text>
+</svg>

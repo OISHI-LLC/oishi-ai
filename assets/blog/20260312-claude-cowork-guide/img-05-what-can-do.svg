@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1300">
+  <defs>
+    <linearGradient id="bg5c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDF4FF"/>
+      <stop offset="100%" stop-color="#FAE8FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1300" rx="24" fill="url(#bg5c)"/>
+  <text x="600" y="68" text-anchor="middle" font-family="sans-serif" font-size="52" font-weight="bold" fill="#1E1B4B">Coworkでできること 5選</text>
+  <text x="600" y="115" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#86198F">全部プログラミング不要！日本語で頼むだけ</text>
+
+  <!-- Row 1: 3 cards -->
+  <!-- 1: File Organization -->
+  <rect x="40" y="150" width="370" height="520" rx="20" fill="#fff"/>
+  <text x="225" y="240" text-anchor="middle" font-family="sans-serif" font-size="72">📂</text>
+  <text x="225" y="300" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">ファイル整理</text>
+  <text x="225" y="345" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">散らかったフォルダを</text>
+  <text x="225" y="380" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">種類・日付で自動分類</text>
+  <rect x="70" y="405" width="310" height="65" rx="12" fill="#FDF4FF"/>
+  <text x="225" y="435" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#86198F">「ダウンロードフォルダ</text>
+  <text x="225" y="462" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#86198F">を整理して」</text>
+  <rect x="70" y="490" width="310" height="50" rx="10" fill="#DCFCE7"/>
+  <text x="225" y="523" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#16A34A">超かんたん</text>
+  <rect x="70" y="555" width="310" height="90" rx="10" fill="#F0FDF4"/>
+  <text x="225" y="590" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#166534">100個以上でも高速整理</text>
+  <text x="225" y="625" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#166534">初めての方におすすめ</text>
+
+  <!-- 2: Excel -->
+  <rect x="420" y="150" width="370" height="520" rx="20" fill="#fff"/>
+  <text x="605" y="240" text-anchor="middle" font-family="sans-serif" font-size="72">📊</text>
+  <text x="605" y="300" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">Excel作成</text>
+  <text x="605" y="345" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">書式付きExcelを</text>
+  <text x="605" y="380" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">自動で作成・集計</text>
+  <rect x="450" y="405" width="310" height="65" rx="12" fill="#FDF4FF"/>
+  <text x="605" y="435" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#86198F">「売上データをExcelに</text>
+  <text x="605" y="462" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#86198F">まとめて」</text>
+  <rect x="450" y="490" width="310" height="50" rx="10" fill="#DCFCE7"/>
+  <text x="605" y="523" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#16A34A">かんたん</text>
+  <rect x="450" y="555" width="310" height="90" rx="10" fill="#F0FDF4"/>
+  <text x="605" y="590" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#166534">ヘッダー・関数まで自動</text>
+  <text x="605" y="625" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#166534">そのまま使えるクオリティ</text>
+
+  <!-- 3: Research -->
+  <rect x="800" y="150" width="370" height="520" rx="20" fill="#fff"/>
+  <text x="985" y="240" text-anchor="middle" font-family="sans-serif" font-size="72">🔍</text>
+  <text x="985" y="300" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">リサーチ</text>
+  <text x="985" y="345" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">調査して</text>
+  <text x="985" y="380" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">レポートにまとめる</text>
+  <rect x="830" y="405" width="310" height="65" rx="12" fill="#FDF4FF"/>
+  <text x="985" y="435" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#86198F">「競合5社を調べて</text>
+  <text x="985" y="462" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#86198F">レポートにして」</text>
+  <rect x="830" y="490" width="310" height="50" rx="10" fill="#FEF3C7"/>
+  <text x="985" y="523" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#92400E">ふつう</text>
+  <rect x="830" y="555" width="310" height="90" rx="10" fill="#F0FDF4"/>
+  <text x="985" y="590" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#166534">複数ソースを統合</text>
+  <text x="985" y="625" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#166534">経営判断の下調べに最適</text>
+
+  <!-- Row 2: 2 cards (centered) -->
+  <!-- 4: Data Extraction -->
+  <rect x="120" y="700" width="450" height="520" rx="20" fill="#fff"/>
+  <text x="345" y="790" text-anchor="middle" font-family="sans-serif" font-size="72">🪪</text>
+  <text x="345" y="850" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">データ抽出</text>
+  <text x="345" y="895" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">名刺・画像から</text>
+  <text x="345" y="930" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">情報を自動読取り</text>
+  <rect x="170" y="960" width="350" height="65" rx="12" fill="#FDF4FF"/>
+  <text x="345" y="990" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#86198F">「名刺の情報を</text>
+  <text x="345" y="1017" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#86198F">Excelにまとめて」</text>
+  <rect x="170" y="1045" width="350" height="50" rx="10" fill="#FEF3C7"/>
+  <text x="345" y="1078" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#92400E">ふつう</text>
+  <rect x="170" y="1110" width="350" height="90" rx="10" fill="#F0FDF4"/>
+  <text x="345" y="1145" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#166534">53枚→95件を数分で抽出</text>
+  <text x="345" y="1180" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#166534">実績あり</text>
+
+  <!-- 5: Document Creation -->
+  <rect x="630" y="700" width="450" height="520" rx="20" fill="#fff"/>
+  <text x="855" y="790" text-anchor="middle" font-family="sans-serif" font-size="72">📝</text>
+  <text x="855" y="850" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">資料作成</text>
+  <text x="855" y="895" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">議事録・報告書</text>
+  <text x="855" y="930" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#6B7280">PowerPointも対応</text>
+  <rect x="680" y="960" width="350" height="65" rx="12" fill="#FDF4FF"/>
+  <text x="855" y="990" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#86198F">「会議の議事録を</text>
+  <text x="855" y="1017" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#86198F">まとめて」</text>
+  <rect x="680" y="1045" width="350" height="50" rx="10" fill="#DCFCE7"/>
+  <text x="855" y="1078" text-anchor="middle" font-family="sans-serif" font-size="28" font-weight="bold" fill="#16A34A">かんたん</text>
+  <rect x="680" y="1110" width="350" height="90" rx="10" fill="#F0FDF4"/>
+  <text x="855" y="1145" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#166534">既存フォーマットを参考に</text>
+  <text x="855" y="1180" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#166534">作成できる</text>
+</svg>

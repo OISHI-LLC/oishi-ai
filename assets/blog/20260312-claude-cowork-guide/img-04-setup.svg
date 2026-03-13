@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780">
+  <defs>
+    <linearGradient id="bg4c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ECFDF5"/>
+      <stop offset="100%" stop-color="#D1FAE5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="780" rx="24" fill="url(#bg4c)"/>
+  <text x="600" y="68" text-anchor="middle" font-family="sans-serif" font-size="52" font-weight="bold" fill="#1E1B4B">セットアップ3ステップ</text>
+  <text x="600" y="115" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#166534">5分で完了！すぐに始められます</text>
+
+  <!-- Step 1 -->
+  <rect x="40" y="155" width="360" height="590" rx="20" fill="#fff"/>
+  <circle cx="220" cy="215" r="40" fill="#16A34A" opacity="0.12"/>
+  <text x="220" y="228" text-anchor="middle" font-family="sans-serif" font-size="36" font-weight="bold" fill="#16A34A">1</text>
+  <text x="220" y="310" text-anchor="middle" font-family="sans-serif" font-size="72">📥</text>
+  <text x="220" y="375" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">アプリを</text>
+  <text x="220" y="420" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">ダウンロード</text>
+  <text x="220" y="475" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">claude.com/download</text>
+  <text x="220" y="515" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">からアプリを入手</text>
+  <rect x="75" y="550" width="290" height="60" rx="12" fill="#ECFDF5"/>
+  <text x="220" y="588" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#166534">Mac / Windows どちらもOK</text>
+  <rect x="75" y="630" width="290" height="60" rx="12" fill="#DCFCE7"/>
+  <text x="220" y="668" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">所要時間：2分</text>
+
+  <!-- Step 2 -->
+  <rect x="420" y="155" width="360" height="590" rx="20" fill="#fff"/>
+  <circle cx="600" cy="215" r="40" fill="#16A34A" opacity="0.12"/>
+  <text x="600" y="228" text-anchor="middle" font-family="sans-serif" font-size="36" font-weight="bold" fill="#16A34A">2</text>
+  <text x="600" y="310" text-anchor="middle" font-family="sans-serif" font-size="72">🔄</text>
+  <text x="600" y="375" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">Coworkモードに</text>
+  <text x="600" y="420" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">切替</text>
+  <text x="600" y="475" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">画面上部の</text>
+  <text x="600" y="515" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">「Cowork」を選ぶだけ</text>
+  <rect x="455" y="550" width="290" height="60" rx="12" fill="#ECFDF5"/>
+  <text x="600" y="588" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#166534">ワンクリックで切り替え</text>
+  <rect x="455" y="630" width="290" height="60" rx="12" fill="#DCFCE7"/>
+  <text x="600" y="668" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">所要時間：10秒</text>
+
+  <!-- Step 3 -->
+  <rect x="800" y="155" width="360" height="590" rx="20" fill="#fff" stroke="#16A34A" stroke-width="3"/>
+  <circle cx="980" cy="215" r="40" fill="#16A34A" opacity="0.12"/>
+  <text x="980" y="228" text-anchor="middle" font-family="sans-serif" font-size="36" font-weight="bold" fill="#16A34A">3</text>
+  <text x="980" y="310" text-anchor="middle" font-family="sans-serif" font-size="72">📂</text>
+  <text x="980" y="375" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">フォルダを</text>
+  <text x="980" y="420" text-anchor="middle" font-family="sans-serif" font-size="38" font-weight="bold" fill="#1E1B4B">許可</text>
+  <text x="980" y="475" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">作業したいフォルダを</text>
+  <text x="980" y="515" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">指定してアクセス許可</text>
+  <rect x="835" y="550" width="290" height="60" rx="12" fill="#F5F3FF"/>
+  <text x="980" y="580" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#7C3AED">許可したフォルダだけに</text>
+  <text x="980" y="605" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#7C3AED">アクセスされるので安心</text>
+  <rect x="835" y="630" width="290" height="60" rx="12" fill="#DCFCE7"/>
+  <text x="980" y="668" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="bold" fill="#16A34A">準備完了！</text>
+</svg>

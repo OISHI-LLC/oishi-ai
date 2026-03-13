@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 440">
+  <defs>
+    <linearGradient id="bg4b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="440" rx="24" fill="url(#bg4b)"/>
+  <text x="800" y="55" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1E1B4B">AIエージェント導入ロードマップ</text>
+  <!-- Step 1 -->
+  <rect x="60" y="90" width="470" height="300" rx="16" fill="#fff" opacity="0.9"/>
+  <circle cx="295" cy="140" r="28" fill="#7C3AED"/>
+  <text x="295" y="149" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#fff">1</text>
+  <text x="295" y="195" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1E1B4B">既存AIツールで体験</text>
+  <text x="295" y="235" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">ChatGPT / Claude で業務を試す</text>
+  <text x="295" y="262" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">「AIにできること」を体感</text>
+  <text x="295" y="289" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">社内の活用候補を洗い出す</text>
+  <rect x="170" y="320" width="250" height="36" rx="18" fill="#7C3AED" opacity="0.1"/>
+  <text x="295" y="344" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#7C3AED">期間: 1〜2週間</text>
+  <!-- Arrow 1->2 -->
+  <path d="M545 240 L555 240" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="555,230 580,240 555,250" fill="#CBD5E1"/>
+  <!-- Step 2 -->
+  <rect x="565" y="90" width="470" height="300" rx="16" fill="#fff" opacity="0.9"/>
+  <circle cx="800" cy="140" r="28" fill="#7C3AED" opacity="0.8"/>
+  <text x="800" y="149" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#fff">2</text>
+  <text x="800" y="195" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1E1B4B">エージェント型に移行</text>
+  <text x="800" y="235" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">定型業務をエージェントに委任</text>
+  <text x="800" y="262" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">人間は確認・承認に集中</text>
+  <text x="800" y="289" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">効果測定で投資判断</text>
+  <rect x="675" y="320" width="250" height="36" rx="18" fill="#7C3AED" opacity="0.1"/>
+  <text x="800" y="344" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#7C3AED">期間: 1〜2ヶ月</text>
+  <!-- Arrow 2->3 -->
+  <path d="M1050 240 L1060 240" stroke="#CBD5E1" stroke-width="2"/>
+  <polygon points="1060,230 1085,240 1060,250" fill="#CBD5E1"/>
+  <!-- Step 3 -->
+  <rect x="1070" y="90" width="470" height="300" rx="16" fill="#fff" opacity="0.9"/>
+  <circle cx="1305" cy="140" r="28" fill="#7C3AED" opacity="0.6"/>
+  <text x="1305" y="149" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#fff">3</text>
+  <text x="1305" y="195" text-anchor="middle" font-family="sans-serif" font-size="24" font-weight="bold" fill="#1E1B4B">マルチエージェント化</text>
+  <text x="1305" y="235" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">複数エージェントが連携</text>
+  <text x="1305" y="262" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">部門横断の業務を自動化</text>
+  <text x="1305" y="289" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">人間はゴール設定に専念</text>
+  <rect x="1180" y="320" width="250" height="36" rx="18" fill="#7C3AED" opacity="0.1"/>
+  <text x="1305" y="344" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#7C3AED">期間: 3〜6ヶ月</text>
+  <text x="800" y="428" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#6B7280">小さく始めて、成果を確認しながら段階的に拡大する</text>
+</svg>

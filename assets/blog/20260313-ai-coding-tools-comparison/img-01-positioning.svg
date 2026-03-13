@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0F9FF"/>
+      <stop offset="100%" stop-color="#E0F2FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg1)"/>
+
+  <!-- Title -->
+  <text x="600" y="65" text-anchor="middle" font-family="sans-serif" font-size="48" font-weight="bold" fill="#0F172A">3つのツール、何が違う？</text>
+  <text x="600" y="110" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#3B82F6">レストランに例えるとわかりやすい</text>
+
+  <!-- Card 1: GitHub Copilot -->
+  <rect x="50" y="150" width="350" height="700" rx="20" fill="#fff" stroke="#6366F1" stroke-width="3"/>
+  <rect x="50" y="150" width="350" height="80" rx="20" fill="#6366F1"/>
+  <rect x="50" y="210" width="350" height="20" fill="#6366F1"/>
+  <text x="225" y="202" text-anchor="middle" font-family="sans-serif" font-size="36" font-weight="bold" fill="#fff">GitHub Copilot</text>
+
+  <text x="225" y="280" text-anchor="middle" font-family="sans-serif" font-size="64">🍽️</text>
+  <text x="225" y="330" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#4338CA">優秀なウェイター</text>
+  <text x="225" y="370" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">料理中にさっと</text>
+  <text x="225" y="405" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">提案してくれる</text>
+
+  <line x1="100" y1="430" x2="350" y2="430" stroke="#E5E7EB" stroke-width="2"/>
+
+  <text x="225" y="470" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#4338CA" font-weight="bold">こんなイメージ</text>
+  <text x="225" y="510" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">コードを書いていると</text>
+  <text x="225" y="545" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">横から「次はこれ」と</text>
+  <text x="225" y="580" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">候補を出してくれる</text>
+
+  <line x1="100" y1="610" x2="350" y2="610" stroke="#E5E7EB" stroke-width="2"/>
+
+  <text x="225" y="650" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#4338CA" font-weight="bold">得意なこと</text>
+  <text x="225" y="690" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">リアルタイム補完</text>
+  <text x="225" y="725" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">GitHub連携</text>
+  <text x="225" y="760" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">多くのエディタ対応</text>
+
+  <rect x="100" y="790" width="250" height="45" rx="10" fill="#EEF2FF"/>
+  <text x="225" y="820" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#4338CA">$10〜/月</text>
+
+  <!-- Card 2: Cursor -->
+  <rect x="425" y="150" width="350" height="700" rx="20" fill="#fff" stroke="#10B981" stroke-width="3"/>
+  <rect x="425" y="150" width="350" height="80" rx="20" fill="#10B981"/>
+  <rect x="425" y="210" width="350" height="20" fill="#10B981"/>
+  <text x="600" y="202" text-anchor="middle" font-family="sans-serif" font-size="36" font-weight="bold" fill="#fff">Cursor</text>
+
+  <text x="600" y="280" text-anchor="middle" font-family="sans-serif" font-size="64">👨‍🍳</text>
+  <text x="600" y="330" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#059669">専属シェフ付きキッチン</text>
+  <text x="600" y="370" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">料理道具ごと</text>
+  <text x="600" y="405" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">AI化された環境</text>
+
+  <line x1="475" y1="430" x2="725" y2="430" stroke="#E5E7EB" stroke-width="2"/>
+
+  <text x="600" y="470" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#059669" font-weight="bold">こんなイメージ</text>
+  <text x="600" y="510" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">エディタの中で</text>
+  <text x="600" y="545" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">「この機能作って」と</text>
+  <text x="600" y="580" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">頼むと一括で生成</text>
+
+  <line x1="475" y1="610" x2="725" y2="610" stroke="#E5E7EB" stroke-width="2"/>
+
+  <text x="600" y="650" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#059669" font-weight="bold">得意なこと</text>
+  <text x="600" y="690" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">IDE内で全部完結</text>
+  <text x="600" y="725" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">Tab補完が高速</text>
+  <text x="600" y="760" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">バックグラウンド実行</text>
+
+  <rect x="475" y="790" width="250" height="45" rx="10" fill="#ECFDF5"/>
+  <text x="600" y="820" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#059669">$20〜/月</text>
+
+  <!-- Card 3: Claude Code -->
+  <rect x="800" y="150" width="350" height="700" rx="20" fill="#fff" stroke="#F59E0B" stroke-width="3"/>
+  <rect x="800" y="150" width="350" height="80" rx="20" fill="#F59E0B"/>
+  <rect x="800" y="210" width="350" height="20" fill="#F59E0B"/>
+  <text x="975" y="202" text-anchor="middle" font-family="sans-serif" font-size="36" font-weight="bold" fill="#fff">Claude Code</text>
+
+  <text x="975" y="280" text-anchor="middle" font-family="sans-serif" font-size="64">🧑‍🍳</text>
+  <text x="975" y="330" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#D97706">出張料理人</text>
+  <text x="975" y="370" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">注文だけで</text>
+  <text x="975" y="405" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#6B7280">一品仕上げてくれる</text>
+
+  <line x1="850" y1="430" x2="1100" y2="430" stroke="#E5E7EB" stroke-width="2"/>
+
+  <text x="975" y="470" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#D97706" font-weight="bold">こんなイメージ</text>
+  <text x="975" y="510" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">ターミナルで</text>
+  <text x="975" y="545" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">「バグ直して」と</text>
+  <text x="975" y="580" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">頼むと自律的に完了</text>
+
+  <line x1="850" y1="610" x2="1100" y2="610" stroke="#E5E7EB" stroke-width="2"/>
+
+  <text x="975" y="650" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#D97706" font-weight="bold">得意なこと</text>
+  <text x="975" y="690" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">大規模な変更</text>
+  <text x="975" y="725" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">自律型エージェント</text>
+  <text x="975" y="760" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#374151">プロジェクト全体把握</text>
+
+  <rect x="850" y="790" width="250" height="45" rx="10" fill="#FFFBEB"/>
+  <text x="975" y="820" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#D97706">$20〜/月</text>
+</svg>

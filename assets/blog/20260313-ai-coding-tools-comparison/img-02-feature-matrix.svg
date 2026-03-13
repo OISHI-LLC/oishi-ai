@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 920">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FEFCE8"/>
+      <stop offset="100%" stop-color="#FEF9C3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="920" fill="url(#bg2)"/>
+
+  <!-- Title -->
+  <text x="600" y="65" text-anchor="middle" font-family="sans-serif" font-size="48" font-weight="bold" fill="#0F172A">主要機能 — できること比較</text>
+  <text x="600" y="108" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#92400E">◎ 最も得意 / ○ 対応 / △ 限定的 / × 非対応</text>
+
+  <!-- Table Header -->
+  <rect x="50" y="140" width="1100" height="70" rx="12" fill="#1E293B"/>
+  <text x="280" y="185" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="bold" fill="#fff">機能</text>
+  <text x="600" y="185" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="bold" fill="#A78BFA">Copilot</text>
+  <text x="800" y="185" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="bold" fill="#34D399">Cursor</text>
+  <text x="1000" y="185" text-anchor="middle" font-family="sans-serif" font-size="32" font-weight="bold" fill="#FBBF24">Claude Code</text>
+
+  <!-- Row 1 -->
+  <rect x="50" y="215" width="1100" height="75" rx="0" fill="#fff"/>
+  <text x="280" y="262" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E293B">コード補完（Tab補完）</text>
+  <text x="600" y="265" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+  <text x="800" y="265" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+  <text x="1000" y="265" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#DC2626">×</text>
+
+  <!-- Row 2 -->
+  <rect x="50" y="295" width="1100" height="75" rx="0" fill="#F8FAFC"/>
+  <text x="280" y="342" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E293B">エージェントモード</text>
+  <text x="600" y="345" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#2563EB">○</text>
+  <text x="800" y="345" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+  <text x="1000" y="345" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+
+  <!-- Row 3 -->
+  <rect x="50" y="375" width="1100" height="75" rx="0" fill="#fff"/>
+  <text x="280" y="422" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E293B">バックグラウンド実行</text>
+  <text x="600" y="425" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#2563EB">○</text>
+  <text x="800" y="425" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+  <text x="1000" y="425" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#2563EB">○</text>
+
+  <!-- Row 4 -->
+  <rect x="50" y="455" width="1100" height="75" rx="0" fill="#F8FAFC"/>
+  <text x="280" y="502" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E293B">大規模リファクタリング</text>
+  <text x="600" y="505" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#F59E0B">△</text>
+  <text x="800" y="505" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#2563EB">○</text>
+  <text x="1000" y="505" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+
+  <!-- Row 5 -->
+  <rect x="50" y="535" width="1100" height="75" rx="0" fill="#fff"/>
+  <text x="280" y="582" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E293B">対応エディタの多さ</text>
+  <text x="600" y="585" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+  <text x="800" y="585" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#F59E0B">△</text>
+  <text x="1000" y="585" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#2563EB">○</text>
+
+  <!-- Row 6 -->
+  <rect x="50" y="615" width="1100" height="75" rx="0" fill="#F8FAFC"/>
+  <text x="280" y="662" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E293B">マルチモデル選択</text>
+  <text x="600" y="665" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+  <text x="800" y="665" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+  <text x="1000" y="665" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#DC2626">×</text>
+
+  <!-- Row 7 -->
+  <rect x="50" y="695" width="1100" height="75" rx="0" fill="#fff"/>
+  <text x="280" y="742" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E293B">無料プラン</text>
+  <text x="600" y="745" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+  <text x="800" y="745" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#2563EB">○</text>
+  <text x="1000" y="745" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#DC2626">×</text>
+
+  <!-- Row 8 -->
+  <rect x="50" y="775" width="1100" height="75" rx="12" fill="#F8FAFC"/>
+  <text x="280" y="822" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#1E293B">プロジェクト全体理解</text>
+  <text x="600" y="825" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#F59E0B">△</text>
+  <text x="800" y="825" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#2563EB">○</text>
+  <text x="1000" y="825" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#16A34A">◎</text>
+
+  <!-- Bottom note -->
+  <text x="600" y="890" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#64748B">※ 2026年3月時点の情報です。各ツールは頻繁にアップデートされています。</text>
+</svg>

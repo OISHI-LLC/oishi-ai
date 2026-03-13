@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="bg2c" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F5F3FF"/>
+      <stop offset="100%" stop-color="#EDE9FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" rx="24" fill="url(#bg2c)"/>
+  <text x="600" y="65" text-anchor="middle" font-family="sans-serif" font-size="52" font-weight="bold" fill="#1E1B4B">Claude Code vs Claude Cowork</text>
+  <text x="600" y="110" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#7C3AED">同じ技術基盤、でも役割が違う</text>
+
+  <!-- Claude Code -->
+  <rect x="40" y="150" width="530" height="540" rx="20" fill="#fff"/>
+  <text x="305" y="240" text-anchor="middle" font-family="sans-serif" font-size="72">💻</text>
+  <text x="305" y="300" text-anchor="middle" font-family="sans-serif" font-size="40" font-weight="bold" fill="#1E1B4B">Claude Code</text>
+  <text x="305" y="345" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#7C3AED">プログラマーの相棒</text>
+
+  <text x="100" y="405" font-family="sans-serif" font-size="30" fill="#6B7280">対象：エンジニア・開発者</text>
+  <text x="100" y="450" font-family="sans-serif" font-size="30" fill="#6B7280">場所：ターミナル・VS Code</text>
+  <text x="100" y="495" font-family="sans-serif" font-size="30" fill="#6B7280">用途：コーディング・テスト</text>
+
+  <rect x="80" y="530" width="450" height="70" rx="12" fill="#F5F3FF"/>
+  <text x="305" y="575" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#7C3AED">黒い画面でコマンド入力が必要</text>
+
+  <!-- Center arrow -->
+  <text x="600" y="430" text-anchor="middle" font-family="sans-serif" font-size="48" fill="#7C3AED">⟷</text>
+  <text x="600" y="475" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#7C3AED">同じ技術基盤</text>
+
+  <!-- Claude Cowork -->
+  <rect x="630" y="150" width="530" height="540" rx="20" fill="#fff" stroke="#16A34A" stroke-width="3"/>
+  <text x="895" y="240" text-anchor="middle" font-family="sans-serif" font-size="72">🤝</text>
+  <text x="895" y="300" text-anchor="middle" font-family="sans-serif" font-size="40" font-weight="bold" fill="#1E1B4B">Claude Cowork</text>
+  <text x="895" y="345" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#16A34A">事務仕事の同僚</text>
+
+  <text x="690" y="405" font-family="sans-serif" font-size="30" fill="#6B7280">対象：誰でもOK（非エンジニア歓迎）</text>
+  <text x="690" y="450" font-family="sans-serif" font-size="30" fill="#6B7280">場所：Claudeデスクトップアプリ</text>
+  <text x="690" y="495" font-family="sans-serif" font-size="30" fill="#6B7280">用途：ファイル整理・資料作成</text>
+
+  <rect x="670" y="530" width="450" height="70" rx="12" fill="#DCFCE7"/>
+  <text x="895" y="575" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#16A34A">日本語で話しかけるだけ！</text>
+</svg>

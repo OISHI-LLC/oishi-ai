@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFF1F2"/>
+      <stop offset="100%" stop-color="#FEE2E2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="520" rx="24" fill="url(#bg2)"/>
+  <text x="800" y="55" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1E1B4B">中小企業のサイバーセキュリティの現実</text>
+
+  <!-- Card 1: 88% -->
+  <rect x="60" y="90" width="350" height="190" rx="16" fill="#fff"/>
+  <text x="235" y="145" text-anchor="middle" font-family="sans-serif" font-size="56" font-weight="bold" fill="#DC2626">88%</text>
+  <text x="235" y="185" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">ランサムウェア攻撃の</text>
+  <text x="235" y="210" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">中小企業が標的の割合</text>
+  <text x="235" y="265" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#9CA3AF">Acrisure 2025</text>
+
+  <!-- Card 2: 47% -->
+  <rect x="430" y="90" width="350" height="190" rx="16" fill="#fff"/>
+  <text x="605" y="145" text-anchor="middle" font-family="sans-serif" font-size="56" font-weight="bold" fill="#DC2626">47%</text>
+  <text x="605" y="185" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">セキュリティ予算が</text>
+  <text x="605" y="210" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">ない中小企業</text>
+  <text x="605" y="265" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#9CA3AF">Cyber Defense Magazine 2026</text>
+
+  <!-- Card 3: 11% -->
+  <rect x="800" y="90" width="350" height="190" rx="16" fill="#fff"/>
+  <text x="975" y="145" text-anchor="middle" font-family="sans-serif" font-size="56" font-weight="bold" fill="#DC2626">11%</text>
+  <text x="975" y="185" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">AIツールを防御に</text>
+  <text x="975" y="210" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">活用している中小企業</text>
+  <text x="975" y="265" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#9CA3AF">VikingCloud 2026</text>
+
+  <!-- Card 4: 83% -->
+  <rect x="1170" y="90" width="370" height="190" rx="16" fill="#fff"/>
+  <text x="1355" y="145" text-anchor="middle" font-family="sans-serif" font-size="56" font-weight="bold" fill="#DC2626">83%</text>
+  <text x="1355" y="185" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">AIで脅威レベルが</text>
+  <text x="1355" y="210" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#6B7280">上がったと感じる企業</text>
+  <text x="1355" y="265" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#9CA3AF">Cyber Defense Magazine 2026</text>
+
+  <!-- Bottom message -->
+  <rect x="200" y="320" width="1200" height="170" rx="16" fill="#fff" stroke="#FECACA" stroke-width="2"/>
+  <text x="800" y="370" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#DC2626">攻撃者はAIを使って攻撃を進化させている</text>
+  <text x="800" y="405" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#6B7280">しかし守る側の中小企業は、まだ対策が追いついていない</text>
+
+  <!-- Threat list -->
+  <text x="400" y="450" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#DC2626" font-weight="600">AIフィッシング 50%</text>
+  <text x="700" y="450" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#DC2626" font-weight="600">AI脆弱性スキャン 45%</text>
+  <text x="1000" y="450" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#DC2626" font-weight="600">AI適応型マルウェア 40%</text>
+  <text x="1280" y="450" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#DC2626" font-weight="600">ディープフェイク詐欺 40%</text>
+
+  <text x="800" y="480" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#9CA3AF">2026年のサイバー脅威トップ4はすべてAI関連</text>
+</svg>
