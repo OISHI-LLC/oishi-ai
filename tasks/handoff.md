@@ -16,6 +16,56 @@
 
 ---
 
+### 2026-03-14 06:02 JST | Agent: Claude
+- Task: 「ひとりAIチーム」の作り方 記事・画像アセット作成 → WP投稿 → デプロイ
+- Changed Files:
+  - `tasks/article-20260314-one-person-ai-team.html`（記事HTML新規作成、12,497文字）
+  - `assets/blog/20260314-one-person-ai-team/hero-one-person-ai-team.webp`（アイキャッチ画像）
+  - `assets/blog/20260314-one-person-ai-team/img-01-labor-shortage.{svg,png,webp}`（人手不足グラフ）
+  - `assets/blog/20260314-one-person-ai-team/img-02-cost-comparison.{svg,png,webp}`（雇用vsAIコスト比較）
+  - `assets/blog/20260314-one-person-ai-team/img-03-tool-guide.{svg,png,webp}`（業務別ツールガイド）
+  - `assets/blog/20260314-one-person-ai-team/img-04-roadmap.{svg,png,webp}`（3ステップロードマップ）
+  - `tasks/handoff.md`（本エントリ追加）
+- Deploy:
+  - WP: `wp post create` → ID=67（下書き）、`wp post update 67` で本文投入、Yoast SEOメタ設定
+  - GitHub push: `79f43ae` → `master`
+  - GitHub Actions: `Deploy to Xserver` run `23070387294`: `success`
+- Verification:
+  - 画像: SVG 4枚を rsvg-convert → cwebp で変換後、全数Readツールで目視確認。img-02/03/04にテキスト重なり・切れを発見→修正→再変換→再確認OK
+  - 記事: HTML構文エラーなし、文字数12,497、SEO全項目（タイトル・メタ・見出し階層・内部リンク3件・構造化データ・OGP）設定済み
+  - live:
+    - `/` `/blog/` `/wp-login.php` `/favicon.ico` すべて HTTP 200
+    - 画像5枚（hero + img-01〜04）すべて HTTP 200
+  - ファクトチェック: 人手不足倒産427件（帝国データバンク）、AI導入率23.4%（総務省）、採用コスト103.3万円（リクルート）、パナソニック18.6万時間削減 — 全数確認済み
+- Open Items:
+  - なし（Codexが06:09 JSTに公開済み）
+- Next Action:
+  - X投稿3本の作成・キュー登録（型1:ブログ宣伝 / 型2or3を2本）
+
+---
+
+### 2026-03-14 06:09 JST | Agent: Codex
+- Task: WordPress の最新下書き記事を本番公開
+- Changed Files:
+  - `tasks/todo.md`（公開タスク記録・Review 追記）
+  - `tasks/handoff.md`（本エントリ追加）
+- Deploy:
+  - なし（WordPress 本番記事の公開操作のみ）
+- Verification:
+  - server:
+    - `wp post list --post_status=draft` で下書きは `ID=67` の 1 件のみ確認
+    - `wp post update 67 --post_status=publish` 実行成功
+    - `wp post get 67` で `post_status=publish`、`post_name=one-person-ai-team` を確認
+    - `wp post url 67` で `https://www.oishillc.jp/2026/03/14/one-person-ai-team/` を確認
+  - live:
+    - 記事 URL `https://www.oishillc.jp/2026/03/14/one-person-ai-team/` `HTTP 200`
+- Open Items:
+  - なし
+- Next Action:
+  - なし
+
+---
+
 ### 2026-03-13 21:00 JST | Agent: Claude
 - Task: 3/13 AI コーディングツール比較記事向け X 投稿 3 本の予約投稿セットアップ、未コミットローカル変更の整理・デプロイ・検証
 - Changed Files:
