@@ -2,17 +2,16 @@ name: X Auto Post
 
 on:
   schedule:
-    # 2026-03-14: 08:00 JST, 12:00 JST, 15:00 JST
-    - cron: "0 3 14 3 *"
-    - cron: "0 6 14 3 *"
-    # 2026-03-15: 07:00 JST, 11:00 JST, 15:00 JST
-    - cron: "0 22 14 3 *"
-    - cron: "0 2 15 3 *"
-    - cron: "0 6 15 3 *"
+    # 毎日 JST 07:00 / 11:00 / 15:00 に固定実行
+    # キュー内の scheduled <= 現在時刻 かつ status=pending のみ投稿
+    - cron: "0 22 * * *"   # JST 07:00
+    - cron: "0 2 * * *"    # JST 11:00
+    - cron: "0 6 * * *"    # JST 15:00
   workflow_dispatch: # Allow manual trigger
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   post:
@@ -27,6 +26,7 @@ jobs:
       - run: pip install tweepy
 
       - name: Post scheduled tweets
+        id: post_tweets
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_KEY_SECRET: ${{ secrets.X_API_KEY_SECRET }}
@@ -43,3 +43,23 @@ jobs:
             git commit -m "chore: update X post queue status"
             git push
           }
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "X Auto Post failed ($(date -u '+%Y-%m-%d %H:%M UTC'))" \
+            --body "$(cat <<'BODY'
+          ## X Auto Post ワークフローが失敗しました
+
+          **Run:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          キュー内のツイートが投稿されていない可能性があります。
+          手動で確認・再実行してください。
+
+          `gh workflow run "X Auto Post"`
+          BODY
+          )" \
+            --label "bug"

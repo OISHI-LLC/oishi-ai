@@ -43,6 +43,7 @@ def post_due_tweets(dry_run=False):
     queue = load_queue()
     now = datetime.now(JST)
     posted = 0
+    errors = 0
 
     for item in queue:
         if item["status"] != "pending":
@@ -87,13 +88,17 @@ def post_due_tweets(dry_run=False):
             print(f"Error posting id={item['id']}: {e}", file=sys.stderr)
             print(f"  Response body: {body}", file=sys.stderr)
             print(f"  Tweet length: {len(item['text'])} chars", file=sys.stderr)
+            errors += 1
         except Exception as e:
             item["status"] = "error"
             item["error"] = str(e)
             print(f"Error posting id={item['id']}: {e}", file=sys.stderr)
+            errors += 1
 
     save_queue(queue)
-    print(f"Done. {posted} tweet(s) processed.")
+    print(f"Done. {posted} posted, {errors} error(s).")
+    if errors > 0:
+        sys.exit(1)
 
 if __name__ == "__main__":
     dry_run = "--dry-run" in sys.argv
