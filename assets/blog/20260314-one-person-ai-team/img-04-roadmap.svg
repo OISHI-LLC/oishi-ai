@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDF4FF"/>
+      <stop offset="100%" stop-color="#FAE8FF"/>
+    </linearGradient>
+    <linearGradient id="step1g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="step2g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+    <linearGradient id="step3g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#DB2777"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg4)"/>
+
+  <!-- Title -->
+  <text x="600" y="55" text-anchor="middle" font-family="sans-serif" font-size="44" font-weight="bold" fill="#0F172A">月1万円以下で始める3ステップ</text>
+  <text x="600" y="95" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#A855F7">まずは1つのツールから。小さく始めて大きく育てる</text>
+
+  <!-- Step 1 -->
+  <rect x="50" y="130" width="1100" height="180" rx="20" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+  <circle cx="130" cy="220" r="50" fill="url(#step1g)"/>
+  <text x="130" y="235" text-anchor="middle" font-family="sans-serif" font-size="48" font-weight="bold" fill="#fff">1</text>
+
+  <text x="210" y="180" font-family="sans-serif" font-size="34" font-weight="bold" fill="#1E40AF">1つのツールを1つの業務に使う</text>
+  <text x="210" y="220" font-family="sans-serif" font-size="28" fill="#374151">例：Claude Proで議事録やメール下書きを作成</text>
+  <text x="210" y="258" font-family="sans-serif" font-size="26" fill="#6B7280">月額約3,000円 / 30分で設定完了</text>
+  <rect x="880" y="245" width="240" height="48" rx="10" fill="#DBEAFE"/>
+  <text x="1000" y="277" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#1E40AF">期間：1〜2週間</text>
+
+  <!-- Arrow 1 -->
+  <path d="M600 315 L600 335 L580 335 L600 360 L620 335 L600 335" fill="#8B5CF6"/>
+
+  <!-- Step 2 -->
+  <rect x="50" y="370" width="1100" height="180" rx="20" fill="#fff" stroke="#8B5CF6" stroke-width="2"/>
+  <circle cx="130" cy="460" r="50" fill="url(#step2g)"/>
+  <text x="130" y="475" text-anchor="middle" font-family="sans-serif" font-size="48" font-weight="bold" fill="#fff">2</text>
+
+  <text x="210" y="420" font-family="sans-serif" font-size="34" font-weight="bold" fill="#6D28D9">定型業務を見つけて自動化する</text>
+  <text x="210" y="460" font-family="sans-serif" font-size="28" fill="#374151">例：毎週の売上レポートをAIで自動作成</text>
+  <text x="210" y="498" font-family="sans-serif" font-size="26" fill="#6B7280">Zapier連携で通知・記録も自動化</text>
+  <rect x="880" y="485" width="240" height="48" rx="10" fill="#EDE9FE"/>
+  <text x="1000" y="517" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#6D28D9">期間：2〜4週間</text>
+
+  <!-- Arrow 2 -->
+  <path d="M600 555 L600 575 L580 575 L600 600 L620 575 L600 575" fill="#EC4899"/>
+
+  <!-- Step 3 -->
+  <rect x="50" y="610" width="1100" height="170" rx="20" fill="#fff" stroke="#EC4899" stroke-width="2"/>
+  <circle cx="130" cy="695" r="50" fill="url(#step3g)"/>
+  <text x="130" y="710" text-anchor="middle" font-family="sans-serif" font-size="48" font-weight="bold" fill="#fff">3</text>
+
+  <text x="210" y="665" font-family="sans-serif" font-size="34" font-weight="bold" fill="#DB2777">ツールを組み合わせてチーム化</text>
+  <text x="210" y="705" font-family="sans-serif" font-size="28" fill="#374151">Claude + Canva + Zapier = ひとりAIチーム</text>
+  <text x="210" y="743" font-family="sans-serif" font-size="26" fill="#6B7280">月額約8,000円で3〜5人分の業務をカバー</text>
+  <rect x="880" y="728" width="240" height="48" rx="10" fill="#FCE7F3"/>
+  <text x="1000" y="760" text-anchor="middle" font-family="sans-serif" font-size="26" font-weight="bold" fill="#DB2777">目標：2〜3ヶ月</text>
+</svg>

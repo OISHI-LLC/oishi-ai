@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 950">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F0FDF4"/>
+      <stop offset="100%" stop-color="#ECFDF5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="950" fill="url(#bg3)"/>
+
+  <!-- Title -->
+  <text x="600" y="55" text-anchor="middle" font-family="sans-serif" font-size="44" font-weight="bold" fill="#0F172A">業務別AIツールガイド</text>
+  <text x="600" y="95" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#059669">非エンジニアでも今日から使える5つのツール</text>
+
+  <!-- Row 1: Claude -->
+  <rect x="50" y="125" width="1100" height="140" rx="16" fill="#fff" stroke="#F59E0B" stroke-width="2"/>
+  <rect x="50" y="125" width="200" height="140" rx="16" fill="#FEF3C7"/>
+  <rect x="234" y="125" width="16" height="140" fill="#fff"/>
+  <text x="150" y="185" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#92400E">Claude</text>
+  <text x="150" y="225" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#B45309">$20/月</text>
+  <text x="280" y="180" font-family="sans-serif" font-size="30" fill="#374151" font-weight="bold">文章作成・リサーチ・分析・要約</text>
+  <text x="280" y="220" font-family="sans-serif" font-size="26" fill="#6B7280">長文レポート、市場調査、データ分析に強い</text>
+
+  <!-- Row 2: ChatGPT -->
+  <rect x="50" y="285" width="1100" height="140" rx="16" fill="#fff" stroke="#10B981" stroke-width="2"/>
+  <rect x="50" y="285" width="200" height="140" rx="16" fill="#D1FAE5"/>
+  <rect x="234" y="285" width="16" height="140" fill="#fff"/>
+  <text x="150" y="345" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#065F46">ChatGPT</text>
+  <text x="150" y="385" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#047857">$20/月</text>
+  <text x="280" y="340" font-family="sans-serif" font-size="30" fill="#374151" font-weight="bold">アイデア出し・メール・顧客対応</text>
+  <text x="280" y="380" font-family="sans-serif" font-size="26" fill="#6B7280">GPTsでカスタムAI作成。画像生成も対応</text>
+
+  <!-- Row 3: Copilot -->
+  <rect x="50" y="445" width="1100" height="140" rx="16" fill="#fff" stroke="#3B82F6" stroke-width="2"/>
+  <rect x="50" y="445" width="200" height="140" rx="16" fill="#DBEAFE"/>
+  <rect x="234" y="445" width="16" height="140" fill="#fff"/>
+  <text x="150" y="495" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#1E40AF">Microsoft</text>
+  <text x="150" y="530" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="bold" fill="#1E40AF">365 Copilot</text>
+  <text x="150" y="565" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#2563EB">$30/月</text>
+  <text x="280" y="500" font-family="sans-serif" font-size="30" fill="#374151" font-weight="bold">Excel・Word・PowerPoint連携</text>
+  <text x="280" y="540" font-family="sans-serif" font-size="26" fill="#6B7280">既存Office業務をそのままAI化できる</text>
+
+  <!-- Row 4: Canva AI -->
+  <rect x="50" y="605" width="1100" height="140" rx="16" fill="#fff" stroke="#8B5CF6" stroke-width="2"/>
+  <rect x="50" y="605" width="200" height="140" rx="16" fill="#EDE9FE"/>
+  <rect x="234" y="605" width="16" height="140" fill="#fff"/>
+  <text x="150" y="665" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#6D28D9">Canva AI</text>
+  <text x="150" y="705" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#7C3AED">約1,000円/月</text>
+  <text x="280" y="660" font-family="sans-serif" font-size="30" fill="#374151" font-weight="bold">SNS画像・プレゼン・チラシ・動画</text>
+  <text x="280" y="700" font-family="sans-serif" font-size="26" fill="#6B7280">デザイナーなしでプロ品質を実現</text>
+
+  <!-- Row 5: Zapier -->
+  <rect x="50" y="765" width="1100" height="140" rx="16" fill="#fff" stroke="#F97316" stroke-width="2"/>
+  <rect x="50" y="765" width="200" height="140" rx="16" fill="#FFF7ED"/>
+  <rect x="234" y="765" width="16" height="140" fill="#fff"/>
+  <text x="150" y="825" text-anchor="middle" font-family="sans-serif" font-size="34" font-weight="bold" fill="#C2410C">Zapier</text>
+  <text x="150" y="865" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#EA580C">無料〜$20/月</text>
+  <text x="280" y="820" font-family="sans-serif" font-size="30" fill="#374151" font-weight="bold">業務自動化・ツール間連携</text>
+  <text x="280" y="860" font-family="sans-serif" font-size="26" fill="#6B7280">メール→Slack通知→記録を自動化</text>
+
+  <!-- Footer -->
+  <text x="600" y="940" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#6B7280">すべてブラウザだけで利用可能。プログラミング知識は不要</text>
+</svg>
