@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="glowR">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg2)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="55" text-anchor="middle" fill="#f1f5f9" font-size="38" font-weight="bold">5軸レーダーチャート ─ 三大AI能力比較</text>
+  <text x="600" y="88" text-anchor="middle" fill="#94a3b8" font-size="24">各項目10点満点で評価（筆者主観＋ベンチマーク参考）</text>
+
+  <!-- Pentagon grids -->
+  <polygon points="600,418 626,454 616,486 584,486 574,454" fill="none" stroke="#1e3a5f" stroke-width="1"/>
+  <polygon points="600,366 652,438 632,502 568,502 548,438" fill="none" stroke="#1e3a5f" stroke-width="1"/>
+  <polygon points="600,314 678,422 648,518 552,518 522,422" fill="none" stroke="#1e3a5f" stroke-width="1"/>
+  <polygon points="600,262 704,406 664,534 536,534 496,406" fill="none" stroke="#1e3a5f" stroke-width="1"/>
+  <polygon points="600,210 730,390 680,550 520,550 470,390" fill="none" stroke="#334155" stroke-width="2"/>
+
+  <!-- Axis lines -->
+  <line x1="600" y1="470" x2="600" y2="210" stroke="#475569" stroke-width="1.5"/>
+  <line x1="600" y1="470" x2="730" y2="390" stroke="#475569" stroke-width="1.5"/>
+  <line x1="600" y1="470" x2="680" y2="550" stroke="#475569" stroke-width="1.5"/>
+  <line x1="600" y1="470" x2="520" y2="550" stroke="#475569" stroke-width="1.5"/>
+  <line x1="600" y1="470" x2="470" y2="390" stroke="#475569" stroke-width="1.5"/>
+
+  <!-- Axis labels -->
+  <text x="600" y="190" text-anchor="middle" fill="#e2e8f0" font-size="26" font-weight="bold">文章力</text>
+  <text x="748" y="385" text-anchor="start" fill="#e2e8f0" font-size="26" font-weight="bold">コーディング</text>
+  <text x="695" y="575" text-anchor="start" fill="#e2e8f0" font-size="26" font-weight="bold">マルチモーダル</text>
+  <text x="505" y="575" text-anchor="end" fill="#e2e8f0" font-size="26" font-weight="bold">安全性</text>
+  <text x="452" y="385" text-anchor="end" fill="#e2e8f0" font-size="26" font-weight="bold">エコシステム</text>
+
+  <!-- Data polygons -->
+  <!-- GPT-5.4: 文章9, コード8, マルチ7, 安全8, エコ10 -->
+  <polygon points="600,236.8 704,406 656,526 552,518 470,390"
+           fill="#10a37f" fill-opacity="0.18" stroke="#10a37f" stroke-width="2.5" filter="url(#glowR)"/>
+
+  <!-- Claude Sonnet 4.6: 文章9, コード10, マルチ6, 安全10, エコ7 -->
+  <polygon points="600,236.8 730,390 648,518 520,550 509,414"
+           fill="#d97706" fill-opacity="0.18" stroke="#d97706" stroke-width="2.5" filter="url(#glowR)"/>
+
+  <!-- Gemini 3.1 Pro: 文章8, コード9, マルチ10, 安全7, エコ8 -->
+  <polygon points="600,262 717,398 680,550 564,526 496,406"
+           fill="#4285f4" fill-opacity="0.18" stroke="#4285f4" stroke-width="2.5" filter="url(#glowR)"/>
+
+  <!-- Data points -->
+  <!-- GPT-5.4 -->
+  <circle cx="600" cy="236.8" r="5" fill="#10a37f"/>
+  <circle cx="704" cy="406" r="5" fill="#10a37f"/>
+  <circle cx="656" cy="526" r="5" fill="#10a37f"/>
+  <circle cx="552" cy="518" r="5" fill="#10a37f"/>
+  <circle cx="470" cy="390" r="5" fill="#10a37f"/>
+
+  <!-- Claude Sonnet 4.6 -->
+  <circle cx="600" cy="236.8" r="5" fill="#d97706"/>
+  <circle cx="730" cy="390" r="5" fill="#d97706"/>
+  <circle cx="648" cy="518" r="5" fill="#d97706"/>
+  <circle cx="520" cy="550" r="5" fill="#d97706"/>
+  <circle cx="509" cy="414" r="5" fill="#d97706"/>
+
+  <!-- Gemini 3.1 Pro -->
+  <circle cx="600" cy="262" r="5" fill="#4285f4"/>
+  <circle cx="717" cy="398" r="5" fill="#4285f4"/>
+  <circle cx="680" cy="550" r="5" fill="#4285f4"/>
+  <circle cx="564" cy="526" r="5" fill="#4285f4"/>
+  <circle cx="496" cy="406" r="5" fill="#4285f4"/>
+
+  <!-- Legend -->
+  <rect x="100" y="760" width="1000" height="100" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <rect x="150" y="790" width="40" height="20" rx="4" fill="#10a37f" fill-opacity="0.5" stroke="#10a37f" stroke-width="2"/>
+  <text x="205" y="807" fill="#10a37f" font-size="26" font-weight="bold">GPT-5.4</text>
+  <rect x="430" y="790" width="40" height="20" rx="4" fill="#d97706" fill-opacity="0.5" stroke="#d97706" stroke-width="2"/>
+  <text x="485" y="807" fill="#d97706" font-size="24" font-weight="bold">Claude Sonnet 4.6</text>
+  <rect x="760" y="790" width="40" height="20" rx="4" fill="#4285f4" fill-opacity="0.5" stroke="#4285f4" stroke-width="2"/>
+  <text x="815" y="807" fill="#4285f4" font-size="24" font-weight="bold">Gemini 3.1 Pro</text>
+
+  <text x="205" y="835" fill="#94a3b8" font-size="20">文9 コ8 マ7 安8 エ10</text>
+  <text x="485" y="835" fill="#94a3b8" font-size="20">文9 コ10 マ6 安10 エ7</text>
+  <text x="815" y="835" fill="#94a3b8" font-size="20">文8 コ9 マ10 安7 エ8</text>
+</svg>

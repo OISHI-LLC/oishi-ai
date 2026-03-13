@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="gptGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10a37f"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="claudeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="geminiGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4285f4"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <filter id="barShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg4)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="55" text-anchor="middle" fill="#f1f5f9" font-size="38" font-weight="bold">月額コスト比較 ─ チーム規模別シミュレーション</text>
+  <text x="600" y="90" text-anchor="middle" fill="#94a3b8" font-size="24">標準プラン（Plus / Pro / AI Pro相当）で試算</text>
+
+  <!-- Legend -->
+  <rect x="300" y="110" width="600" height="50" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <rect x="340" y="125" width="24" height="20" rx="4" fill="url(#geminiGrad)"/>
+  <text x="374" y="141" fill="#4285f4" font-size="22" font-weight="bold">Gemini</text>
+  <rect x="510" y="125" width="24" height="20" rx="4" fill="url(#claudeGrad)"/>
+  <text x="544" y="141" fill="#d97706" font-size="22" font-weight="bold">Claude</text>
+  <rect x="680" y="125" width="24" height="20" rx="4" fill="url(#gptGrad)"/>
+  <text x="714" y="141" fill="#10a37f" font-size="22" font-weight="bold">GPT-5.4</text>
+
+  <!-- Y axis -->
+  <text x="180" y="825" text-anchor="end" fill="#94a3b8" font-size="20">¥0</text>
+  <line x1="200" y1="820" x2="1100" y2="820" stroke="#334155" stroke-width="1"/>
+
+  <text x="180" y="695" text-anchor="end" fill="#94a3b8" font-size="20">¥100,000</text>
+  <line x1="200" y1="694" x2="1100" y2="694" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,6"/>
+
+  <text x="180" y="569" text-anchor="end" fill="#94a3b8" font-size="20">¥200,000</text>
+  <line x1="200" y1="568" x2="1100" y2="568" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,6"/>
+
+  <text x="180" y="443" text-anchor="end" fill="#94a3b8" font-size="20">¥300,000</text>
+  <line x1="200" y1="442" x2="1100" y2="442" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,6"/>
+
+  <text x="180" y="317" text-anchor="end" fill="#94a3b8" font-size="20">¥400,000</text>
+  <line x1="200" y1="316" x2="1100" y2="316" stroke="#1e293b" stroke-width="1" stroke-dasharray="6,6"/>
+
+  <text x="180" y="195" text-anchor="end" fill="#94a3b8" font-size="20">¥500,000</text>
+  <line x1="200" y1="190" x2="1100" y2="190" stroke="#334155" stroke-width="1"/>
+
+  <!-- Group 1: 1人利用 -->
+  <text x="370" y="860" text-anchor="middle" fill="#e2e8f0" font-size="26" font-weight="bold">1人</text>
+
+  <rect x="290" y="796" width="50" height="24" rx="4" fill="url(#geminiGrad)" filter="url(#barShadow)"/>
+  <text x="350" y="813" fill="#93c5fd" font-size="20" font-weight="bold">¥3,000</text>
+
+  <rect x="290" y="764" width="50" height="24" rx="4" fill="url(#claudeGrad)" filter="url(#barShadow)"/>
+  <text x="350" y="781" fill="#fbbf24" font-size="20" font-weight="bold">¥3,000</text>
+
+  <rect x="290" y="732" width="50" height="24" rx="4" fill="url(#gptGrad)" filter="url(#barShadow)"/>
+  <text x="350" y="749" fill="#6ee7b7" font-size="20" font-weight="bold">¥3,000</text>
+
+  <text x="370" y="710" text-anchor="middle" fill="#64748b" font-size="18">月額ほぼ同額</text>
+
+  <!-- Group 2: 5人利用 (Team plans: Gemini ~$25, Claude $25-30, ChatGPT $25-30) -->
+  <text x="650" y="860" text-anchor="middle" fill="#e2e8f0" font-size="26" font-weight="bold">5人</text>
+  <text x="650" y="885" text-anchor="middle" fill="#94a3b8" font-size="18">チームプラン</text>
+
+  <!-- Gemini: $19.99×5 = ~¥15,000 -->
+  <rect x="570" y="783" width="50" height="37" rx="4" fill="url(#geminiGrad)" filter="url(#barShadow)"/>
+  <text x="630" y="807" fill="#93c5fd" font-size="20" font-weight="bold">¥15,000</text>
+
+  <!-- Claude: $25×5 = ¥18,750 -->
+  <rect x="570" y="741" width="50" height="37" rx="4" fill="url(#claudeGrad)" filter="url(#barShadow)"/>
+  <text x="630" y="765" fill="#fbbf24" font-size="20" font-weight="bold">¥18,750</text>
+
+  <!-- GPT: $25×5 = ¥18,750 -->
+  <rect x="570" y="699" width="50" height="37" rx="4" fill="url(#gptGrad)" filter="url(#barShadow)"/>
+  <text x="630" y="723" fill="#6ee7b7" font-size="20" font-weight="bold">¥18,750</text>
+
+  <text x="650" y="678" text-anchor="middle" fill="#64748b" font-size="18">Geminiが約20%お得</text>
+
+  <!-- Group 3: 20人利用 -->
+  <text x="950" y="860" text-anchor="middle" fill="#e2e8f0" font-size="26" font-weight="bold">20人</text>
+  <text x="950" y="885" text-anchor="middle" fill="#94a3b8" font-size="18">チームプラン</text>
+
+  <!-- Gemini: $19.99×20 = ~¥60,000: height = (60000/500000)*630 = 75.6 -->
+  <rect x="870" y="744" width="50" height="76" rx="4" fill="url(#geminiGrad)" filter="url(#barShadow)"/>
+  <text x="930" y="790" fill="#93c5fd" font-size="20" font-weight="bold">¥60,000</text>
+
+  <!-- Claude: $25×20 = ¥75,000: height = 94.5 -->
+  <rect x="870" y="650" width="50" height="94" rx="4" fill="url(#claudeGrad)" filter="url(#barShadow)"/>
+  <text x="930" y="703" fill="#fbbf24" font-size="20" font-weight="bold">¥75,000</text>
+
+  <!-- GPT: $25×20 = ¥75,000 -->
+  <rect x="870" y="550" width="50" height="94" rx="4" fill="url(#gptGrad)" filter="url(#barShadow)"/>
+  <text x="930" y="603" fill="#6ee7b7" font-size="20" font-weight="bold">¥75,000</text>
+
+  <text x="950" y="530" text-anchor="middle" fill="#64748b" font-size="18">年間で¥180,000の差</text>
+</svg>

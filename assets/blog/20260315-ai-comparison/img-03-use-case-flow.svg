@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="shadow3">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1100" fill="url(#bg3)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="55" text-anchor="middle" fill="#f1f5f9" font-size="38" font-weight="bold">ユースケース別おすすめフローチャート</text>
+  <text x="600" y="90" text-anchor="middle" fill="#94a3b8" font-size="24">あなたの主な用途は？ → 最適なAIが見つかる</text>
+
+  <!-- Start node -->
+  <rect x="430" y="120" width="340" height="70" rx="35" fill="#6366f1" filter="url(#shadow3)"/>
+  <text x="600" y="163" text-anchor="middle" fill="#fff" font-size="30" font-weight="bold">主な用途は？</text>
+
+  <!-- Arrows from start -->
+  <line x1="480" y1="190" x2="220" y2="250" stroke="#6366f1" stroke-width="3"/>
+  <line x1="600" y1="190" x2="600" y2="250" stroke="#6366f1" stroke-width="3"/>
+  <line x1="720" y1="190" x2="980" y2="250" stroke="#6366f1" stroke-width="3"/>
+  <polygon points="215,247 225,243 222,254" fill="#6366f1"/>
+  <polygon points="594,250 606,250 600,262" fill="#6366f1"/>
+  <polygon points="975,247 985,254 978,243" fill="#6366f1"/>
+
+  <!-- Branch 1: 文章・マーケティング -->
+  <rect x="70" y="260" width="310" height="65" rx="12" fill="#1e293b" stroke="#475569" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="225" y="285" text-anchor="middle" fill="#e2e8f0" font-size="24" font-weight="bold">文章作成</text>
+  <text x="225" y="312" text-anchor="middle" fill="#94a3b8" font-size="22">マーケティング</text>
+
+  <!-- Branch 2: コーディング -->
+  <rect x="445" y="260" width="310" height="65" rx="12" fill="#1e293b" stroke="#475569" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="600" y="285" text-anchor="middle" fill="#e2e8f0" font-size="24" font-weight="bold">コーディング</text>
+  <text x="600" y="312" text-anchor="middle" fill="#94a3b8" font-size="22">技術タスク</text>
+
+  <!-- Branch 3: データ分析 -->
+  <rect x="820" y="260" width="310" height="65" rx="12" fill="#1e293b" stroke="#475569" stroke-width="2" filter="url(#shadow3)"/>
+  <text x="975" y="285" text-anchor="middle" fill="#e2e8f0" font-size="24" font-weight="bold">データ分析</text>
+  <text x="975" y="312" text-anchor="middle" fill="#94a3b8" font-size="22">マルチモーダル</text>
+
+  <!-- Branch 1 sub -->
+  <line x1="225" y1="325" x2="225" y2="380" stroke="#475569" stroke-width="2"/>
+  <polygon points="219,380 231,380 225,392" fill="#475569"/>
+  <rect x="70" y="395" width="310" height="55" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="225" y="428" text-anchor="middle" fill="#cbd5e1" font-size="22">安全性を最重視する？</text>
+
+  <line x1="150" y1="450" x2="150" y2="520" stroke="#475569" stroke-width="2"/>
+  <text x="140" y="490" text-anchor="end" fill="#94a3b8" font-size="20">Yes</text>
+  <polygon points="144,520 156,520 150,532" fill="#475569"/>
+
+  <rect x="50" y="535" width="200" height="90" rx="12" fill="#d97706" fill-opacity="0.15" stroke="#d97706" stroke-width="2.5" filter="url(#shadow3)"/>
+  <text x="150" y="568" text-anchor="middle" fill="#d97706" font-size="24" font-weight="bold">Claude</text>
+  <text x="150" y="593" text-anchor="middle" fill="#d97706" font-size="24" font-weight="bold">Sonnet 4.6</text>
+  <text x="150" y="616" text-anchor="middle" fill="#fbbf24" font-size="17">安全 × 高品質文章</text>
+
+  <line x1="300" y1="450" x2="300" y2="520" stroke="#475569" stroke-width="2"/>
+  <text x="310" y="490" text-anchor="start" fill="#94a3b8" font-size="20">No</text>
+  <polygon points="294,520 306,520 300,532" fill="#475569"/>
+
+  <rect x="200" y="535" width="200" height="90" rx="12" fill="#10a37f" fill-opacity="0.15" stroke="#10a37f" stroke-width="2.5" filter="url(#shadow3)"/>
+  <text x="300" y="570" text-anchor="middle" fill="#10a37f" font-size="28" font-weight="bold">GPT-5.4</text>
+  <text x="300" y="600" text-anchor="middle" fill="#6ee7b7" font-size="20">プラグイン豊富</text>
+
+  <!-- Branch 2 sub -->
+  <line x1="600" y1="325" x2="600" y2="380" stroke="#475569" stroke-width="2"/>
+  <polygon points="594,380 606,380 600,392" fill="#475569"/>
+  <rect x="445" y="395" width="310" height="55" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="600" y="428" text-anchor="middle" fill="#cbd5e1" font-size="22">自律型エージェントが必要？</text>
+
+  <line x1="520" y1="450" x2="520" y2="520" stroke="#475569" stroke-width="2"/>
+  <text x="510" y="490" text-anchor="end" fill="#94a3b8" font-size="20">Yes</text>
+  <polygon points="514,520 526,520 520,532" fill="#475569"/>
+
+  <rect x="420" y="535" width="200" height="90" rx="12" fill="#d97706" fill-opacity="0.15" stroke="#d97706" stroke-width="2.5" filter="url(#shadow3)"/>
+  <text x="520" y="568" text-anchor="middle" fill="#d97706" font-size="24" font-weight="bold">Claude</text>
+  <text x="520" y="593" text-anchor="middle" fill="#d97706" font-size="24" font-weight="bold">Sonnet 4.6</text>
+  <text x="520" y="616" text-anchor="middle" fill="#fbbf24" font-size="18">Claude Code最強</text>
+
+  <line x1="680" y1="450" x2="680" y2="520" stroke="#475569" stroke-width="2"/>
+  <text x="690" y="490" text-anchor="start" fill="#94a3b8" font-size="20">No</text>
+  <polygon points="674,520 686,520 680,532" fill="#475569"/>
+
+  <rect x="580" y="535" width="200" height="90" rx="12" fill="#10a37f" fill-opacity="0.15" stroke="#10a37f" stroke-width="2.5" filter="url(#shadow3)"/>
+  <text x="680" y="570" text-anchor="middle" fill="#10a37f" font-size="28" font-weight="bold">GPT-5.4</text>
+  <text x="680" y="600" text-anchor="middle" fill="#6ee7b7" font-size="20">Codex連携</text>
+
+  <!-- Branch 3 sub -->
+  <line x1="975" y1="325" x2="975" y2="380" stroke="#475569" stroke-width="2"/>
+  <polygon points="969,380 981,380 975,392" fill="#475569"/>
+  <rect x="820" y="395" width="310" height="55" rx="10" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="975" y="428" text-anchor="middle" fill="#cbd5e1" font-size="22">動画・音声も扱う？</text>
+
+  <line x1="900" y1="450" x2="900" y2="520" stroke="#475569" stroke-width="2"/>
+  <text x="890" y="490" text-anchor="end" fill="#94a3b8" font-size="20">Yes</text>
+  <polygon points="894,520 906,520 900,532" fill="#475569"/>
+
+  <rect x="785" y="535" width="230" height="90" rx="12" fill="#4285f4" fill-opacity="0.15" stroke="#4285f4" stroke-width="2.5" filter="url(#shadow3)"/>
+  <text x="900" y="565" text-anchor="middle" fill="#4285f4" font-size="26" font-weight="bold">Gemini</text>
+  <text x="900" y="592" text-anchor="middle" fill="#4285f4" font-size="26" font-weight="bold">3.1 Pro</text>
+  <text x="900" y="615" text-anchor="middle" fill="#93c5fd" font-size="17">ネイティブマルチモーダル</text>
+
+  <line x1="1050" y1="450" x2="1050" y2="520" stroke="#475569" stroke-width="2"/>
+  <text x="1060" y="490" text-anchor="start" fill="#94a3b8" font-size="20">No</text>
+  <polygon points="1044,520 1056,520 1050,532" fill="#475569"/>
+
+  <rect x="950" y="535" width="200" height="90" rx="12" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-width="2.5" filter="url(#shadow3)"/>
+  <text x="1050" y="570" text-anchor="middle" fill="#a5b4fc" font-size="26" font-weight="bold">3社とも対応</text>
+  <text x="1050" y="600" text-anchor="middle" fill="#818cf8" font-size="20">画像解析はどれも◎</text>
+
+  <!-- Bottom section -->
+  <rect x="100" y="680" width="1000" height="55" rx="12" fill="#6366f1" fill-opacity="0.1" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="600" y="715" text-anchor="middle" fill="#a5b4fc" font-size="26" font-weight="bold">追加の判断軸</text>
+
+  <rect x="100" y="760" width="310" height="140" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="255" y="800" text-anchor="middle" fill="#fbbf24" font-size="24" font-weight="bold">コスト重視なら</text>
+  <rect x="130" y="815" width="250" height="60" rx="8" fill="#4285f4" fill-opacity="0.12" stroke="#4285f4" stroke-width="1.5"/>
+  <text x="255" y="840" text-anchor="middle" fill="#4285f4" font-size="24" font-weight="bold">Gemini 3.1 Pro</text>
+  <text x="255" y="865" text-anchor="middle" fill="#93c5fd" font-size="20">API単価が最安</text>
+
+  <rect x="445" y="760" width="310" height="140" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="600" y="800" text-anchor="middle" fill="#fbbf24" font-size="24" font-weight="bold">Google連携重視なら</text>
+  <rect x="475" y="815" width="250" height="60" rx="8" fill="#4285f4" fill-opacity="0.12" stroke="#4285f4" stroke-width="1.5"/>
+  <text x="600" y="840" text-anchor="middle" fill="#4285f4" font-size="24" font-weight="bold">Gemini 3.1 Pro</text>
+  <text x="600" y="865" text-anchor="middle" fill="#93c5fd" font-size="20">Workspace統合</text>
+
+  <rect x="790" y="760" width="310" height="140" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <text x="945" y="800" text-anchor="middle" fill="#fbbf24" font-size="24" font-weight="bold">既存ツール連携重視</text>
+  <rect x="820" y="815" width="250" height="60" rx="8" fill="#10a37f" fill-opacity="0.12" stroke="#10a37f" stroke-width="1.5"/>
+  <text x="945" y="840" text-anchor="middle" fill="#10a37f" font-size="24" font-weight="bold">GPT-5.4</text>
+  <text x="945" y="865" text-anchor="middle" fill="#6ee7b7" font-size="20">GPTs・プラグイン最多</text>
+
+  <text x="600" y="950" text-anchor="middle" fill="#64748b" font-size="20">※ 用途が複数ある場合は「もっとも頻度が高い業務」を基準に選ぶのがおすすめです</text>
+</svg>

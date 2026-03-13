@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="glow1">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow2">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg1)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" fill="#f1f5f9" font-size="38" font-weight="bold">三大AI ポジショニングマップ</text>
+  <text x="600" y="95" text-anchor="middle" fill="#94a3b8" font-size="24">2026年春 ─ 各モデルの立ち位置を可視化</text>
+
+  <!-- Axes -->
+  <line x1="150" y1="500" x2="1050" y2="500" stroke="#475569" stroke-width="2"/>
+  <polygon points="1050,494 1065,500 1050,506" fill="#475569"/>
+  <polygon points="150,494 135,500 150,506" fill="#475569"/>
+  <text x="1070" y="505" fill="#94a3b8" font-size="22" text-anchor="start">汎用性</text>
+  <text x="130" y="505" fill="#94a3b8" font-size="22" text-anchor="end">専門特化</text>
+
+  <line x1="600" y1="150" x2="600" y2="830" stroke="#475569" stroke-width="2"/>
+  <polygon points="594,150 600,135 606,150" fill="#475569"/>
+  <polygon points="594,830 600,845 606,830" fill="#475569"/>
+  <text x="600" y="130" text-anchor="middle" fill="#94a3b8" font-size="22">エコシステム充実</text>
+  <text x="600" y="870" text-anchor="middle" fill="#94a3b8" font-size="22">モデル性能特化</text>
+
+  <!-- Quadrant labels -->
+  <text x="370" y="200" text-anchor="middle" fill="#334155" font-size="20">専門特化 × エコシステム</text>
+  <text x="830" y="200" text-anchor="middle" fill="#334155" font-size="20">汎用 × エコシステム</text>
+  <text x="370" y="800" text-anchor="middle" fill="#334155" font-size="20">専門特化 × 性能重視</text>
+  <text x="830" y="800" text-anchor="middle" fill="#334155" font-size="20">汎用 × 性能重視</text>
+
+  <!-- Grid lines -->
+  <line x1="150" y1="330" x2="1050" y2="330" stroke="#1e293b" stroke-width="1" stroke-dasharray="8,8"/>
+  <line x1="150" y1="670" x2="1050" y2="670" stroke="#1e293b" stroke-width="1" stroke-dasharray="8,8"/>
+  <line x1="375" y1="150" x2="375" y2="830" stroke="#1e293b" stroke-width="1" stroke-dasharray="8,8"/>
+  <line x1="825" y1="150" x2="825" y2="830" stroke="#1e293b" stroke-width="1" stroke-dasharray="8,8"/>
+
+  <!-- GPT-5.4 (OpenAI Green) -->
+  <circle cx="830" cy="280" r="65" fill="#10a37f" fill-opacity="0.15" stroke="#10a37f" stroke-width="3" filter="url(#glow2)"/>
+  <circle cx="830" cy="280" r="8" fill="#10a37f" filter="url(#glow1)"/>
+  <text x="830" y="270" text-anchor="middle" fill="#10a37f" font-size="32" font-weight="bold">GPT-5.4</text>
+  <text x="830" y="305" text-anchor="middle" fill="#6ee7b7" font-size="20">最大のエコシステム</text>
+  <text x="830" y="330" text-anchor="middle" fill="#6ee7b7" font-size="20">コンピュータ操作対応</text>
+
+  <!-- Gemini 3.1 Pro (Google Blue) -->
+  <circle cx="780" cy="560" r="65" fill="#4285f4" fill-opacity="0.15" stroke="#4285f4" stroke-width="3" filter="url(#glow2)"/>
+  <circle cx="780" cy="560" r="8" fill="#4285f4" filter="url(#glow1)"/>
+  <text x="780" y="545" text-anchor="middle" fill="#4285f4" font-size="30" font-weight="bold">Gemini</text>
+  <text x="780" y="575" text-anchor="middle" fill="#4285f4" font-size="28" font-weight="bold">3.1 Pro</text>
+  <text x="780" y="605" text-anchor="middle" fill="#93c5fd" font-size="20">マルチモーダル最強</text>
+  <text x="780" y="630" text-anchor="middle" fill="#93c5fd" font-size="20">API最安 × 高性能</text>
+
+  <!-- Claude Sonnet 4.6 (Anthropic Warm) -->
+  <circle cx="400" cy="510" r="65" fill="#d97706" fill-opacity="0.15" stroke="#d97706" stroke-width="3" filter="url(#glow2)"/>
+  <circle cx="400" cy="510" r="8" fill="#d97706" filter="url(#glow1)"/>
+  <text x="400" y="490" text-anchor="middle" fill="#d97706" font-size="28" font-weight="bold">Claude</text>
+  <text x="400" y="520" text-anchor="middle" fill="#d97706" font-size="28" font-weight="bold">Sonnet 4.6</text>
+  <text x="400" y="555" text-anchor="middle" fill="#fbbf24" font-size="20">安全性 × コーディング</text>
+  <text x="400" y="580" text-anchor="middle" fill="#fbbf24" font-size="20">SWE-bench 79.6%</text>
+</svg>
