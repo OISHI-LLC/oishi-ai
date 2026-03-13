@@ -982,6 +982,127 @@ section {
   padding-bottom: 120px;
 }
 
+/* ===== Blog Article — Table of Contents ===== */
+.blog-article nav {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 32px 24px;
+  margin: 32px 0 40px;
+}
+
+.blog-article nav > strong {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-1);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.blog-article nav ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: toc;
+}
+
+.blog-article nav ol li {
+  counter-increment: toc;
+  margin-bottom: 0;
+}
+
+.blog-article nav ol li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.blog-article nav ol li a::before {
+  content: counter(toc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-3);
+}
+
+.blog-article nav ol li a:hover {
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--text-1);
+  text-decoration: none;
+}
+
+/* ===== Blog Article — Tables ===== */
+.blog-article .about-table-wrap {
+  max-width: 100%;
+  margin: 0 0 28px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blog-article table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.blog-article .about-table-wrap table {
+  margin-bottom: 0;
+}
+
+.blog-article table thead th {
+  background: var(--bg-elevated);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-1);
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+
+.blog-article table tbody td {
+  font-size: 0.9375rem;
+  color: var(--text-2);
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.blog-article table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.blog-article table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+.blog-article table tbody tr:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.blog-article table tbody td strong {
+  color: var(--text-1);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .header-nav {
