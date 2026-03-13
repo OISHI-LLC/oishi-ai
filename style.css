@@ -827,6 +827,19 @@ section {
   color: var(--text-3);
 }
 
+.blog-featured-img {
+  max-width: 760px;
+  margin: 0 auto 40px;
+}
+
+.blog-featured-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  margin: 0;
+}
+
 .blog-list {
   max-width: 720px;
   margin: 0 auto;

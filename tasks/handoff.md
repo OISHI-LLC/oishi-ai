@@ -16,6 +16,25 @@
 
 ---
 
+### 2026-03-13 11:45 JST | Agent: Codex
+- Task: ブログ記事詳細ページのアイキャッチ画像が大きすぎる表示崩れを修正
+- Changed Files:
+  - `style.css`
+  - `tasks/handoff.md`
+- Deploy:
+  - GitHub push: pending
+  - GitHub Actions: pending
+- Verification:
+  - local:
+    - `single.php` にある `.blog-featured-img` ラッパーに対応する CSS が未定義だったことを確認
+    - `style.css` に `.blog-featured-img` と `.blog-featured-img img` を追加し、`max-width: 760px`・中央配置・画像幅100%を設定
+- Open Items:
+  - GitHub Actions deploy 完了待ち
+- Next Action:
+  - push 後に `/`, `/blog/`, `/wp-login.php`, `/favicon.ico` と対象記事ページを確認する
+
+---
+
 ### 2026-03-12 04:05 JST | Agent: Codex
 - Task: Claude Code 記事向け X 投稿 3 本の結果確認と、今夜用の臨時 cron を通常運用へ戻す
 - Changed Files:
