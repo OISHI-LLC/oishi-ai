@@ -16,6 +16,32 @@
 
 ---
 
+### 2026-03-15 04:30 JST | Agent: Claude
+- Task: プロジェクト整理 + CLAUDE.md監査 + X投稿cron修正
+- Changed Files:
+  - `CLAUDE.md` — Project Overview / Deploy & Automation セクション追加、関連ファイルへのポインタ追加
+  - `.github/workflows/x-post.yml` — cron を 7:00/11:00/15:00 → 8:00/12:00/19:00 JST に変更（19時ツイート遅延バグ修正）
+  - `PROJECT_RULES.md` — X投稿時間帯を「8時/12時/19時」に統一
+  - `tasks/article-20260314-one-person-ai-team.html` — alt属性の年号修正（2024→2025）
+- Deploy:
+  - GitHub push: `4595078` → `1944131` → `master`
+  - GitHub Actions deploy: 対象はワークフロー定義変更のみ（テーマファイル変更なし、FTPデプロイはスキップされる想定）
+- Deleted Files:
+  - `preview/` ディレクトリ（19 MB、古い下書き・未最適化画像）
+  - `tasks/backups/20260304-home-chatbot/`（obsolete .bak）
+  - `tasks/todo-archive.md`（handoff-archiveと重複、ポリシー違反）
+  - `.DS_Store` x 4
+- Verification:
+  - x-post.yml: cron `0 23 * * *`(08:00) / `0 3 * * *`(12:00) / `0 10 * * *`(19:00) を確認
+  - PROJECT_RULES.md: 84行目「8時/12時/19時に固定」を確認
+  - 削除対象がPHP/CSS/deploy.ymlから未参照であることを確認済み
+- Open Items:
+  - MCP記事関連ファイル（assets/blog/20260316-mcp-guide/, assets/twitter/20260316/, tasks/x-content-queue.json）がステージ済み・未コミット
+- Next Action:
+  - MCP記事のコミット・デプロイ・WP投稿
+
+---
+
 ### 2026-03-14 08:40 JST | Agent: Claude
 - Task: 三大AI比較記事デプロイ + X投稿6本キュー登録 + X投稿ワークフロー自動化
 - Changed Files:
@@ -74,25 +100,5 @@
 - Next Action:
   - X投稿3本の作成・キュー登録（型1:ブログ宣伝 / 型2or3を2本）
 
----
 
-### 2026-03-14 06:09 JST | Agent: Codex
-- Task: WordPress の最新下書き記事を本番公開
-- Changed Files:
-  - `tasks/todo.md`（公開タスク記録・Review 追記）
-  - `tasks/handoff.md`（本エントリ追加）
-- Deploy:
-  - なし（WordPress 本番記事の公開操作のみ）
-- Verification:
-  - server:
-    - `wp post list --post_status=draft` で下書きは `ID=67` の 1 件のみ確認
-    - `wp post update 67 --post_status=publish` 実行成功
-    - `wp post get 67` で `post_status=publish`、`post_name=one-person-ai-team` を確認
-    - `wp post url 67` で `https://www.oishillc.jp/2026/03/14/one-person-ai-team/` を確認
-  - live:
-    - 記事 URL `https://www.oishillc.jp/2026/03/14/one-person-ai-team/` `HTTP 200`
-- Open Items:
-  - なし
-- Next Action:
-  - なし
 

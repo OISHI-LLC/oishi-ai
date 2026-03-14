@@ -4,6 +4,28 @@
 
 ---
 
+### 2026-03-14 06:09 JST | Agent: Codex
+- Task: WordPress の最新下書き記事を本番公開
+- Changed Files:
+  - `tasks/todo.md`（公開タスク記録・Review 追記）
+  - `tasks/handoff.md`（本エントリ追加）
+- Deploy:
+  - なし（WordPress 本番記事の公開操作のみ）
+- Verification:
+  - server:
+    - `wp post list --post_status=draft` で下書きは `ID=67` の 1 件のみ確認
+    - `wp post update 67 --post_status=publish` 実行成功
+    - `wp post get 67` で `post_status=publish`、`post_name=one-person-ai-team` を確認
+    - `wp post url 67` で `https://www.oishillc.jp/2026/03/14/one-person-ai-team/` を確認
+  - live:
+    - 記事 URL `https://www.oishillc.jp/2026/03/14/one-person-ai-team/` `HTTP 200`
+- Open Items:
+  - なし
+- Next Action:
+  - なし
+
+---
+
 ### 2026-03-13 21:00 JST | Agent: Claude
 - Task: 3/13 AI コーディングツール比較記事向け X 投稿 3 本の予約投稿セットアップ、未コミットローカル変更の整理・デプロイ・検証
 
