@@ -115,14 +115,14 @@
   {
     "id": 38,
     "type": "blog_announce",
-    "scheduled": "2026-03-15T07:00:00+09:00",
+    "scheduled": "2026-03-15T08:00:00+09:00",
     "text": "ChatGPT、Claude、Gemini。\n「どれがいいの？」よく聞かれるので整理しました。\n\nGemini → 動画・音声を処理できる唯一のモデル\nClaude → コーディングと安全性が業界トップ\nGPT-5.4 → エコシステムの広さが圧倒的\n\n個人は月約3,000円で同額。\n20人チームだと年間18万円の差に。\n\n部門別おすすめもまとめています。\nhttps://www.oishillc.jp/2026/03/15/gemini-claude-gpt-comparison-2026/",
     "status": "pending"
   },
   {
     "id": 39,
     "type": "practical_take",
-    "scheduled": "2026-03-15T11:00:00+09:00",
+    "scheduled": "2026-03-15T12:00:00+09:00",
     "text": "AI選びでもったいないのは「有名だから」で決めること。\n\n用途で選ぶとこうなります。\n\n契約書チェック → Claude\n「わからない」と正直に言う安心感\n\n会議の議事録 → Gemini\n音声を直接入力できるのはGeminiだけ\n\n営業メール・SNS → GPT-5.4\nテンプレートの数が圧倒的\n\nよく使う業務から逆算して選ぶのが正解。",
     "image": "assets/twitter/20260315/tweet2-use-case-pick.png",
     "status": "pending"
@@ -130,7 +130,7 @@
   {
     "id": 40,
     "type": "practical_take",
-    "scheduled": "2026-03-15T15:00:00+09:00",
+    "scheduled": "2026-03-15T19:00:00+09:00",
     "text": "三大AI、個人は月額ほぼ同じ3,000円。\nでもチーム利用で差が出ます。\n\n20人チームの月額\nGemini：約60,000円\nClaude・GPT：約75,000円\n\n年間で18万円の差。\n\nただ安いから正解とは限らない。\nGPTsで業務自動化すれば差額以上の時間が浮く。\nWorkspace中心ならGeminiが最強。\n\n料金と「何に使うか」で選ぶのがおすすめ。",
     "image": "assets/twitter/20260315/tweet3-team-cost.png",
     "status": "pending"
