@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="65" text-anchor="middle" fill="#22c55e" font-size="42" font-weight="bold">MCP = AIの世界のUSB-C</text>
+
+  <!-- Left: Before -->
+  <rect x="50" y="100" width="520" height="380" rx="14" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+  <text x="310" y="148" text-anchor="middle" fill="#ef4444" font-size="32" font-weight="bold">MCP以前</text>
+
+  <text x="130" y="200" fill="#94a3b8" font-size="24">AI 5種 × ツール 10種</text>
+  <text x="310" y="260" text-anchor="middle" fill="#ef4444" font-size="60" font-weight="bold">= 50通り</text>
+  <text x="310" y="310" text-anchor="middle" fill="#fca5a5" font-size="24">の個別開発が必要</text>
+
+  <line x1="100" y1="340" x2="520" y2="340" stroke="#334155" stroke-width="1"/>
+  <text x="310" y="380" text-anchor="middle" fill="#94a3b8" font-size="22">コスト大 / 保守が大変</text>
+  <text x="310" y="415" text-anchor="middle" fill="#94a3b8" font-size="22">AI切り替え時に全部作り直し</text>
+  <text x="310" y="460" text-anchor="middle" fill="#ef4444" font-size="28" font-weight="bold">✕</text>
+
+  <!-- Arrow -->
+  <text x="600" y="310" text-anchor="middle" fill="#475569" font-size="48" font-weight="bold">→</text>
+
+  <!-- Right: After -->
+  <rect x="630" y="100" width="520" height="380" rx="14" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+  <text x="890" y="148" text-anchor="middle" fill="#22c55e" font-size="32" font-weight="bold">MCP以後</text>
+
+  <text x="710" y="200" fill="#94a3b8" font-size="24">AI 5種 + ツール 10種</text>
+  <text x="890" y="260" text-anchor="middle" fill="#22c55e" font-size="60" font-weight="bold">= 15通り</text>
+  <text x="890" y="310" text-anchor="middle" fill="#86efac" font-size="24">MCPに1回対応するだけ</text>
+
+  <line x1="680" y1="340" x2="1100" y2="340" stroke="#334155" stroke-width="1"/>
+  <text x="890" y="380" text-anchor="middle" fill="#94a3b8" font-size="22">コスト削減 / 保守が楽</text>
+  <text x="890" y="415" text-anchor="middle" fill="#94a3b8" font-size="22">AI切り替えてもサーバーはそのまま</text>
+  <text x="890" y="460" text-anchor="middle" fill="#22c55e" font-size="28" font-weight="bold">◎</text>
+
+  <!-- Bottom -->
+  <rect x="200" y="510" width="800" height="70" rx="12" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="2"/>
+  <text x="600" y="555" text-anchor="middle" fill="#22c55e" font-size="26" font-weight="bold">OpenAI・Google・Microsoft・AWSが全社対応した業界標準</text>
+
+  <!-- Watermark -->
+  <text x="600" y="640" text-anchor="middle" fill="#475569" font-size="18">AI Lab OISHI</text>
+</svg>

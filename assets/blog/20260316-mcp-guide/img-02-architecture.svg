@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="55" text-anchor="middle" fill="#f1f5f9" font-size="36" font-weight="bold">MCPの仕組み ─ 3つの登場人物</text>
+  <text x="600" y="90" text-anchor="middle" fill="#94a3b8" font-size="22">レストランのたとえで理解する</text>
+
+  <!-- Row 1: Technical Architecture -->
+  <text x="600" y="140" text-anchor="middle" fill="#64748b" font-size="18">── 技術的な構造 ──</text>
+
+  <!-- Host -->
+  <rect x="60" y="170" width="300" height="200" rx="16" fill="#7c3aed" fill-opacity="0.12" stroke="#7c3aed" stroke-width="3"/>
+  <text x="210" y="210" text-anchor="middle" fill="#7c3aed" font-size="32" font-weight="bold">ホスト</text>
+  <text x="210" y="245" text-anchor="middle" fill="#c4b5fd" font-size="20">（Host）</text>
+  <text x="210" y="285" text-anchor="middle" fill="#94a3b8" font-size="20">AIアプリケーション</text>
+  <text x="210" y="315" text-anchor="middle" fill="#64748b" font-size="18">Claude Desktop</text>
+  <text x="210" y="340" text-anchor="middle" fill="#64748b" font-size="18">ChatGPT など</text>
+
+  <!-- Client -->
+  <rect x="450" y="170" width="300" height="200" rx="16" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="3"/>
+  <text x="600" y="210" text-anchor="middle" fill="#3b82f6" font-size="32" font-weight="bold">クライアント</text>
+  <text x="600" y="245" text-anchor="middle" fill="#93c5fd" font-size="20">（Client）</text>
+  <text x="600" y="285" text-anchor="middle" fill="#94a3b8" font-size="20">ホスト内の接続係</text>
+  <text x="600" y="315" text-anchor="middle" fill="#64748b" font-size="18">1クライアント = 1サーバー</text>
+  <text x="600" y="340" text-anchor="middle" fill="#64748b" font-size="18">と1対1で通信</text>
+
+  <!-- Server -->
+  <rect x="840" y="170" width="300" height="200" rx="16" fill="#22c55e" fill-opacity="0.12" stroke="#22c55e" stroke-width="3"/>
+  <text x="990" y="210" text-anchor="middle" fill="#22c55e" font-size="32" font-weight="bold">サーバー</text>
+  <text x="990" y="245" text-anchor="middle" fill="#86efac" font-size="20">（Server）</text>
+  <text x="990" y="285" text-anchor="middle" fill="#94a3b8" font-size="20">ツールへの窓口</text>
+  <text x="990" y="315" text-anchor="middle" fill="#64748b" font-size="18">Google Calendar用</text>
+  <text x="990" y="340" text-anchor="middle" fill="#64748b" font-size="18">Slack用 など</text>
+
+  <!-- Arrows (tech) -->
+  <line x1="360" y1="270" x2="450" y2="270" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrowR)"/>
+  <line x1="750" y1="270" x2="840" y2="270" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrowR)"/>
+  <defs>
+    <marker id="arrowR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <text x="405" y="258" text-anchor="middle" fill="#94a3b8" font-size="16">指示</text>
+  <text x="795" y="258" text-anchor="middle" fill="#94a3b8" font-size="16">MCP通信</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="420" x2="1140" y2="420" stroke="#334155" stroke-width="1" stroke-dasharray="8,8"/>
+  <text x="600" y="460" text-anchor="middle" fill="#64748b" font-size="18">── レストランに例えると ──</text>
+
+  <!-- Row 2: Restaurant Metaphor -->
+  <!-- Customer -->
+  <rect x="60" y="490" width="300" height="200" rx="16" fill="#7c3aed" fill-opacity="0.08" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="210" y="540" text-anchor="middle" fill="#c4b5fd" font-size="48">🙋</text>
+  <text x="210" y="585" text-anchor="middle" fill="#7c3aed" font-size="30" font-weight="bold">お客さん</text>
+  <text x="210" y="620" text-anchor="middle" fill="#94a3b8" font-size="20">「パスタをください」</text>
+  <text x="210" y="650" text-anchor="middle" fill="#94a3b8" font-size="20">と注文する人</text>
+  <text x="210" y="680" text-anchor="middle" fill="#7c3aed" font-size="18">= ホスト</text>
+
+  <!-- Waiter -->
+  <rect x="450" y="490" width="300" height="200" rx="16" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="600" y="540" text-anchor="middle" fill="#93c5fd" font-size="48">🤵</text>
+  <text x="600" y="585" text-anchor="middle" fill="#3b82f6" font-size="30" font-weight="bold">ウェイター</text>
+  <text x="600" y="620" text-anchor="middle" fill="#94a3b8" font-size="20">注文を聞いて</text>
+  <text x="600" y="650" text-anchor="middle" fill="#94a3b8" font-size="20">キッチンに伝える</text>
+  <text x="600" y="680" text-anchor="middle" fill="#3b82f6" font-size="18">= クライアント</text>
+
+  <!-- Kitchen -->
+  <rect x="840" y="490" width="300" height="200" rx="16" fill="#22c55e" fill-opacity="0.08" stroke="#22c55e" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="990" y="540" text-anchor="middle" fill="#86efac" font-size="48">👨‍🍳</text>
+  <text x="990" y="585" text-anchor="middle" fill="#22c55e" font-size="30" font-weight="bold">キッチン</text>
+  <text x="990" y="620" text-anchor="middle" fill="#94a3b8" font-size="20">料理を作って</text>
+  <text x="990" y="650" text-anchor="middle" fill="#94a3b8" font-size="20">ウェイターに返す</text>
+  <text x="990" y="680" text-anchor="middle" fill="#22c55e" font-size="18">= サーバー</text>
+
+  <!-- Arrows (restaurant) -->
+  <line x1="360" y1="590" x2="450" y2="590" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrowR)"/>
+  <line x1="750" y1="590" x2="840" y2="590" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrowR)"/>
+  <text x="405" y="578" text-anchor="middle" fill="#94a3b8" font-size="16">注文</text>
+  <text x="795" y="578" text-anchor="middle" fill="#94a3b8" font-size="16">調理依頼</text>
+
+  <!-- Bottom Key Point -->
+  <rect x="200" y="730" width="800" height="80" rx="12" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="2"/>
+  <text x="600" y="765" text-anchor="middle" fill="#22c55e" font-size="22" font-weight="bold">ポイント：ウェイター（MCP）の「注文の伝え方」が統一されているから</text>
+  <text x="600" y="795" text-anchor="middle" fill="#86efac" font-size="20">どのキッチン（ツール）にも同じ方法で注文できる</text>
+
+  <!-- Footer -->
+  <text x="600" y="860" text-anchor="middle" fill="#475569" font-size="16">© AI Lab OISHI</text>
+</svg>

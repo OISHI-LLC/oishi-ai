@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="10" refX="11" refY="5" orient="auto">
+      <path d="M0,0 L12,5 L0,10" fill="#22c55e"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="700" fill="url(#bg)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="50" text-anchor="middle" fill="#f1f5f9" font-size="36" font-weight="bold">MCPの始め方 ─ 3ステップ</text>
+  <text x="600" y="85" text-anchor="middle" fill="#94a3b8" font-size="22">非エンジニアでも今日から試せる</text>
+
+  <!-- Step 1 -->
+  <rect x="40" y="130" width="340" height="420" rx="16" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="2.5"/>
+  <circle cx="210" cy="180" r="36" fill="#3b82f6" fill-opacity="0.2" stroke="#3b82f6" stroke-width="3"/>
+  <text x="210" y="192" text-anchor="middle" fill="#3b82f6" font-size="34" font-weight="bold">1</text>
+  <text x="210" y="245" text-anchor="middle" fill="#3b82f6" font-size="26" font-weight="bold">MCPクライアントを</text>
+  <text x="210" y="278" text-anchor="middle" fill="#3b82f6" font-size="26" font-weight="bold">選ぶ</text>
+
+  <text x="210" y="325" text-anchor="middle" fill="#94a3b8" font-size="20">おすすめ：</text>
+
+  <rect x="75" y="345" width="270" height="44" rx="8" fill="#d97706" fill-opacity="0.15" stroke="#d97706" stroke-width="1.5"/>
+  <text x="210" y="374" text-anchor="middle" fill="#fbbf24" font-size="20" font-weight="bold">Claude Desktop（推奨）</text>
+
+  <rect x="75" y="400" width="270" height="44" rx="8" fill="#475569" stroke="#64748b" stroke-width="1.5"/>
+  <text x="210" y="429" text-anchor="middle" fill="#e2e8f0" font-size="18">ChatGPT Desktop</text>
+
+  <rect x="75" y="455" width="270" height="44" rx="8" fill="#475569" stroke="#64748b" stroke-width="1.5"/>
+  <text x="210" y="484" text-anchor="middle" fill="#e2e8f0" font-size="18">Cursor / VS Code</text>
+
+  <text x="210" y="530" text-anchor="middle" fill="#64748b" font-size="16">無料プランでもMCP利用可</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="380" y1="340" x2="430" y2="340" stroke="#22c55e" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Step 2 -->
+  <rect x="430" y="130" width="340" height="420" rx="16" fill="#22c55e" fill-opacity="0.08" stroke="#22c55e" stroke-width="2.5"/>
+  <circle cx="600" cy="180" r="36" fill="#22c55e" fill-opacity="0.2" stroke="#22c55e" stroke-width="3"/>
+  <text x="600" y="192" text-anchor="middle" fill="#22c55e" font-size="34" font-weight="bold">2</text>
+  <text x="600" y="245" text-anchor="middle" fill="#22c55e" font-size="26" font-weight="bold">MCPサーバーを</text>
+  <text x="600" y="278" text-anchor="middle" fill="#22c55e" font-size="26" font-weight="bold">追加する</text>
+
+  <text x="600" y="325" text-anchor="middle" fill="#94a3b8" font-size="20">すぐ試せるサーバー：</text>
+
+  <rect x="465" y="345" width="270" height="38" rx="8" fill="#475569" stroke="#64748b" stroke-width="1.5"/>
+  <text x="600" y="371" text-anchor="middle" fill="#e2e8f0" font-size="18">ファイルシステム</text>
+
+  <rect x="465" y="393" width="270" height="38" rx="8" fill="#475569" stroke="#64748b" stroke-width="1.5"/>
+  <text x="600" y="419" text-anchor="middle" fill="#e2e8f0" font-size="18">GitHub</text>
+
+  <rect x="465" y="441" width="270" height="38" rx="8" fill="#475569" stroke="#64748b" stroke-width="1.5"/>
+  <text x="600" y="467" text-anchor="middle" fill="#e2e8f0" font-size="18">Google Drive</text>
+
+  <rect x="465" y="489" width="270" height="38" rx="8" fill="#475569" stroke="#64748b" stroke-width="1.5"/>
+  <text x="600" y="515" text-anchor="middle" fill="#e2e8f0" font-size="18">Slack / DB</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="770" y1="340" x2="820" y2="340" stroke="#22c55e" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Step 3 -->
+  <rect x="820" y="130" width="340" height="420" rx="16" fill="#a855f7" fill-opacity="0.08" stroke="#a855f7" stroke-width="2.5"/>
+  <circle cx="990" cy="180" r="36" fill="#a855f7" fill-opacity="0.2" stroke="#a855f7" stroke-width="3"/>
+  <text x="990" y="192" text-anchor="middle" fill="#a855f7" font-size="34" font-weight="bold">3</text>
+  <text x="990" y="245" text-anchor="middle" fill="#a855f7" font-size="26" font-weight="bold">小さな自動化から</text>
+  <text x="990" y="278" text-anchor="middle" fill="#a855f7" font-size="26" font-weight="bold">試す</text>
+
+  <text x="990" y="325" text-anchor="middle" fill="#94a3b8" font-size="20">最初の一歩の例：</text>
+
+  <rect x="855" y="345" width="270" height="44" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="990" y="374" text-anchor="middle" fill="#c4b5fd" font-size="17">フォルダの中身を一覧表示</text>
+
+  <rect x="855" y="400" width="270" height="44" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="990" y="429" text-anchor="middle" fill="#c4b5fd" font-size="17">Slackメッセージを要約</text>
+
+  <rect x="855" y="455" width="270" height="44" rx="8" fill="#a855f7" fill-opacity="0.1" stroke="#a855f7" stroke-width="1.5"/>
+  <text x="990" y="484" text-anchor="middle" fill="#c4b5fd" font-size="17">CSVの分析とレポート</text>
+
+  <text x="990" y="530" text-anchor="middle" fill="#64748b" font-size="16">1〜2日で活用が広がる</text>
+
+  <!-- Bottom message -->
+  <rect x="200" y="590" width="800" height="70" rx="12" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="2"/>
+  <text x="600" y="625" text-anchor="middle" fill="#22c55e" font-size="22" font-weight="bold">まずはClaude Desktopをインストールして、1つのサーバーを追加してみよう</text>
+  <text x="600" y="650" text-anchor="middle" fill="#86efac" font-size="18">設定ファイルに数行追加するだけ。プログラミング不要。</text>
+</svg>

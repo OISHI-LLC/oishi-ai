@@ -134,5 +134,28 @@
     "text": "三大AI、個人は月額ほぼ同じ3,000円。\nでもチーム利用で差が出ます。\n\n20人チームの月額\nGemini：約60,000円\nClaude・GPT：約75,000円\n\n年間で18万円の差。\n\nただ安いから正解とは限らない。\nGPTsで業務自動化すれば差額以上の時間が浮く。\nWorkspace中心ならGeminiが最強。\n\n料金と「何に使うか」で選ぶのがおすすめ。",
     "image": "assets/twitter/20260315/tweet3-team-cost.png",
     "status": "pending"
+  },
+  {
+    "id": 41,
+    "type": "blog_announce",
+    "scheduled": "2026-03-16T08:00:00+09:00",
+    "text": "MCPって何か、ちゃんと説明できますか？\n\nAIがカレンダー・メール・データベースと\n自由につながるための「共通ルール」です。\n\nOpenAI、Google、Microsoft、AWS──\n主要プレイヤーが全社対応した今、\n知らないままだと確実に出遅れます。\n\n仕組み・活用事例・始め方まで、\n非エンジニアでもわかるように整理しました。\n\nhttps://www.oishillc.jp/2026/03/16/what-is-mcp-guide/",
+    "status": "pending"
+  },
+  {
+    "id": 42,
+    "type": "practical_take",
+    "scheduled": "2026-03-16T12:00:00+09:00",
+    "text": "MCPの本質を一言で言うと\n「AIの世界のUSB-C」です。\n\nMCP以前：\nAIツールごとに専用の接続が必要\n→ 10ツール×5AI = 50通りの開発\n\nMCP以後：\n共通規格で1回つなげばOK\n→ 10+5 = 15通りで済む\n\nOpenAIがAssistants APIを非推奨にして\nResponses API（MCP対応）に移行するのも、\nこの効率差が理由です。\n\n2026年、AIを業務で使うなら\nMCPは避けて通れないインフラになります。",
+    "image": "assets/twitter/20260316/tweet2-mcp-usb-analogy.png",
+    "status": "pending"
+  },
+  {
+    "id": 43,
+    "type": "practical_take",
+    "scheduled": "2026-03-16T19:00:00+09:00",
+    "text": "「MCPは開発者向けでしょ？」\n→ これ、よくある誤解です。\n\nClaude DesktopやChatGPTを使っていれば、\nすでにMCPの恩恵を受けています。\n\nMCPのおかげで実現していること：\n・AIがファイルを直接読み書きできる\n・カレンダーやメールと連携できる\n・外部データベースを検索できる\n\n「使う側」は技術を知らなくても大丈夫。\nただし「選ぶ側」は知っておくべきです。\n\nMCP対応ツールを選ぶかどうかで、\nAIの活用幅がまったく変わるからです。",
+    "image": "assets/twitter/20260316/tweet3-mcp-misconception.png",
+    "status": "pending"
   }
 ]

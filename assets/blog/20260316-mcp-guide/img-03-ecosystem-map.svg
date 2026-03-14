@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)" rx="16"/>
+
+  <!-- Title -->
+  <text x="600" y="55" text-anchor="middle" fill="#f1f5f9" font-size="36" font-weight="bold">MCPエコシステム対応状況マップ</text>
+  <text x="600" y="90" text-anchor="middle" fill="#94a3b8" font-size="22">2026年3月最新 ─ 主要プレイヤー全社が対応</text>
+
+  <!-- Center MCP Hub -->
+  <circle cx="600" cy="450" r="90" fill="#22c55e" fill-opacity="0.15" stroke="#22c55e" stroke-width="3" filter="url(#glow)"/>
+  <text x="600" y="440" text-anchor="middle" fill="#22c55e" font-size="42" font-weight="bold">MCP</text>
+  <text x="600" y="475" text-anchor="middle" fill="#86efac" font-size="18">オープン標準</text>
+  <text x="600" y="500" text-anchor="middle" fill="#86efac" font-size="18">Linux Foundation</text>
+
+  <!-- Anthropic (Top) -->
+  <rect x="450" y="140" width="300" height="120" rx="14" fill="#d97706" fill-opacity="0.12" stroke="#d97706" stroke-width="2.5"/>
+  <text x="600" y="180" text-anchor="middle" fill="#d97706" font-size="28" font-weight="bold">Anthropic</text>
+  <text x="600" y="210" text-anchor="middle" fill="#fbbf24" font-size="18">MCPの生みの親</text>
+  <text x="600" y="235" text-anchor="middle" fill="#94a3b8" font-size="16">Claude Desktop / Claude Code / API</text>
+  <line x1="600" y1="260" x2="600" y2="360" stroke="#d97706" stroke-width="2.5"/>
+
+  <!-- OpenAI (Left) -->
+  <rect x="60" y="300" width="280" height="120" rx="14" fill="#10a37f" fill-opacity="0.12" stroke="#10a37f" stroke-width="2.5"/>
+  <text x="200" y="340" text-anchor="middle" fill="#10a37f" font-size="28" font-weight="bold">OpenAI</text>
+  <text x="200" y="370" text-anchor="middle" fill="#6ee7b7" font-size="18">Responses API / Agents SDK</text>
+  <text x="200" y="395" text-anchor="middle" fill="#94a3b8" font-size="16">ChatGPT Desktop対応</text>
+  <line x1="340" y1="390" x2="510" y2="430" stroke="#10a37f" stroke-width="2.5"/>
+
+  <!-- Google (Right) -->
+  <rect x="860" y="300" width="280" height="120" rx="14" fill="#4285f4" fill-opacity="0.12" stroke="#4285f4" stroke-width="2.5"/>
+  <text x="1000" y="340" text-anchor="middle" fill="#4285f4" font-size="28" font-weight="bold">Google</text>
+  <text x="1000" y="370" text-anchor="middle" fill="#93c5fd" font-size="18">Gemini SDK / AI Studio</text>
+  <text x="1000" y="395" text-anchor="middle" fill="#94a3b8" font-size="16">Cloud Run MCPサーバー</text>
+  <line x1="860" y1="390" x2="690" y2="430" stroke="#4285f4" stroke-width="2.5"/>
+
+  <!-- Microsoft (Bottom Left) -->
+  <rect x="100" y="530" width="280" height="120" rx="14" fill="#0078d4" fill-opacity="0.12" stroke="#0078d4" stroke-width="2.5"/>
+  <text x="240" y="570" text-anchor="middle" fill="#0078d4" font-size="28" font-weight="bold">Microsoft</text>
+  <text x="240" y="600" text-anchor="middle" fill="#60a5fa" font-size="18">Windows 11 / M365 Copilot</text>
+  <text x="240" y="625" text-anchor="middle" fill="#94a3b8" font-size="16">Azure Functions MCP拡張</text>
+  <line x1="380" y1="570" x2="515" y2="470" stroke="#0078d4" stroke-width="2.5"/>
+
+  <!-- AWS (Bottom Right) -->
+  <rect x="820" y="530" width="280" height="120" rx="14" fill="#ff9900" fill-opacity="0.12" stroke="#ff9900" stroke-width="2.5"/>
+  <text x="960" y="570" text-anchor="middle" fill="#ff9900" font-size="28" font-weight="bold">AWS</text>
+  <text x="960" y="600" text-anchor="middle" fill="#fbbf24" font-size="18">Bedrock / AgentCore</text>
+  <text x="960" y="625" text-anchor="middle" fill="#94a3b8" font-size="16">公式MCPサーバー多数</text>
+  <line x1="820" y1="570" x2="685" y2="470" stroke="#ff9900" stroke-width="2.5"/>
+
+  <!-- Bottom: Other Tools -->
+  <rect x="150" y="710" width="900" height="100" rx="14" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+  <text x="600" y="745" text-anchor="middle" fill="#94a3b8" font-size="20" font-weight="bold">その他の対応ツール・プラットフォーム</text>
+  <text x="600" y="780" text-anchor="middle" fill="#64748b" font-size="18">Cursor　/　VS Code（Copilot）　/　Windsurf　/　Replit　/　Zed　/　JetBrains　/　Cline</text>
+
+  <!-- Stats -->
+  <rect x="120" y="120" width="200" height="50" rx="8" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="220" y="152" text-anchor="middle" fill="#22c55e" font-size="20" font-weight="bold">10,000+ サーバー</text>
+
+  <rect x="880" y="120" width="200" height="50" rx="8" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="980" y="152" text-anchor="middle" fill="#22c55e" font-size="20" font-weight="bold">★ 79,000+ Stars</text>
+
+  <!-- AAIF label -->
+  <rect x="400" y="835" width="400" height="40" rx="8" fill="#334155" stroke="#475569" stroke-width="1"/>
+  <text x="600" y="862" text-anchor="middle" fill="#94a3b8" font-size="17">Agentic AI Foundation（Linux Foundation傘下）で中立運営</text>
+</svg>
