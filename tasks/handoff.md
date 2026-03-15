@@ -16,6 +16,17 @@
 
 ---
 
+### 2026-03-15 13:50 JST | Agent: Claude
+- Task: ポートフォリオページの問い合わせリンクを修正
+- Changed Files:
+  - `page-portfolio.php` — CTAの`mailto:info@oishillc.jp`を`/contact/`ページへのリンクに変更
+- Deploy: GitHub push → FTPS自動デプロイ
+- Verification: PHP構文チェック済み、本番確認待ち
+- Open Items: なし
+- Next Action: なし
+
+---
+
 ### 2026-03-15 13:33 JST | Agent: Claude
 - Task: PageSpeed モバイルスコア改善（73→90+目標）
 - Changed Files:

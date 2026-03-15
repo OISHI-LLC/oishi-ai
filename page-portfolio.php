@@ -83,7 +83,7 @@
     <span class="section-label">Contact</span>
     <h2>プロジェクトのご相談はお気軽に</h2>
     <p>貴社の課題に合わせた最適なAIソリューションをご提案します。</p>
-    <a href="mailto:info@oishillc.jp" class="btn btn-primary">お問い合わせ</a>
+    <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-primary">お問い合わせ</a>
   </div>
 </section>
 
