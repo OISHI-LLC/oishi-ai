@@ -26,6 +26,11 @@
 </header>
 
 <section class="hero" id="hero">
+  <img class="hero-bg-img"
+       src="<?php echo esc_url(get_template_directory_uri() . '/hero-bg-800.jpg'); ?>"
+       srcset="<?php echo esc_attr(get_template_directory_uri() . '/hero-bg-480.webp 480w, ' . get_template_directory_uri() . '/hero-bg-800.webp 800w, ' . get_template_directory_uri() . '/hero-bg-1200.webp 1200w, ' . get_template_directory_uri() . '/hero-bg-1600.webp 1600w'); ?>"
+       sizes="100vw" alt="" width="2720" height="1568"
+       fetchpriority="high" decoding="async" loading="eager">
   <div class="hero-content">
     <span class="hero-label">AI Consulting</span>
     <h1>AIの力で、ビジネスを次のステージへ</h1>

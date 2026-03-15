@@ -796,3 +796,62 @@ function oishi_ai_handle_contact() {
 }
 add_action('admin_post_nopriv_oishi_contact', 'oishi_ai_handle_contact');
 add_action('admin_post_oishi_contact', 'oishi_ai_handle_contact');
+
+// ===== Performance: preconnect hints =====
+function oishi_ai_preconnect_hints() {
+    echo '<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>' . "\n";
+    echo '<link rel="preconnect" href="https://www.google-analytics.com" crossorigin>' . "\n";
+}
+add_action('wp_head', 'oishi_ai_preconnect_hints', 0);
+
+// ===== Performance: hero image preload (front page only) =====
+function oishi_ai_preload_hero_image() {
+    if (!is_front_page()) {
+        return;
+    }
+    $uri = get_template_directory_uri();
+    $imagesrcset = esc_attr(
+        $uri . '/hero-bg-480.webp 480w, ' .
+        $uri . '/hero-bg-800.webp 800w, ' .
+        $uri . '/hero-bg-1200.webp 1200w, ' .
+        $uri . '/hero-bg-1600.webp 1600w'
+    );
+    echo '<link rel="preload" as="image" imagesrcset="' . $imagesrcset . '" imagesizes="100vw" fetchpriority="high">' . "\n";
+}
+add_action('wp_head', 'oishi_ai_preload_hero_image', 1);
+
+// ===== Performance: critical CSS inline + async full CSS =====
+function oishi_ai_critical_css() {
+    $critical_path = get_template_directory() . '/critical.css';
+    if (!file_exists($critical_path)) {
+        return;
+    }
+
+    // Dequeue the normal style.css
+    wp_dequeue_style('oishi-ai-style');
+    wp_deregister_style('oishi-ai-style');
+
+    // Inline critical CSS
+    echo '<style>' . file_get_contents($critical_path) . '</style>' . "\n";
+
+    // Async load full CSS
+    $style_ver = (string) filemtime(get_stylesheet_directory() . '/style.css');
+    $full_css_url = esc_url(get_stylesheet_uri() . '?ver=' . $style_ver);
+    echo '<link rel="preload" href="' . $full_css_url . '" as="style" onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n";
+    echo '<noscript><link rel="stylesheet" href="' . $full_css_url . '"></noscript>' . "\n";
+}
+add_action('wp_enqueue_scripts', 'oishi_ai_critical_css', 200);
+
+// ===== Google Analytics 4 (loaded in footer for performance) =====
+function oishi_ai_ga4_tracking() {
+    ?>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLKGERC3FF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MLKGERC3FF');
+    </script>
+    <?php
+}
+add_action('wp_footer', 'oishi_ai_ga4_tracking');
