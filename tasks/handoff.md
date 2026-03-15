@@ -16,6 +16,46 @@
 
 ---
 
+### 2026-03-15 13:33 JST | Agent: Claude
+- Task: PageSpeed モバイルスコア改善（73→90+目標）
+- Changed Files:
+  - `index.php` — ヒーロー画像をCSS backgroundから`<img>`タグ+srcsetに変更
+  - `style.css` — `.hero`のbackground削除、`.hero-bg-img`追加、z-index整理、モバイル`::before`修正
+  - `functions.php` — ヒーロー画像preload、クリティカルCSSインライン化+フルCSS非同期読み込み、preconnectヒント、GA4コード追加（wp_footerへ移動）
+  - `critical.css` — 新規作成（above-the-fold CSS、3.7KB）
+  - `.htaccess` — 画像1年/CSS・JS1ヶ月のキャッシュヘッダー追加
+  - `hero-bg-480.webp` (18KB), `hero-bg-800.webp` (39KB), `hero-bg-1200.webp` (72KB), `hero-bg-1600.webp` (105KB) — 新規生成
+  - `hero-bg-800.jpg` (85KB) — WebP非対応フォールバック
+- Deploy:
+  - GitHub push: `80c5ffa` → `master`
+  - GitHub Actions: Deploy to Xserver run `23103402126`: success (19s)
+- Verification:
+  - PHP構文チェック: functions.php, index.php エラーなし
+  - サーバーGA4重複なし確認済み
+  - PageSpeed再計測待ち
+- Open Items:
+  - PageSpeed Insightsでモバイルスコア再計測が必要
+  - 90+未達の場合は追加最適化を検討
+- Next Action:
+  - PageSpeed計測 → 結果に応じて追加対策
+
+---
+
+### 2026-03-15 13:05 JST | Agent: Claude
+- Task: GitHub Actions cron遅延対策 — 30分間隔に変更
+- Changed Files:
+  - `.github/workflows/x-post.yml` — cron を 8:00/12:00/19:00 の3回 → `*/30 * * * *`（30分間隔）に変更
+- Deploy:
+  - GitHub push: `1476a42` → `master`
+  - ワークフロー定義変更のみ（FTPデプロイ対象外）
+- Verification:
+  - id:39（12:00予定）が cron スキップで未投稿だったため手動トリガーで投稿済み
+  - id:40（19:00予定）は pending。19:00以降の30分枠で自動投稿される想定
+- Open Items: なし
+- Next Action: 19:00以降に id:40 が正常投稿されたか確認
+
+---
+
 ### 2026-03-15 04:30 JST | Agent: Claude
 - Task: プロジェクト整理 + CLAUDE.md監査 + X投稿cron修正
 - Changed Files:
