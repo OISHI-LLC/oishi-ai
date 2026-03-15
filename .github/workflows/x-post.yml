@@ -2,11 +2,9 @@ name: X Auto Post
 
 on:
   schedule:
-    # 毎日 JST 08:00 / 12:00 / 19:00 に固定実行
+    # 30分ごとに実行（GitHub Actions cronの遅延対策）
     # キュー内の scheduled <= 現在時刻 かつ status=pending のみ投稿
-    - cron: "0 23 * * *"   # JST 08:00
-    - cron: "0 3 * * *"    # JST 12:00
-    - cron: "0 10 * * *"   # JST 19:00
+    - cron: "*/30 * * * *"
   workflow_dispatch: # Allow manual trigger
 
 permissions:
